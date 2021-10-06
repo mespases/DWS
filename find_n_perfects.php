@@ -33,11 +33,11 @@
 
     if (isset($_POST["num"])) {
         $num = intval($_POST["num"]);
-        //TODO: YOUR CODE HERE
         $n = 1;
 
         for ($i = 0; $i < $num; $i++) {
-            while (isPerfectNum($n) != true) $n++;
+            while (!isPerfectNum($n)) $n++;
+
             echo $n."<br>";
             $n++;
         }
