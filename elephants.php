@@ -29,14 +29,14 @@ function test($elephants, $elephantsSorted) {
     //}
     //getSortedElephantsByNumber($elephantsSorted);
     echo count($elephants);
-    for ($i = 0; i < count($elephants); $i++) {
+    for ($i = 0; $i < count($elephants); $i++) {
         echo "<tr>";
-    //    echo "<td>".$elephants[$i]['number']."</td>";
-    //    echo "<td>".$elephants[$i]['name']."</td>";
-    //    echo "<td>".$elephants[$i]['species']."</td>";
-    //    //echo "<td>".$elephantsSorted[$i]['number']."</td>";
-    //    //echo "<td>".$elephantsSorted[$i]['name']."</td>";
-    //    //echo "<td>".$elephantsSorted[$i]['species']."</td>";
+        echo "<td>".$elephants[$i]['number']."</td>";
+        echo "<td>".$elephants[$i]['name']."</td>";
+        echo "<td>".$elephants[$i]['species']."</td>";
+        echo "<td>".$elephantsSorted[$i]['number']."</td>";
+        echo "<td>".$elephantsSorted[$i]['name']."</td>";
+        echo "<td>".$elephantsSorted[$i]['species']."</td>";
         echo "</tr>";
     }
 }
