@@ -3,9 +3,6 @@ $contents = file_get_contents("https://dawsonferrer.com/allabres/apis_solutions/
 $elephants = json_decode($contents, true);
 
 function getSortedElephantsByNumber($elephants){
-    //TODO: Return an array of elephants sorted by it's number (ascending order).
-    //NOTES 1: You receive a elephants multidimensional array, you can view it's content with var_dump() function.
-    //NOTES 2:You CAN'T use any sorting PHP built-in function.
     $elephantsSorted = $elephants;
 
     for ($i = 0; $i < count($elephantsSorted); $i++) {
