@@ -1,12 +1,13 @@
 <?php
 $contents = file_get_contents("https://dawsonferrer.com/allabres/apis_solutions/elephants.php");
 $elephants = json_decode($contents, true);
-$elephantsSorted = $elephants;
 
-function getSortedElephantsByNumber($elephantsSorted){
+function getSortedElephantsByNumber($elephants){
     //TODO: Return an array of elephants sorted by it's number (ascending order).
     //NOTES 1: You receive a elephants multidimensional array, you can view it's content with var_dump() function.
     //NOTES 2:You CAN'T use any sorting PHP built-in function.
+    $elephantsSorted = $elephants;
+
     for ($i = 0; $i < count($elephantsSorted); $i++) {
         for ($j = 0; $j < count($elephantsSorted); $j++) {
             if ($elephantsSorted[$j]['number'] > $elephantsSorted[$j+1]['number'] && $elephantsSorted[$j+1]['number'] !== null) {
@@ -20,8 +21,8 @@ function getSortedElephantsByNumber($elephantsSorted){
     return $elephantsSorted;
 }
 
-function test($elephants, $elephantsSorted) {
-    $elephantsSorted = getSortedElephantsByNumber($elephantsSorted);
+function printElephants($elephants) {
+    $elephantsSorted = getSortedElephantsByNumber($elephants);
 
     for ($i = 0; $i < count($elephants); $i++) {
         echo "<tr>";
@@ -78,7 +79,7 @@ function test($elephants, $elephantsSorted) {
     </thead>
     <tbody>
     <?php
-        test($elephants, $elephantsSorted);
+        printElephants($elephants);
 
     ?>
     </tbody>
