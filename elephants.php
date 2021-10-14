@@ -17,18 +17,12 @@ function getSortedElephantsByNumber($elephantsSorted){
             }
         }
     }
+    return $elephantsSorted;
 }
 
 function test($elephants, $elephantsSorted) {
-    //foreach ($elephants as $elephant) {
-    //    echo "<tr>";
-    //    echo "<td>".$elephant['number']."</td>";
-    //    echo "<td>".$elephant['name']."</td>";
-    //    echo "<td>".$elephant['species']."</td>";
-    //    echo "</tr>";
-    //}
-    //getSortedElephantsByNumber($elephantsSorted);
-    echo count($elephants);
+    $elephantsSorted = getSortedElephantsByNumber($elephantsSorted);
+
     for ($i = 0; $i < count($elephants); $i++) {
         echo "<tr>";
         echo "<td>".$elephants[$i]['number']."</td>";
