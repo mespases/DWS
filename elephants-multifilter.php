@@ -3,16 +3,24 @@ $contents = file_get_contents("https://dawsonferrer.com/allabres/apis_solutions/
 $elephants = json_decode($contents, true);
 
 function getSortedElephantsByNumber($elephants){
-    for ($i = 0; $i < count($elephants); $i++) {
+    $changes = true;
+
+    while ($changes) {
+        $count = 1;
         for ($j = 0; $j < count($elephants); $j++) {
             if ($elephants[$j]['number'] > $elephants[$j+1]['number'] && $elephants[$j+1]['number'] !== null) {
                 $n1 = $elephants[$j];
                 $n2 = $elephants[$j+1];
                 $elephants[$j] = $n2;
                 $elephants[$j+1] = $n1;
+            } else if ($count == 39) {
+                $changes = false;
+            } else {
+                $count++;
             }
         }
     }
+
     return $elephants;
 }
 
@@ -24,6 +32,7 @@ function getSortedElephantsByBirth($elephants){
 
         for ($j = 0; $j < count($elephants); $j++) {
             if ($elephants[$j]['dod'] > $elephants[$j+1]['dod'] && $elephants[$j+1] != null) {
+
                 $n1 = $elephants[$j];
                 $n2 = $elephants[$j+1];
                 $elephants[$j] = $n2;
@@ -36,6 +45,8 @@ function getSortedElephantsByBirth($elephants){
             }
         }
     }
+
+    return $elephants;
 }
 
 function getSortedElephantsByHavingImage($elephants){
@@ -79,10 +90,7 @@ function printElephants($elephants) {
 }
 
 if(isset($_GET["sortingCriteria"])){
-    //TODO: Logic to call a function depending on the sorting criteria.
     $category = strval($_GET["sortingCriteria"]);
-
-
 }
 
 ?>
