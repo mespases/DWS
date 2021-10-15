@@ -17,20 +17,72 @@ function getSortedElephantsByNumber($elephants){
 }
 
 function getSortedElephantsByBirth($elephants){
-    //TODO: Return an array of elephants sorted by it's birth date (ascending order).
-    //NOTES 1: You receive a elephants multidimensional array, you can view it's content with var_dump() function.
-    //NOTES 2:You CAN'T use any sorting PHP built-in function.
+    $changes = true;
+
+    while ($changes) {
+        $count = 1;
+
+        for ($j = 0; $j < count($elephants); $j++) {
+            if ($elephants[$j]['dod'] > $elephants[$j+1]['dod'] && $elephants[$j+1] != null) {
+                $n1 = $elephants[$j];
+                $n2 = $elephants[$j+1];
+                $elephants[$j] = $n2;
+                $elephants[$j+1] = $n1;
+
+            } else if ($count == 39) {
+                $changes = false;
+            } else {
+                $count++;
+            }
+        }
+    }
 }
 
 function getSortedElephantsByHavingImage($elephants){
-    //TODO: Return an array of elephants sorted depending on whether they have an image (those who have an image go first).
-    //NOTES 1: You receive a elephants multidimensional array, you can view it's content with var_dump() function.
-    //NOTES 2:You CAN'T use any sorting PHP built-in function.
+    $imgNull = "https://elephant-api.herokuapp.com/pictures/missing.jpg";
+    $changes = true;
+
+    while ($changes) {
+        $count = 1;
+
+        for ($j = 0; $j < count($elephants); $j++) {
+            if (($elephants[$j]['image'] == $imgNull && $elephants[$j+1]['image'] != $imgNull) && $elephants[$j+1] != null) {
+                $n1 = $elephants[$j];
+                $n2 = $elephants[$j+1];
+                $elephants[$j] = $n2;
+                $elephants[$j+1] = $n1;
+
+            } else if ($count == 39) {
+                $changes = false;
+            } else {
+                $count++;
+            }
+        }
+    }
+
+    return $elephants;
+}
+
+function printElephants($elephants) {
+    foreach ($elephants as $elephant) {
+        echo "<div class='col-md-4'>";
+        echo "<div class='card' style='width: 18rem'>";
+        echo "<img src='".$elephant["image"]."' class='card-img-top'>";
+        echo "<div class='card-body'>";
+        echo "<h5 class='card-title'>".$elephant["number"]." - ".$elephant["name"]."</h5>";
+        echo "<h6 class='card-subtitle mb-2 text-muted'>Subespecies: ".$elephant["species"]."</h6>";
+        echo "<h6 class='card-subtitle mb-2 text-muted'>Year of birth: ".$elephant["dod"]."</h6>";
+        echo "<p class='card-text'>".$elephant["note"]."</p>";
+        echo "<a href='".$elephant["wikilink"]."' class='btn mr-2' target='_blank'><i class='fas fa-link'></i> Visit elephant</a>";
+        echo "<i class='fas fa-link'></i></a></div></div></div>";
+    }
 }
 
 if(isset($_GET["sortingCriteria"])){
     //TODO: Logic to call a function depending on the sorting criteria.
-    $num = strval($_GET["sortingCriteria"]);
+    $category = strval($_GET["sortingCriteria"]);
+
+
 }
 
 ?>
@@ -118,15 +170,20 @@ if(isset($_GET["sortingCriteria"])){
     <div class="row">
 
         <?php
-        //TODO: Logic to print the elephants cards.
-        //NOTES 1: You can copy the markup language from the solution deployment.
-            foreach ($elephants as $elephant) {
-                echo '<div class="card" style="width: "18rem" ">';
-                echo '<img src="'.$elephant["image"].'" class="cart-img-top">';
-                echo "<div class='card-body'>";
-                echo "<h5 class='card-title'>".$elephant["number"]." - ".$elephant["name"]."</h5>";
-                echo '</div></div>';
-            }
+
+        if ($category == "number") {
+            $elephantsSorted = getSortedElephantsByNumber($elephants);
+            printElephants($elephantsSorted);
+        } else if ($category == "birth"){
+            $elephantsSorted = getSortedElephantsByBirth($elephants);
+            printElephants($elephantsSorted);
+        } else if ($category == "image") {
+            $elephantsSorted = getSortedElephantsByHavingImage($elephants);
+            printElephants($elephantsSorted);
+        } else {
+            printElephants($elephants);
+        }
+
         ?>
 
     </div>
