@@ -122,7 +122,10 @@ if(isset($_GET["sortingCriteria"])){
         //NOTES 1: You can copy the markup language from the solution deployment.
             foreach ($elephants as $elephant) {
                 echo '<div class="card" style="width: "18rem" ">';
-                echo '</div>';
+                echo '<img src="'.$elephant["image"].'" class="cart-img-top">';
+                echo "<div class='card-body'>";
+                echo "<h5 class='card-title'>".$elephant["number"]." - ".$elephant["name"]."</h5>";
+                echo '</div></div>';
             }
         ?>
 
