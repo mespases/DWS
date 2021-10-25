@@ -49,7 +49,7 @@ class Characters {
      */
     public function setEpisodes($episodes)
     {
-        $this->episodes = $episodes;
+        $this->episodes= $episodes;
     }
 
     /**

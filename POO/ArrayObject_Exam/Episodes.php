@@ -9,7 +9,7 @@ class Episodes {
     private $created;
     private $characters; // Array
 
-    public function __construct($id, $name, $air_date, $episode, $created, $characters)
+    public function __construct($id, $name, $air_date, $episode, $created, array $characters)
     {
         $this->id = $id;
         $this->name = $name;
