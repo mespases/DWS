@@ -83,8 +83,10 @@
     }
 
 function render($character) {
+    //var_dump($character->getId());
+
     echo '<div class="col-md-4 col-sm-12 col-xs-12"><div class="card mb-4 box-shadow bg-light">';
-    echo '<img class="card-img-top" src="'. $character->getImage() .'" alt="https://dawsonferrer.com/allabres/apis_solutions/rickandmorty/images/character_115_avatar.jpg">';
+    echo '<img class="card-img-top" src="'. $character->getImage() .'" alt="'.$character->getImage().'">';
     echo '<div class="card-body"><h5 class="card-title">'. $character->getName().'</h5>';
     echo '<div class="alert alert-success" style="padding:0;" role="alert">'. $character->getStatus() .' - '. $character->getSpecies() .'</div>';
     echo '<form><div class="mb-3" style="margin-bottom:0!important;">';
@@ -93,14 +95,13 @@ function render($character) {
     echo '<div class="mb-3"><label for="exampleInputEmail1" class="form-label" style="margin-bottom: 0;"><strong>Last known location:</strong></label>';
     echo '<div id="emailHelp" class="form-text" style="margin-top:0;">'. $character->getLocation() .'</div></div></form>';
     echo '<div class="d-flex justify-content-between align-items-center"><div class="btn-group">';
-    echo '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#characterModal_115">View episodes</button><!-- Modal -->';
-    echo '<div class="modal fade" id="characterModal_115" tabindex="-1" aria-labelledby="characterModalLabel_115" aria-hidden="true">';
+    echo '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#characterModal_'.$character->getId().'">View episodes</button>';
+    echo '<div class="modal fade" id="characterModal_'.$character->getId().'" tabindex="-1" aria-labelledby="characterModalLabel_'.$character->getId().'" aria-hidden="true">';
     echo '<div class="modal-dialog"><div class="modal-content"><div class="modal-header">';
-    echo '<h5 class="modal-title" id="characterModalLabel_115">Episodes list</h5>';
+    echo '<h5 class="modal-title" id="characterModalLabel_115">Episodes list </h5>';
     echo '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>';
+    //echo count($character->getEpisodes());
     echo '<div class="modal-body"><ol class="list-group">';
-
-
 
     foreach ($character->getEpisodes() as $episode => $a) {
         echo '<li class="list-group-item">'. $a .'</li>';
