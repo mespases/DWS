@@ -1,8 +1,10 @@
 <?php
+    // "Importamos" las clases
     include ("Characters.php");
     include ("Locations.php");
     include ("Episodes.php");
 
+    // Muestra por pantalla el código de errores
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -49,6 +51,7 @@
 
         for ($i = 0; $i < count($characters); $i++) {
 
+            // Map origin
             for ($j = 0; $j <count($locations); $j++) {
                 if ($characters[$i]->getOrigin() == $locations[$j]->getId() && $characters[$i]->getOrigin() != "0") {
                     $characters[$i]->setOrigin($locations[$j]->getName());
@@ -57,6 +60,7 @@
                 }
             }
 
+            // Map location
             for ($j = 0; $j < count($locations); $j++) {
                 if ($characters[$i]->getLocation() == $locations[$j]->getId() && $characters[$i]->getLocation() != "0") {
                     $characters[$i]->setLocation($locations[$j]->getName());
@@ -65,6 +69,7 @@
                 }
             }
 
+            // Map episodes
             for ($j = 0; $j < count($episodes); $j++) {
                 for ($k = 0; $k < count($characters[$i]->getEpisodes()); $k++) {
                     if (($characters[$i]->getEpisodes()[$k] == intval($episodes[$j]->getId())) && $characters[$i]->getEpisodes()[$k] !== 0) {
@@ -83,7 +88,6 @@
     }
 
 function render($character) {
-    //var_dump($character->getId());
 
     echo '<div class="col-md-4 col-sm-12 col-xs-12"><div class="card mb-4 box-shadow bg-light">';
     echo '<img class="card-img-top" src="'. $character->getImage() .'" alt="'.$character->getImage().'">';
@@ -100,7 +104,6 @@ function render($character) {
     echo '<div class="modal-dialog"><div class="modal-content"><div class="modal-header">';
     echo '<h5 class="modal-title" id="characterModalLabel_115">Episodes list </h5>';
     echo '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>';
-    //echo count($character->getEpisodes());
     echo '<div class="modal-body"><ol class="list-group">';
 
     foreach ($character->getEpisodes() as $episode => $a) {
