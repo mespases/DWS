@@ -5,7 +5,7 @@
         private $distrito;
         private $partido;
         private $votos;
-        private $resultado;
+        private $escanos;
 
         public function __construct($distrito, $partido, $votos)
         {
@@ -14,9 +14,9 @@
             $this->votos = $votos;
         }
 
-        public function setResultado($resultado)
+        public function setEscanos($escanos)
         {
-            $this->resultado = $resultado;
+            $this->escanos = $escanos;
         }
 
         public function getPartido()

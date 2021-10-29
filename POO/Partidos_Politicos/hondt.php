@@ -6,10 +6,12 @@
 
         // for de resultados
             // if resultado->distrito == Madrid
-                //
+                // guardarlos en una array
 
-        // for de partidos, ej -> PSOE
-        // for de distrito hasta que sea Madrid
+        // for i de cada escaño, en este caso 37
+        // Comprobamos en la array cual es el mas grande y le damos un escaño, dividimos por dos su votos
+        // volvemos a comprobar cual es el mas grande le damos escaño y dividimos por dos
+
 
 
         // Calculamos
