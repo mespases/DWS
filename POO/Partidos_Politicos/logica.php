@@ -17,6 +17,8 @@ include("resultado.php");
             $this->resultados = $this->generateResults(json_decode(file_get_contents($this->api_resultados), true));
             $this->partidos = $this->generatePartidos(json_decode(file_get_contents($this->api_partidos), true));
             $this->distritos = $this->generateDistritos(json_decode(file_get_contents($this->api_distritos), true));
+            $this->passDistritos();
+            echo "Hola";
         }
 
         /* @return Array de objetos -> class Resultado */
@@ -33,7 +35,7 @@ include("resultado.php");
         private function generatePartidos($resultadosPartidos) {
             for ($i = 0; $i < count($resultadosPartidos); $i++) {
                 $partidos[$i] = new Partido($resultadosPartidos[$i]["id"], $resultadosPartidos[$i]["name"],
-                    $resultadosPartidos[$i]["acronym"], $resultadosPartidos[$i]["logo"]);
+                    $resultadosPartidos[$i]["acronym"], $resultadosPartidos[$i]["logo"], $resultadosPartidos[$i]["colour"]);
             }
 
             return $partidos;
@@ -72,6 +74,97 @@ include("resultado.php");
                 $this->partidos[$i]->setVotos($votos);
             }
          var_dump($this->partidos);
+        }
+
+        private function passDistritos() {
+            for ($i = 0; $i < count($this->distritos); $i++) {
+                $this->calcularEscanosDistritos($this->distritos[$i]->getNombre(), $this->distritos[$i]->getDelegados());
+            }
+        }
+
+        private function filtrarXProvincia($distrito) {
+            // Nos filtra por el distrito que nos han pasado como argumento
+            $resultXdistrito = [];
+            $cont = 0;
+
+            for ($i = 0; $i < count($this->resultados); $i++) {
+                if ($this->resultados[$i]->getDistrito() == $distrito) {
+                    $resultXdistrito[$cont] = $this->resultados[$i];
+                    $cont++;
+                }
+            }
+
+            return $resultXdistrito;
+        }
+
+        private function calcularEscanosDistritos($distrito, $escanos) {
+            //$resultXdistrito = [];
+            //$cont = 0;
+//
+            //// Nos filtra por el distrito que nos han pasado como argumento
+            //for ($i = 0; $i < count($this->resultados); $i++) {
+            //    if ($this->resultados[$i]->getDistrito() == $distrito) {
+            //        $resultXdistrito[$cont] = $this->resultados[$i];
+            //        $cont++;
+            //    }
+            //}
+
+            $resultXdistrito = $this->filtrarXProvincia($distrito);
+
+            // Recorremos los escaños y los asignando
+           for ($j = 0; $j < $escanos; $j++) {
+                $this->asignarEscanos($resultXdistrito);
+           }
+
+           // Asignamos porcentaje para el grafico
+            for ($k = 0; $k < count($resultXdistrito); $k++) {
+                $porcentaje = ($resultXdistrito[$k]->getEscanos()*100)/$escanos;
+                $resultXdistrito[$k]->setPorcentaje($porcentaje);
+            }
+        }
+
+        private function asignarEscanos($resultXdistrito) {
+            $posicion_del_mayor = 0;
+            for ($k = 0; $k < count($resultXdistrito); $k++) {
+
+                if ($resultXdistrito[$k]->getVotos()/$resultXdistrito[$k]->getDivisor() >
+                    $resultXdistrito[$posicion_del_mayor]->getVotos()/$resultXdistrito[$posicion_del_mayor]->getDivisor()) {
+                    $posicion_del_mayor = $k;
+                }
+
+            }
+            $escanos_actuales = $resultXdistrito[$posicion_del_mayor]->getEscanos() + 1;
+            $divisor_actual = $resultXdistrito[$posicion_del_mayor]->getDivisor() + 1;
+            $resultXdistrito[$posicion_del_mayor]->setEscanos($escanos_actuales);
+            $resultXdistrito[$posicion_del_mayor]->setDivisor($divisor_actual);
+        }
+
+        private function ordenarResultados($resultXdistrito) {
+            for ($i = 0; $i < count($resultXdistrito); $i++) {
+                for ($j = 0; $j < count($resultXdistrito); $j++) {
+                    if ($resultXdistrito[$j]->getEscanos() > $resultXdistrito[$j+1]->getEscanos() && $resultXdistrito[$j+1] !== null) {
+                        $resulpeque = $resultXdistrito[$j];
+                        $resulgrande = $resultXdistrito[$j+1];
+                        $resultXdistrito[$i] = $resulgrande;
+                        $resultXdistrito[$i+1] = $resulpeque;
+                    }
+                }
+            }
+
+            return $resultXdistrito;
+        }
+
+        public function getProvincias() {
+            return $this->distritos;
+        }
+
+        public function getPartidos() {
+            return $this->partidos;
+        }
+
+        public function getResultxProvincias($provincia) {
+            $resultXdistrito = $this->filtrarXProvincia($provincia);
+            return $this->ordenarResultados($resultXdistrito);
         }
     }
 

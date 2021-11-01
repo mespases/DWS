@@ -5,7 +5,9 @@
         private $distrito;
         private $partido;
         private $votos;
-        private $escanos;
+        private $escanos = 0;
+        private $divisor = 1;
+        private $porcentaje = 0;
 
         public function __construct($distrito, $partido, $votos)
         {
@@ -14,9 +16,35 @@
             $this->votos = $votos;
         }
 
-        public function setEscanos($escanos)
+        public function getPorcentaje(): int
+        {
+            return $this->porcentaje;
+        }
+
+        public function setPorcentaje(int $porcentaje): void
+        {
+            $this->porcentaje = $porcentaje;
+        }
+
+
+        public function getDivisor(): int
+        {
+            return $this->divisor;
+        }
+
+        public function setDivisor(int $divisor): void
+        {
+            $this->divisor = $divisor;
+        }
+
+        public function setEscanos(int $escanos): void
         {
             $this->escanos = $escanos;
+        }
+
+        public function getEscanos(): int
+        {
+            return $this->escanos;
         }
 
         public function getPartido()

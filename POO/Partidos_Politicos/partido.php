@@ -6,16 +6,18 @@
         private $nombre;
         private $acronimo;
         private $logo;
+        private $color;
 
         private $distrito; // Array
         private $votos; // Array
 
-        public function __construct($id, $nombre, $acronimo, $logo)
+        public function __construct($id, $nombre, $acronimo, $logo, $color)
         {
             $this->id = $id;
             $this->nombre = $nombre;
             $this->acronimo = $acronimo;
             $this->logo = $logo;
+            $this->color = $color;
         }
 
         public function getNombre()

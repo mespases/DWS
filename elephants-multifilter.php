@@ -13,7 +13,7 @@ function getSortedElephantsByNumber($elephants){
                 $n2 = $elephants[$j+1];
                 $elephants[$j] = $n2;
                 $elephants[$j+1] = $n1;
-            } else if ($count == 39) {
+            } else if ($count == count($elephants)) {
                 $changes = false;
             } else {
                 $count++;
@@ -25,6 +25,7 @@ function getSortedElephantsByNumber($elephants){
 }
 
 function getSortedElephantsByBirth($elephants){
+
     $changes = true;
 
     while ($changes) {
@@ -32,7 +33,6 @@ function getSortedElephantsByBirth($elephants){
 
         for ($j = 0; $j < count($elephants); $j++) {
             if ($elephants[$j]['dod'] > $elephants[$j+1]['dod'] && $elephants[$j+1] != null) {
-
                 $n1 = $elephants[$j];
                 $n2 = $elephants[$j+1];
                 $elephants[$j] = $n2;

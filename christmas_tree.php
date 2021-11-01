@@ -44,6 +44,7 @@
             $num = intval($_POST["numFlats"]);
             imprime($num);
         }
+
     ?>
     <!--<span style='color: skyblue'>*</span>
         <span style='color: forestgreen'>*</span>-->

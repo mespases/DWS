@@ -13,6 +13,16 @@
             $this->delegados = $delegados;
         }
 
+        public function getNombre()
+        {
+            return $this->nombre;
+        }
+
+        public function getDelegados()
+        {
+            return $this->delegados;
+        }
+
     }
 
 ?>
