@@ -39,14 +39,14 @@ $partidos = $logica->getPartidos();
                 echo '<option value="partido">Filtrar por partido</option>';
                 echo '</select>';
             }
-//
+
             if ($sortby == "provincia") {
                 echo "<select name='provincia' class='select'>";
                 for ($i = 0; $i < count($provincias); $i++) {
                     echo "<option value='". $provincias[$i]->getNombre() ."'>". $provincias[$i]->getNombre() ."</option>";
                 }
                 echo "</select>";
-//
+
             } else if ($sortby == "partido") {
                 echo "<select name='partido' class='select'>";
                 for ($i = 0; $i < count($partidos); $i++) {
@@ -55,40 +55,44 @@ $partidos = $logica->getPartidos();
                 echo "</select>";
             }
             echo '<button class="btn" type="submit">Sort</button>';
+
+
         ?>
     </form>
 </header>
 <h1 class="titulo_grafico">Resultado elecctoral: <?php if ($prov != "") echo $prov; else if ($part != "") echo $part; else echo "Elecciones Generales"?></h1>
-<section class="container_grafico">
-    <div class="grafico"></div>
-    <!-- Esto se repite por cada partido -->
-    <div class="partidos">
-        <div class="container_leyenda">
-                <span class="leyenda_all">
-                    <span style="background-color:var(--color_PP);"></span>
-                    <p class="partido">30% PP</p>
-                </span>
-        </div>
-        <div class="container_leyenda">
-                <span class="leyenda_all">
-                    <span style="background-color: var(--color_vox);"></span>
-                    <p class="partido">30% VOX</p>
-                </span>
-        </div>
-        <div class="container_leyenda">
-                <span class="leyenda_all">
-                    <span style="background-color: var(--color_PSOE);"></span>
-                    <p class="partido">40% PSOE</p>
-                </span>
-        </div>
+
+<?php
+    $provinciasFilter = $logica->getResultxProvincias($prov);
+
+    if ($sortby == "") {
+        echo '<section class="container_grafico">';
+        echo '<div class="grafico"></div>';
+        echo '<div class="content_p">';
+        for ($i = 0; $i < count($provinciasFilter); $i++) {
+            echo '<div class="partidos">';
+            echo    '<div class="container_leyenda">';
+            echo        '<span class="leyenda_all">';
+            echo            '<span style="background-color:'.$provinciasFilter[$i]->getColor().';"></span>';
+            echo            '<p class="partido">'.$provinciasFilter[$i]->getPorcentaje().'% '.$provinciasFilter[$i]->getAcronimo().' | '.$provinciasFilter[$i]->getEscanos().' escaños</p>';
+            echo        '</span>';
+            echo    '</div>';
+        }
+        echo '</div>';
+        echo '</div>';
+        echo '</section>';
+
+    }
+
+?>
 
         <?php
 
         ?>
 
-        <p class="total">Votos totales: 1000000000</p>
+
     </div>
-</section>
+</section>-->
 </body>
 <style>
     :root {
@@ -124,16 +128,31 @@ $partidos = $logica->getPartidos();
         margin-top: 90px;
     }
 
+    .content_p {
+        margin-left: 440px;
+        margin-top: 66px;
+        position: absolute
+    }
+
     .grafico {
         width: 400px;
         height: 400px;
         border-radius: 50%;
+        background-image: conic-gradient(
+        <?php
+        $cont = 0;
+        for ($i = 0; $i < count($provinciasFilter); $i++) {
+            if ($i == count($provinciasFilter)-1) {
+                echo $provinciasFilter[$i]->getColor().' ';
+                echo $cont.'% '.$provinciasFilter[$i]->getPorcentaje().'%';
+            } else {
+                echo $provinciasFilter[$i]->getColor().' ';
+                echo $cont.'% '.($provinciasFilter[$i]->getPorcentaje() + $cont).'%,';
+            }
 
-    <?php
-        $resultXdistrito = $logica->getResultxProvincias($prov);
-        echo 'background-image: conic-gradient(#1DB4E8 30%, var(--color_vox) 30% 50%, var(--color_PSOE) 40%);';
-
-    ?>
+            $cont += $provinciasFilter[$i]->getPorcentaje();
+        }
+        ?>);
 
         box-shadow: 1px 1px 5px 1px rgb(70, 70, 70);
         position: absolute;
@@ -150,12 +169,6 @@ $partidos = $logica->getPartidos();
         margin-right: 8px;
         border-radius: 3px;
         background-color: red;
-    }
-
-    .partidos {
-        margin-left: 440px;
-        margin-top: 135px;
-        position: absolute
     }
 
     .leyenda_all {
