@@ -9,12 +9,48 @@
         private $divisor = 1;
         private $porcentaje = 0;
 
+        // Mapeo de partido
+        private $acronimo;
+        private $logo;
+        private $color;
+
         public function __construct($distrito, $partido, $votos)
         {
             $this->distrito = $distrito;
             $this->partido = $partido;
             $this->votos = $votos;
         }
+
+        public function getAcronimo()
+        {
+            return $this->acronimo;
+        }
+
+        public function setAcronimo($acronimo)
+        {
+            $this->acronimo = $acronimo;
+        }
+
+        public function getLogo()
+        {
+            return $this->logo;
+        }
+
+        public function setLogo($logo)
+        {
+            $this->logo = $logo;
+        }
+
+        public function getColor()
+        {
+            return $this->color;
+        }
+
+        public function setColor($color)
+        {
+            $this->color = $color;
+        }
+
 
         public function getPorcentaje(): int
         {

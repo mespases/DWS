@@ -18,7 +18,7 @@ include("resultado.php");
             $this->partidos = $this->generatePartidos(json_decode(file_get_contents($this->api_partidos), true));
             $this->distritos = $this->generateDistritos(json_decode(file_get_contents($this->api_distritos), true));
             $this->passDistritos();
-            echo "Hola";
+            $this->resultMap();
         }
 
         /* @return Array de objetos -> class Resultado */
@@ -74,6 +74,18 @@ include("resultado.php");
                 $this->partidos[$i]->setVotos($votos);
             }
          var_dump($this->partidos);
+        }
+
+        private function resultMap() {
+            for ($i = 0; $i < count($this->resultados); $i++) {
+                for ($j = 0; $j < count($this->partidos); $j++) {
+                    if ($this->resultados[$i]->getPartido() == $this->partidos[$j]->getNombre()) {
+                        $this->resultados[$i]->setAcronimo($this->partidos[$j]->getAcronimo());
+                        $this->resultados[$i]->setLogo($this->partidos[$j]->getLogo());
+                        $this->resultados[$i]->setColor($this->partidos[$j]->getColor());
+                    }
+                }
+            }
         }
 
         private function passDistritos() {
@@ -142,7 +154,7 @@ include("resultado.php");
         private function ordenarResultados($resultXdistrito) {
             for ($i = 0; $i < count($resultXdistrito); $i++) {
                 for ($j = 0; $j < count($resultXdistrito); $j++) {
-                    if ($resultXdistrito[$j]->getEscanos() > $resultXdistrito[$j+1]->getEscanos() && $resultXdistrito[$j+1] !== null) {
+                    if ($resultXdistrito[$j+1] !== null && $resultXdistrito[$j]->getEscanos() > $resultXdistrito[$j+1]->getEscanos()) {
                         $resulpeque = $resultXdistrito[$j];
                         $resulgrande = $resultXdistrito[$j+1];
                         $resultXdistrito[$i] = $resulgrande;

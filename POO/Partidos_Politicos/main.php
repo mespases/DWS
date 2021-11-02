@@ -16,43 +16,46 @@ $partidos = $logica->getPartidos();
 <body>
 <header>
     <form action="main.php" method="post">
-        <select name="sorting" class="select">
-            <option value="general">Resultados generales</option>
-            <option value="provincia">Filtrar por provincia</option>
-            <option value="partido">Filtrar por partido</option>
-        </select>
-        <button class="btn" type="submit">Sort</button>
-    <?php
+        <?php
 
-        $sortby = "";
-        $part = "";
-        $prov = "";
+            $sortby = "";
+            $part = "";
+            $prov = "";
 
-        if (isset($_POST["sorting"])) {
-            $sortby = strval($_POST["sorting"]);
-        }
-        if (isset($_POST["provincia"])) {
-            $prov = strval($_POST["provincia"]);
-        }
-        if (isset($_POST["partido"])) {
-            $part = strval($_POST["partido"]);
-        }
-
-        if ($sortby == "provincia") {
-            echo "<select name='provincia' class='select'>";
-            for ($i = 0; $i < count($provincias); $i++) {
-                echo "<option value='". $provincias[$i]->getNombre() ."'>". $provincias[$i]->getNombre() ."</option>";
+            if (isset($_POST["sorting"])) {
+                $sortby = strval($_POST["sorting"]);
             }
-            echo "</select>";
-
-        } else if ($sortby == "partido") {
-            echo "<select name='partido' class='select'>";
-            for ($i = 0; $i < count($partidos); $i++) {
-                echo "<option value='". $partidos[$i]->getNombre() ."'>". $partidos[$i]->getNombre() ."</option>";
+            if (isset($_POST["provincia"])) {
+                $prov = strval($_POST["provincia"]);
             }
-            echo "</select>";
-        }
-    ?>
+            if (isset($_POST["partido"])) {
+                $part = strval($_POST["partido"]);
+            }
+
+            if ($sortby != "provincia" && $sortby != "partido") {
+                echo '<select name="sorting" class="select" id="selection">';
+                echo '<option value="general">Resultados generales</option>';
+                echo '<option value="provincia">Filtrar por provincia</option>';
+                echo '<option value="partido">Filtrar por partido</option>';
+                echo '</select>';
+            }
+//
+            if ($sortby == "provincia") {
+                echo "<select name='provincia' class='select'>";
+                for ($i = 0; $i < count($provincias); $i++) {
+                    echo "<option value='". $provincias[$i]->getNombre() ."'>". $provincias[$i]->getNombre() ."</option>";
+                }
+                echo "</select>";
+//
+            } else if ($sortby == "partido") {
+                echo "<select name='partido' class='select'>";
+                for ($i = 0; $i < count($partidos); $i++) {
+                    echo "<option value='". $partidos[$i]->getNombre() ."'>". $partidos[$i]->getNombre() ."</option>";
+                }
+                echo "</select>";
+            }
+            echo '<button class="btn" type="submit">Sort</button>';
+        ?>
     </form>
 </header>
 <h1 class="titulo_grafico">Resultado elecctoral: <?php if ($prov != "") echo $prov; else if ($part != "") echo $part; else echo "Elecciones Generales"?></h1>
@@ -126,11 +129,11 @@ $partidos = $logica->getPartidos();
         height: 400px;
         border-radius: 50%;
 
-        <?php
-            $resultXdistrito = $logica->getResultxProvincias($prov);
-            echo 'background-image: conic-gradient(#1DB4E8 30%, var(--color_vox) 30% 50%, var(--color_PSOE) 40%);';
+    <?php
+        $resultXdistrito = $logica->getResultxProvincias($prov);
+        echo 'background-image: conic-gradient(#1DB4E8 30%, var(--color_vox) 30% 50%, var(--color_PSOE) 40%);';
 
-        ?>
+    ?>
 
         box-shadow: 1px 1px 5px 1px rgb(70, 70, 70);
         position: absolute;
@@ -176,7 +179,7 @@ $partidos = $logica->getPartidos();
     }
 
     form, form + select {
-        margin-top: 0px;
+        margin-top: -86px;
         float: right;
         padding-right: 15px;
     }

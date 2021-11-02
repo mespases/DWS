@@ -25,6 +25,21 @@
         return $this->nombre;
         }
 
+        public function getAcronimo()
+        {
+            return $this->acronimo;
+        }
+
+        public function getLogo()
+        {
+            return $this->logo;
+        }
+
+        public function getColor()
+        {
+            return $this->color;
+        }
+
         public function setDistrito($distrito)
         {
         $this->distrito = $distrito;
