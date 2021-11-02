@@ -98,9 +98,6 @@
             return $this->votos;
         }
 
-
-
     }
-
 
 ?>

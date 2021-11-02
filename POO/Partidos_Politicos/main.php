@@ -95,12 +95,6 @@ $partidos = $logica->getPartidos();
 </section>-->
 </body>
 <style>
-    :root {
-        --color_PP: #1DB4E8;
-        --color_PSOE: #DF0818;
-        --color_vox: rgb(4, 122, 4);
-    }
-
     * {
         margin: 0;
         padding: 0;
@@ -154,13 +148,8 @@ $partidos = $logica->getPartidos();
         }
         ?>);
 
-        box-shadow: 1px 1px 5px 1px rgb(70, 70, 70);
+        box-shadow: 1px 1px 7px 2px rgb(70, 70, 70);
         position: absolute;
-    }
-
-    .a {
-        background-image: conic-gradient(#1DB4E8 30%,
-        var(--color_vox) 30% 60%, var(--color_PSOE) 60% 100%);
     }
 
     span > span {
@@ -181,14 +170,6 @@ $partidos = $logica->getPartidos();
         color: #fff;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         line-height: 1.6;
-    }
-
-    .total {
-        color: #fff;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        padding: 10px;
-        border-radius: 3px;
-        background-color: rgb(30, 50, 70);
     }
 
     form, form + select {
@@ -222,12 +203,8 @@ $partidos = $logica->getPartidos();
         transition-duration: 0.4s;
     }
 
-    .select:hover {
-        box-shadow: 1px 1px 16px 3px rgb(70, 70, 70), 1px 1px 50px 3px rgb(15, 17, 27);
-    }
-
-    .btn:hover {
-        box-shadow: 1px 1px 16px 3px rgb(70, 70, 70), 1px 1px 50px 3px rgb(15, 17, 27);
+    .btn:hover, .select:hover {
+        box-shadow: 1px 1px 17px 3px rgb(70, 70, 70), 1px 1px 60px 3px rgb(15, 17, 27);
     }
 </style>
 </html>

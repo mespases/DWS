@@ -51,31 +51,7 @@ include("resultado.php");
             return $distritos;
         }
 
-        private function mapp() {
-            // En partido hacer dos nuevas variables con array, que añadan EJ:
-            // PSOE, distrito[0]->Madrid, votos[0]->88423
-            // PSOE, distrito[1]->Barcelona, votos->54216
-
-            // TODO: NO SIRVE DE NADA D: BORRAR LUEGO y borrar en partido dist y votos
-
-            for ($i = 0; $i < count($this->partidos); $i++) {
-                $dist = [];
-                $votos = [];
-                $cont = 0;
-
-                for ($j = 0; $j < count($this->resultados); $j++) {
-                    if ($this->partidos[$i]->getNombre() == $this->resultados[$j]->getPartido()) {
-                        $dist[$cont] = $this->resultados[$j]->getDistrito();
-                        $votos[$cont] = $this->resultados[$j]->getVotos();
-                        $cont++;
-                    }
-                }
-                $this->partidos[$i]->setDistrito($dist);
-                $this->partidos[$i]->setVotos($votos);
-            }
-         var_dump($this->partidos);
-        }
-
+        /* Mapea en la clase resultados el acronimo, logo y color del partido */
         private function resultMap() {
             for ($i = 0; $i < count($this->resultados); $i++) {
                 for ($j = 0; $j < count($this->partidos); $j++) {
@@ -93,14 +69,15 @@ include("resultado.php");
             }
         }
 
+        /* Pasa todos los distritos para ir asignando todos los escaños */
         private function passDistritos() {
             for ($i = 0; $i < count($this->distritos); $i++) {
                 $this->calcularEscanosDistritos($this->distritos[$i]->getNombre(), $this->distritos[$i]->getDelegados());
             }
         }
 
+        /* @return Array de resultados filtrados por provincia */
         private function filtrarXProvincia($distrito) {
-            // Nos filtra por el distrito que nos han pasado como argumento
             $resultXdistrito = [];
             $cont = 0;
 
@@ -114,18 +91,8 @@ include("resultado.php");
             return $resultXdistrito;
         }
 
+        /* Asigna los escaños y el porcentaje */
         private function calcularEscanosDistritos($distrito, $escanos) {
-            //$resultXdistrito = [];
-            //$cont = 0;
-//
-            //// Nos filtra por el distrito que nos han pasado como argumento
-            //for ($i = 0; $i < count($this->resultados); $i++) {
-            //    if ($this->resultados[$i]->getDistrito() == $distrito) {
-            //        $resultXdistrito[$cont] = $this->resultados[$i];
-            //        $cont++;
-            //    }
-            //}
-
             $resultXdistrito = $this->filtrarXProvincia($distrito);
 
             // Recorremos los escaños y los asignando
@@ -140,6 +107,7 @@ include("resultado.php");
             }
         }
 
+        /* Realiza el sistema d'Hont */
         private function asignarEscanos($resultXdistrito) {
             $posicion_del_mayor = 0;
             for ($k = 0; $k < count($resultXdistrito); $k++) {
@@ -156,6 +124,7 @@ include("resultado.php");
             $resultXdistrito[$posicion_del_mayor]->setDivisor($divisor_actual);
         }
 
+        /* Nos ordena los resultados del mayor al menor */
         private function ordenarResultados($resultXdistrito) {
             for ($i = 0; $i < count($resultXdistrito); $i++) {
                 for ($j = 0; $j < count($resultXdistrito); $j++) {
@@ -171,6 +140,7 @@ include("resultado.php");
             return $resultXdistrito;
         }
 
+        /* @return Array de resultados, mientras su porcentaje de votos, sea mayor a 0% */
         private function eliminarPorcentaje($resultXdistrito) {
             $resultProcentaje = [];
 
@@ -193,6 +163,7 @@ include("resultado.php");
             return $this->partidos;
         }
 
+        /* @param provincia ej->"Madird" @return result de distritos */
         public function getResultxProvincias($provincia) {
             $resultXdistrito = $this->filtrarXProvincia($provincia);
             $resultXdistrito = $this->eliminarPorcentaje($resultXdistrito);

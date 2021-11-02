@@ -8,9 +8,6 @@
         private $logo;
         private $color;
 
-        private $distrito; // Array
-        private $votos; // Array
-
         public function __construct($id, $nombre, $acronimo, $logo, $color)
         {
             $this->id = $id;
@@ -40,17 +37,5 @@
             return $this->color;
         }
 
-        public function setDistrito($distrito)
-        {
-        $this->distrito = $distrito;
-        }
-
-        public function setVotos($votos)
-        {
-        $this->votos = $votos;
-        }
-
-
-        }
-        ?>
-
+    }
+?>
