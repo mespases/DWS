@@ -65,7 +65,7 @@ $partidos = $logica->getPartidos();
 <?php
     $provinciasFilter = $logica->getResultxProvincias($prov);
 
-    if ($sortby == "") {
+    if ($prov != "") {
         echo '<section class="container_grafico">';
         echo '<div class="grafico"></div>';
         echo '<div class="content_p">';

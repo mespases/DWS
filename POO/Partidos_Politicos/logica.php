@@ -159,7 +159,7 @@ include("resultado.php");
         private function ordenarResultados($resultXdistrito) {
             for ($i = 0; $i < count($resultXdistrito); $i++) {
                 for ($j = 0; $j < count($resultXdistrito); $j++) {
-                    if ($resultXdistrito[$j+1] !== null && $resultXdistrito[$j]->getEscanos() < $resultXdistrito[$j+1]->getEscanos()) {
+                    if (isset($resultXdistrito[$j+1]) && $resultXdistrito[$j]->getEscanos() < $resultXdistrito[$j+1]->getEscanos()) {
                         $resulpeque = $resultXdistrito[$j];
                         $resulgrande = $resultXdistrito[$j+1];
                         $resultXdistrito[$i] = $resulgrande;
