@@ -91,6 +91,21 @@ include("resultado.php");
             return $resultXdistrito;
         }
 
+        /* @return Array de los resultados filtrados por partido */
+        private function filtrarXpartido($partido) {
+            $resultXpartidos = [];
+            $cont = 0;
+
+            for ($i = 0; $i < count($this->resultados); $i++) {
+                if ($this->resultados[$i]->getPartido() == $partido) {
+                    $resultXpartidos[$cont] = $this->resultados[$i];
+                    $cont++;
+                }
+            }
+
+            return $resultXpartidos;
+        }
+
         /* Asigna los escaños y el porcentaje */
         private function calcularEscanosDistritos($distrito, $escanos) {
             $resultXdistrito = $this->filtrarXProvincia($distrito);
@@ -168,6 +183,12 @@ include("resultado.php");
             $resultXdistrito = $this->filtrarXProvincia($provincia);
             $resultXdistrito = $this->eliminarPorcentaje($resultXdistrito);
             return $this->ordenarResultados($resultXdistrito);
+        }
+
+        public function getResultxPartido($partido) {
+            $resultadosXpartido = $this->filtrarXpartido($partido);
+            //return $this->ordenarResultados($resultadosXpartido);
+            return $resultadosXpartido;
         }
     }
 

@@ -63,9 +63,12 @@ $partidos = $logica->getPartidos();
 <h1 class="titulo_grafico">Resultado elecctoral: <?php if ($prov != "") echo $prov; else if ($part != "") echo $part; else echo "Elecciones Generales"?></h1>
 
 <?php
-    $provinciasFilter = $logica->getResultxProvincias($prov);
 
-    if ($prov != "") {
+
+    if ($sortby == "general") {
+        echo "<h1 style='color: white'>Generales</h1>";
+    } else if ($prov != "") {
+        $provinciasFilter = $logica->getResultxProvincias($prov);
         echo '<section class="container_grafico">';
         echo '<div class="grafico"></div>';
         echo '<div class="content_p">';
@@ -81,7 +84,26 @@ $partidos = $logica->getPartidos();
         echo '</div>';
         echo '</div>';
         echo '</section>';
+    } else if ($part != "") {
+        $partidosFilter = $logica->getResultxPartido($part);
+        echo '<table style="background-color: white">';
+        echo '<tr>';
+        echo     '<th>Distrito</th>';
+        echo     '<th>Partido</th>';
+        echo     '<th>Votos</th>';
+        echo     '<th>Escaños</th>';
+        echo '</tr>';
 
+        for ($i = 0; $i < count($partidosFilter); $i++) {
+            echo '<tr>';
+            echo '<td>'.$partidosFilter[$i]->getDistrito().'</td>';
+            echo '<td><img src="'.$partidosFilter[$i]->getLogo().'" height="25px">  '.$partidosFilter[$i]->getAcronimo().'</td>';
+            echo '<td>'.$partidosFilter[$i]->getVotos().'</td>';
+            echo '<td>'.$partidosFilter[$i]->getEscanos().'</td>';
+            echo '</tr>';
+        }
+
+        echo '</table>';
     }
 
 ?>
@@ -205,6 +227,34 @@ $partidos = $logica->getPartidos();
 
     .btn:hover, .select:hover {
         box-shadow: 1px 1px 17px 3px rgb(70, 70, 70), 1px 1px 60px 3px rgb(15, 17, 27);
+    }
+
+    table {
+        margin-top: 35px;
+        margin-left: 20%;
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 60%;
+        position: relative;
+    }
+
+    tbody {
+        background-color: #46465a;
+        color: white;
+        font-family: sans-serif;
+        font-size: 19px;
+        text-align: center;
+    }
+
+    th {
+        width: 26%;
+        color: white;
+        height: 60px;
+        background: #573caf;
+    }
+    table tbody tr {
+        height: 50px;
     }
 </style>
 </html>
