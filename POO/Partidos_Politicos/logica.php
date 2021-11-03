@@ -186,9 +186,7 @@ include("resultado.php");
         }
 
         public function getResultxPartido($partido) {
-            $resultadosXpartido = $this->filtrarXpartido($partido);
-            //return $this->ordenarResultados($resultadosXpartido);
-            return $resultadosXpartido;
+            return $this->filtrarXpartido($partido);
         }
     }
 

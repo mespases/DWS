@@ -157,17 +157,20 @@ $partidos = $logica->getPartidos();
         background-image: conic-gradient(
         <?php
         $cont = 0;
-        for ($i = 0; $i < count($provinciasFilter); $i++) {
-            if ($i == count($provinciasFilter)-1) {
-                echo $provinciasFilter[$i]->getColor().' ';
-                echo $cont.'% '.$provinciasFilter[$i]->getPorcentaje().'%';
-            } else {
-                echo $provinciasFilter[$i]->getColor().' ';
-                echo $cont.'% '.($provinciasFilter[$i]->getPorcentaje() + $cont).'%,';
-            }
+        if (isset($provinciasFilter)) {
+            for ($i = 0; $i < count($provinciasFilter); $i++) {
+                if ($i == count($provinciasFilter)-1) {
+                    echo $provinciasFilter[$i]->getColor().' ';
+                    echo $cont.'% '.$provinciasFilter[$i]->getPorcentaje().'%';
+                } else {
+                    echo $provinciasFilter[$i]->getColor().' ';
+                    echo $cont.'% '.($provinciasFilter[$i]->getPorcentaje() + $cont).'%,';
+                }
 
-            $cont += $provinciasFilter[$i]->getPorcentaje();
+                $cont += $provinciasFilter[$i]->getPorcentaje();
+            }
         }
+
         ?>);
 
         box-shadow: 1px 1px 7px 2px rgb(70, 70, 70);
