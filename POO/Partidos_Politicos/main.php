@@ -60,13 +60,27 @@ $partidos = $logica->getPartidos();
         ?>
     </form>
 </header>
-<h1 class="titulo_grafico">Resultado elecctoral: <?php if ($prov != "") echo $prov; else if ($part != "") echo $part; else echo "Elecciones Generales"?></h1>
+<h1 class="titulo_grafico">Resultado elecctoral: <?php if ($prov != "") echo $prov; else if ($part != "") echo $part; else if($sortby == "general") echo "Elecciones Generales"?></h1>
 
 <?php
 
-
     if ($sortby == "general") {
-        echo "<h1 style='color: white'>Generales</h1>";
+        echo '<table>';
+        echo '<tr>';
+        echo     '<th>Partido</th>';
+        echo     '<th>Votos</th>';
+        echo     '<th>Escaños</th>';
+        echo '</tr>';
+
+        for ($i = 0; $i < count($partidos); $i++) {
+            echo '<tr>';
+            echo '<td><img src="'.$partidos[$i]->getLogo().'" height="25px">  '.$partidos[$i]->getAcronimo().'</td>';
+            echo '<td>'.$partidos[$i]->getVotosTotales().'</td>';
+            echo '<td>'.$partidos[$i]->getEscanosTotales().'</td>';
+            echo '</tr>';
+        }
+
+        echo '</table>';
     } else if ($prov != "") {
         $provinciasFilter = $logica->getResultxProvincias($prov);
         echo '<section class="container_grafico">';
@@ -86,7 +100,7 @@ $partidos = $logica->getPartidos();
         echo '</section>';
     } else if ($part != "") {
         $partidosFilter = $logica->getResultxPartido($part);
-        echo '<table style="background-color: white">';
+        echo '<table>';
         echo '<tr>';
         echo     '<th>Distrito</th>';
         echo     '<th>Partido</th>';
@@ -107,11 +121,6 @@ $partidos = $logica->getPartidos();
     }
 
 ?>
-
-        <?php
-
-        ?>
-
 
     </div>
 </section>-->
@@ -256,6 +265,7 @@ $partidos = $logica->getPartidos();
         height: 60px;
         background: #573caf;
     }
+
     table tbody tr {
         height: 50px;
     }

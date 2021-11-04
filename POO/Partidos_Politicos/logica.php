@@ -19,6 +19,7 @@ include("resultado.php");
             $this->distritos = $this->generateDistritos(json_decode(file_get_contents($this->api_distritos), true));
             $this->passDistritos();
             $this->resultMap();
+            $this->generateGenerales();
         }
 
         /* @return Array de objetos -> class Resultado */
@@ -49,6 +50,23 @@ include("resultado.php");
             }
 
             return $distritos;
+        }
+
+        /* Asigna en la clase partidos los votos y escaños totales */
+        private function generateGenerales() {
+            for ($i = 0; $i < count($this->partidos); $i++) {
+                $votosTot = 0;
+                $escanosTot = 0;
+
+                for ($j = 0; $j < count($this->resultados); $j++) {
+                    if ($this->partidos[$i]->getNombre() == $this->resultados[$j]->getPartido()) {
+                        $votosTot += $this->resultados[$j]->getVotos();
+                        $escanosTot += $this->resultados[$j]->getEscanos();
+                    }
+                }
+                $this->partidos[$i]->setVotosTotales($votosTot);
+                $this->partidos[$i]->setEscanosTotales($escanosTot);
+            }
         }
 
         /* Mapea en la clase resultados el acronimo, logo y color del partido */
@@ -185,6 +203,7 @@ include("resultado.php");
             return $this->ordenarResultados($resultXdistrito);
         }
 
+        /* @return Array de los resultados filtrados por partido*/
         public function getResultxPartido($partido) {
             return $this->filtrarXpartido($partido);
         }

@@ -8,6 +8,10 @@
         private $logo;
         private $color;
 
+        // Mapeo para el resultado general
+        private $votos_totales;
+        private $escanos_totales;
+
         public function __construct($id, $nombre, $acronimo, $logo, $color)
         {
             $this->id = $id;
@@ -36,6 +40,27 @@
         {
             return $this->color;
         }
+
+        public function getVotosTotales()
+        {
+            return $this->votos_totales;
+        }
+
+        public function setVotosTotales($votos_totales): void
+        {
+            $this->votos_totales = $votos_totales;
+        }
+
+        public function getEscanosTotales()
+        {
+            return $this->escanos_totales;
+        }
+
+        public function setEscanosTotales($escanos_totales): void
+        {
+            $this->escanos_totales = $escanos_totales;
+        }
+
 
     }
 ?>
