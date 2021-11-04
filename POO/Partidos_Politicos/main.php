@@ -249,6 +249,7 @@ $partidos = $logica->getPartidos();
         overflow: hidden;
         width: 60%;
         position: relative;
+        box-shadow: 0px 0px 12px white;
     }
 
     tbody {
