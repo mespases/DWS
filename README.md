@@ -1,4 +1,4 @@
-# Uso básico de GITHUB ![GitHub](https://findicons.com/files/icons/2435/alex_peattie/32/github_alt.png)
+# Uso básico de GitHub ![GitHub](https://github.com/mespases/DWS/blob/master/EjerciciosIniciacion/github_g.gif)
 
 ## Creación o copia de repositorio
 
