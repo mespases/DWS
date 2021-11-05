@@ -32,6 +32,14 @@ Subimos el archivo a git
     git push origin main
 ```
 
+### Posible error
+error: falló el push de algunas referencias a 'url del github'
+
+Si queremos forzar la subida podemos usar
+```console
+    git push origin main --force
+```
+
 ## Actualizar archivos
 
 ```console
