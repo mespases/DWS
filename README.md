@@ -32,8 +32,8 @@ Subimos el archivo a git
     git push origin main
 ```
 
-**Posible error**
-error: falló el push de algunas referencias a 'url del github'
+**Posible error:**
+ falló el push de algunas referencias a 'url del github'
 
 Si queremos forzar la subida podemos usar
 ```console
@@ -46,7 +46,7 @@ Si queremos forzar la subida podemos usar
     git pull
 ```
 
-**Posible error**
+**Posible error:**
 
 La siguiente fusión sobrescribiría los siguientes archivos del árbol de trabajo sin seguimiento
 
