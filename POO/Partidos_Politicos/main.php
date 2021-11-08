@@ -242,6 +242,7 @@ $partidos = $logica->getPartidos();
     }
 
     table {
+        box-shadow: 0px 0px 10px white;
         margin-top: 35px;
         margin-left: 20%;
         border-collapse: collapse;
