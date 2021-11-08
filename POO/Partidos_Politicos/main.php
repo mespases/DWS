@@ -74,7 +74,7 @@ $partidos = $logica->getPartidos();
 
         for ($i = 0; $i < count($partidos); $i++) {
             echo '<tr>';
-            echo '<td><img src="'.$partidos[$i]->getLogo().'" height="25px">  '.$partidos[$i]->getAcronimo().'</td>';
+            echo '<td><img src="'.$partidos[$i]->getLogo().'" height="25px" alt="icon">  '.$partidos[$i]->getAcronimo().'</td>';
             echo '<td>'.$partidos[$i]->getVotosTotales().'</td>';
             echo '<td>'.$partidos[$i]->getEscanosTotales().'</td>';
             echo '</tr>';
@@ -111,7 +111,7 @@ $partidos = $logica->getPartidos();
         for ($i = 0; $i < count($partidosFilter); $i++) {
             echo '<tr>';
             echo '<td>'.$partidosFilter[$i]->getDistrito().'</td>';
-            echo '<td><img src="'.$partidosFilter[$i]->getLogo().'" height="25px">  '.$partidosFilter[$i]->getAcronimo().'</td>';
+            echo '<td><img src="'.$partidosFilter[$i]->getLogo().'" height="25px" alt="icon">  '.$partidosFilter[$i]->getAcronimo().'</td>';
             echo '<td>'.$partidosFilter[$i]->getVotos().'</td>';
             echo '<td>'.$partidosFilter[$i]->getEscanos().'</td>';
             echo '</tr>';
@@ -122,8 +122,6 @@ $partidos = $logica->getPartidos();
 
 ?>
 
-    </div>
-</section>-->
 </body>
 <style>
     * {
@@ -242,7 +240,7 @@ $partidos = $logica->getPartidos();
     }
 
     table {
-        box-shadow: 0px 0px 10px white;
+        box-shadow: 0 0 10px white;
         margin-top: 35px;
         margin-left: 20%;
         border-collapse: collapse;
