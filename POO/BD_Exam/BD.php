@@ -14,6 +14,15 @@
             if ($this->conn->connect_error) {
                 die("Conection failed: ". $this->conn->connect_error);
             }
+            $this->createDB();
+        }
+
+        private function createDB() {
+            $query = "CREATE DATABASE [IF NOT EXISTS] ".$this->dbname.";";
+
+            if (!mysqli_query($this->conn, $query)) {
+                echo "Error: " . $query . "<br>" . mysqli_error($this->conn);
+            }
         }
 
         public function insertCharacters($id, $name, $status, $species, $type, $gender, $origin, $location, $image, $created, $episodes) {
