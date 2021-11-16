@@ -15,14 +15,13 @@ insert($characters, $episodes, $locations);
 function insert($characters, $episodes, $locations) {
     global $sql;
 
-    for ($i = 0; $i < count($characters); $i++) {
-        $sql->insertCharacters($characters[$i]["id"], $characters[$i]["name"], $characters[$i]["status"], $characters[$i]["species"], $characters[$i]["type"],
-        $characters[$i]["gender"], $characters[$i]["origin"], $characters[$i]["location"], $characters[$i]["image"], $characters[$i]["created"]);
+    for ($j = 0; $j < count($episodes); $j++) {
+        $sql->insertEpisodes($episodes[$j]["id"], $episodes[$j]["name"], $episodes[$j]["air_date"], $episodes[$j]["episode"], $episodes[$j]["created"]);
     }
 
-    for ($j = 0; $j < count($episodes); $j++) {
-        $sql->insertEpisodes($episodes[$j]["id"], $episodes[$j]["name"], $episodes[$j]["air_date"], $episodes[$j]["episode"], $episodes[$j]["created"],
-        $episodes[$j]["characters"]);
+    for ($i = 0; $i < count($characters); $i++) {
+        $sql->insertCharacters($characters[$i]["id"], $characters[$i]["name"], $characters[$i]["status"], $characters[$i]["species"], $characters[$i]["type"],
+        $characters[$i]["gender"], $characters[$i]["origin"], $characters[$i]["location"], $characters[$i]["image"], $characters[$i]["created"], $characters[$i]["episodes"]);
     }
 
     for ($k = 0; $k < count($locations); $k++) {
@@ -34,7 +33,7 @@ function getSortedCharactersById($characters)
 {
     for ($i = 0; $i < count($characters); $i++) {
         for ($j = 0; $j < count($characters); $j++) {
-            if ($characters[$j]["id"] > $characters[$j+1]["id"] && $characters[$j+1] !== null) {
+            if (isset($characters[$j+1]) && $characters[$j]["id"] > $characters[$j+1]["id"]) {
                 $idmayor = $characters[$j];
                 $idmenor = $characters[$j+1];
 
@@ -51,7 +50,7 @@ function getSortedCharactersByOrigin($characters)
 {
     for ($i = 0; $i < count($characters); $i++) {
         for ($j = 0; $j < count($characters); $j++) {
-            if ($characters[$j]["origin"] > $characters[$j+1]["origin"] && $characters[$j+1] !== null) {
+            if (isset($characters[$j+1]) && $characters[$j]["origin"] > $characters[$j+1]["origin"]) {
                 $idmayor = $characters[$j];
                 $idmenor = $characters[$j+1];
 
@@ -68,7 +67,7 @@ function getSortedCharactersByStatus($characters)
 {
     for ($i = 0; $i < count($characters); $i++) {
         for ($j = 0; $j < count($characters); $j++) {
-            if (($characters[$j["status"]] != "Alive" && $characters[$j+1]["status"] == "Alive") && $characters[$j+1] !== null) {
+            if ( isset($characters[$j+1]) && ($characters[$j["status"]] != "Alive" && $characters[$j+1]["status"] == "Alive")) {
                 $idmayor = $characters[$j];
                 $idmenor = $characters[$j+1];
 
@@ -86,7 +85,7 @@ function getSortedLocationsById($locations)
 {
     for ($i = 0; $i < count($locations); $i++) {
         for ($j = 0; $j < count($locations); $j++) {
-            if ($locations[$j]["id"] > $locations[$j+1]["id"] && $locations[$j+1] !== null) {
+            if (isset($locations[$j+1]) && $locations[$j]["id"] > $locations[$j+1]["id"]) {
                 $idmayor = $locations[$j];
                 $idmenor = $locations[$j+1];
 
@@ -104,7 +103,7 @@ function getSortedEpisodesById($episodes)
 {
     for ($i = 0; $i < count($episodes); $i++) {
         for ($j = 0; $j < count($episodes); $j++) {
-            if ($episodes[$j]["id"] > $episodes[$j+1]["id"] && $episodes[$j+1] !== null) {
+            if (isset($episodes[$j+1]) && $episodes[$j]["id"] > $episodes[$j+1]["id"]) {
                 $idmayor = $episodes[$j];
                 $idmenor = $episodes[$j+1];
 

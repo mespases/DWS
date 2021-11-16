@@ -92,20 +92,24 @@
             $this->sendQuery($query);
         }
 
-        public function insertEpisodes($id, $name, $air_date, $episode, $created, $characters) {
+        public function insertEpisodes($id, $name, $air_date, $episode, $created) {
             $query = 'INSERT INTO episodes VALUES ('.$id.', "'.$name.'", "'.$air_date.'", "'.$episode.'", "'.$created.'")';
             $this->sendQuery($query);
 
             // Hay que hacerlo alreves, solo meter los caracteres
-            for ($i = 0; $i < count($characters); $i++) {
-                $this->insertEp_Ch($characters[$i], $id);
-            }
+            //for ($i = 0; $i < count($characters); $i++) {
+            //    $this->insertEp_Ch($characters[$i], $id);
+            //}
         }
 
         public function insertCharacters($id, $name, $status, $species, $type, $gender, $origin, $location, $image, $created, $episodes) {
             $query = 'INSERT INTO characters VALUES ('.$id.', "'.$name.'", "'.$status.'", "'.$species.'", "'.$type.'", "'.$gender.'",
             "'.$origin.'", "'.$location.'", "'.$image.'", "'.$created.'")';
             $this->sendQuery($query);
+
+            for ($i = 0; $i < count($episodes); $i++) {
+                $this->insertEp_Ch($id, $episodes[$i]);
+            }
         }
 
         public function insertLocalicaciones($id, $name, $type, $dimension, $created) {
