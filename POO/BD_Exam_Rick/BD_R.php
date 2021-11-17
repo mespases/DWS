@@ -119,6 +119,76 @@
             }
         }
 
+        public function mapEpXCh() {
+            $ep_ch = $this->selectEp_Ch();
+            $characters = $this->selectCharacters();
+
+            for ($i = 0; $i < count($characters); $i++) {
+
+                $episodes = [];
+                for ($j = 0; $j < count($ep_ch); $j++) {
+                    if ($characters[$i]["id"] == $ep_ch[$j]["id_cha"]) {
+                        $episodes[] = $ep_ch[$j]["id_epi"];
+                    }
+                }
+
+                $characters[$i]["episodes"] = $episodes;
+            }
+            return $characters;
+        }
+
+        public function selectLocations() {
+            $arr = array();
+
+            $query = "SELECT * FROM `locations`;";
+            $result = $this->conn->query($query);
+
+            while ($row = $result->fetch_assoc()) {
+                $arr[] = $row;
+            }
+
+            return $arr;
+        }
+
+        public function selectEpisodes() {
+            $arr = [];
+
+            $query = "SELECT * FROM `episodes`;";
+            $result = $this->conn->query($query);
+
+            while ($row = $result->fetch_assoc()) {
+                $arr[] = $row;
+            }
+
+            return $arr;
+        }
+
+        private function selectEp_Ch() {
+            $arr = [];
+
+            $query = "SELECT id_cha, id_epi FROM `ep_ch` WHERE 1;";
+            $result = $this->conn->query($query);
+
+            while ($row = $result->fetch_assoc()) {
+                $arr[] = $row;
+            }
+
+            return $arr;
+        }
+
+        private function selectCharacters() {
+            $arr = [];
+
+            $query = "SELECT * FROM `characters`";
+            $result = $this->conn->query($query);
+
+            while ($row = $result->fetch_assoc()) {
+                $arr[] = $row;
+            }
+
+            return $arr;
+        }
+
         public function closeMySQL() {
             mysqli_close($this->conn);
         }

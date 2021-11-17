@@ -2,11 +2,17 @@
 
     class BD {
 
+        //private $conn;
+        //private $servername = "localhost";
+        //private $username = "root";
+        //private $password = "";
+        //private $dbname = "Simulacion_Exam_Part";
+
         private $conn;
-        private $servername = "localhost";
-        private $username = "root";
-        private $password = "";
-        private $dbname = "Simulacion_Exam_Part";
+        private $servername = "sql480.main-hosting.eu";
+        private $username = "u850300514_mespases";
+        private $password = "x45185284J";
+        private $dbname = "u850300514_mespases";
 
         /* Crea una conexion a la BD y crea toda la BD si no existe */
         public function __construct() {

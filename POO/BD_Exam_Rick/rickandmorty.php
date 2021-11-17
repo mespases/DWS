@@ -7,11 +7,15 @@ $seed = 5284; //TODO: LAST 4 NUMBERS OF YOUR DNI.
 $api_url = "https://dawsonferrer.com/allabres/apis_solutions/rickandmorty/api.php?seed=" . $seed . "&data=";
 
 //NOTE: Arrays unsorted
-$characters = json_decode(file_get_contents($api_url . "characters"), true);
-$episodes = json_decode(file_get_contents($api_url . "episodes"), true);
-$locations = json_decode(file_get_contents($api_url . "locations"), true);
+//$characters = json_decode(file_get_contents($api_url . "characters"), true);
+//$episodes = json_decode(file_get_contents($api_url . "episodes"), true);
+//$locations = json_decode(file_get_contents($api_url . "locations"), true);
 
-insert($characters, $episodes, $locations);
+$characters = $sql->mapEpXCh();
+$episodes = $sql->selectEpisodes();
+$locations = $sql->selectLocations();
+
+//insert($characters, $episodes, $locations);
 function insert($characters, $episodes, $locations) {
     global $sql;
 
@@ -174,10 +178,10 @@ function render($character) {
     echo '<div class="mb-3"><label for="exampleInputEmail1" class="form-label" style="margin-bottom: 0;"><strong>Last known location:</strong></label>';
     echo '<div id="emailHelp" class="form-text" style="margin-top:0;">'. $character["location"] .'</div></div></form>';
     echo '<div class="d-flex justify-content-between align-items-center"><div class="btn-group">';
-    echo '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#characterModal_115">View episodes</button><!-- Modal -->';
-    echo '<div class="modal fade" id="characterModal_115" tabindex="-1" aria-labelledby="characterModalLabel_115" aria-hidden="true">';
+    echo '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#characterModal_'.$character["id"].'">View episodes</button><!-- Modal -->';
+    echo '<div class="modal fade" id="characterModal_'.$character["id"].'" tabindex="-1" aria-labelledby="characterModalLabel_'.$character["id"].'" aria-hidden="true">';
     echo '<div class="modal-dialog"><div class="modal-content"><div class="modal-header">';
-    echo '<h5 class="modal-title" id="characterModalLabel_115">Episodes list</h5>';
+    echo '<h5 class="modal-title" id="characterModalLabel_'.$character["id"].'">Episodes list</h5>';
     echo '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>';
     echo '<div class="modal-body"><ol class="list-group">';
 
