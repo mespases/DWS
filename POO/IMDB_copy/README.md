@@ -23,13 +23,14 @@
 
 ### Géneros
 - Id
-- Género
+- Nombre
 
 ### Actores
 - Id
 - Nombre
 - Edad
 - Nacionalidad
+- Imagen
 
 ### Directores
 - Id

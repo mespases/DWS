@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "nombre": "James Cameron",
+        "edad": 68,
+        "nacionalidad": "Canada"
+    },
+    {
+        "id": 2,
+        "nombre": "Anthony",
+        "edad": 53,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 3,
+        "nombre": "Colin Trevorrow",
+        "edad": 45,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 4,
+        "nombre": "Brad Bird",
+        "edad": 64,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 5,
+        "nombre": "Todd Phillips",
+        "edad": 50,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 6,
+        "nombre": "Josh Cooley",
+        "edad": 42,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 7,
+        "nombre": "Gore Verbinski",
+        "edad": 57,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 8,
+        "nombre": "Rob Minkoff",
+        "edad": 59,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 9,
+        "nombre": "David Yates",
+        "edad": 58,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 10,
+        "nombre": "Andrew Adamson",
+        "edad": 54,
+        "nacionalidad": "Nueva Zelanda"
+    },
+    {
+        "id": 11,
+        "nombre": "Christopher Nolan",
+        "edad": 51,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 12,
+        "nombre": "Gus Van Sant",
+        "edad": 69,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 13,
+        "nombre": "Roselyne Bosch",
+        "edad": 60,
+        "nacionalidad": "Francia"
+    },
+    {
+        "id": 14,
+        "nombre": "Oliver Nakache",
+        "edad": 48,
+        "nacionalidad": "Francia"
+    },
+    {
+        "id": 15,
+        "nombre": "Angelina Jolie",
+        "edad": 46,
+        "nacionalidad": "USA"
+    }
+]

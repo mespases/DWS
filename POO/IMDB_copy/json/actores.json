@@ -1,0 +1,188 @@
+[
+    {
+        "id": 1,
+        "nombre": "Sam Worthington",
+        "edad": 45,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 2,
+        "nombre": "Zoe Saldana",
+        "edad": 43,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 3,
+        "nombre": "Robert Downey Jr.",
+        "edad": 56,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 4,
+        "nombre": "Chris Evans",
+        "edad": 40,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 5,
+        "nombre": "Leonardo DiCaprio",
+        "edad": 47,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 6,
+        "nombre": "Kate Winslet",
+        "edad": 46,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 7,
+        "nombre": "Chris Hemsworth",
+        "edad": 38,
+        "nacionalidad": "Australia"
+    },
+    {
+        "id": 8,
+        "nombre": "Chris Pratt",
+        "edad": 42,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 9,
+        "nombre": "Bryce Dallas Howard",
+        "edad": 40,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 10,
+        "nombre": "Joaquin Phoenix",
+        "edad": 47,
+        "nacionalidad": "Puerto Rico"
+    },
+    {
+        "id": 11,
+        "nombre": "Robert De Niro",
+        "edad": 78,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 12,
+        "nombre": "Johnny Depp",
+        "edad": 58,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 13,
+        "nombre": "Orlando Bloom",
+        "edad": 44,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 14,
+        "nombre": "Daniel Radcliffe",
+        "edad": 32,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 15,
+        "nombre": "Emma Watson",
+        "edad": 31,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 16,
+        "nombre": "Rupert Grint",
+        "edad": 33,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 17,
+        "nombre": "Joseph Gordon-Levitt",
+        "edad": 40,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 18,
+        "nombre": "Matthew McConaughey",
+        "edad": 52,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 19,
+        "nombre": "Anne Hathaway",
+        "edad": 39,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 20,
+        "nombre": "Fionn Whitehead",
+        "edad": 24,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 21,
+        "nombre": "Mark Rylance",
+        "edad": 61,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 22,
+        "nombre": "John David Washington",
+        "edad": 37,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 23,
+        "nombre": "Robert Pattinson",
+        "edad": 35,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 24,
+        "nombre": "Matt Damon",
+        "edad": 56,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 25,
+        "nombre": "Robin Williams",
+        "edad": 63,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 26,
+        "nombre": "Jean Reno",
+        "edad": 73,
+        "nacionalidad": "Marruecos"
+    },
+    {
+        "id": 27,
+        "nombre": "Mélanie Laurent",
+        "edad": 38,
+        "nacionalidad": "Francia"
+    },
+    {
+        "id": 28,
+        "nombre": "François Cluzet",
+        "edad": 66,
+        "nacionalidad": "Francia"
+    },
+    {
+        "id": 29,
+        "nombre": "Omar Sy",
+        "edad": 43,
+        "nacionalidad": "Francia"
+    },
+    {
+        "id": 30,
+        "nombre": "Jack O'Connell",
+        "edad": 31,
+        "nacionalidad": "Reino Unido"
+    },
+    {
+        "id": 31,
+        "nombre": "Domhnall Gleeson",
+        "edad": 38,
+        "nacionalidad": "Irlanda"
+    }
+]
