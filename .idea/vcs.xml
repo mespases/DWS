@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/DWS" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/DWS/DWS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Examen2Php" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ExamenPhp" vcs="Git" />
   </component>
 </project>

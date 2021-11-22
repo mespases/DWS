@@ -2,6 +2,11 @@
 
     class BD_movies {
 
+        private $actores;
+        private $directores;
+        private $generos;
+        private $peliculas;
+
         private $conn;
         private $host = "localhost";
         private $username = "root";
@@ -21,6 +26,15 @@
             $this->createTablePeliculas_Actores();
             $this->createTablePeliculas_Directores();
             $this->createTablePeliculas_Generos();
+
+            $this->extractJson();
+        }
+
+        private function extractJson() {
+            $this->actores = json_decode(file_get_contents("./json/actores.json"), true);
+            $this->directores = json_decode(file_get_contents("./json/directores.json"), true);
+            $this->generos = json_decode(file_get_contents("./json/generos.json"), true);
+            $this->peliculas = json_decode(file_get_contents("./json/peliculas.json"), true);
         }
 
         private function createDB() {
@@ -102,6 +116,48 @@
                     );";
 
             $this->sendQuery($query);
+        }
+
+        private function insertTableActores($id, $nombre, $edad, $nacionalidad) {
+            $query = 'INSERT INTO actores VALUES ('.$id.', "'.$nombre.'", '.$edad.', "'.$nacionalidad.'");';
+
+            $this->sendQuery($query);
+        }
+
+        private function insertTableDirector($id, $nombre, $edad, $nacionalidad) {
+            $query = 'INSERT INTO directores VALUES ('.$id.', "'.$nombre.'", '.$edad.', "'.$nacionalidad.'");';
+
+            $this->sendQuery($query);
+        }
+
+        private function insertTableGenero($id, $nombre) {
+            $query = 'INSERT INTO generos VALUES ('.$id.', "'.$nombre.'");';
+
+            $this->sendQuery($query);
+        }
+
+        private function insertTablePelicula($id, $titulo, $ano, $valoracion, $imagen, $trailer, $director, $genero, $actores) {
+            $query = 'INSERT INTO peliculas VALUES ('.$id.', "'.$titulo.'", "'.$ano.'", '.$valoracion.', "'.$imagen.'", "'.$trailer.'");';
+
+            for ($i = 0; $i < count($director); $i++) {
+                $this->insertTableDirector($id, $director[$i]);
+            }
+
+
+
+            $this->sendQuery($query);
+        }
+
+        private function insertTablePeliculas_Actores($actor, $pelicula) {
+
+        }
+
+        private function insertTablePeliculas_Directores($directore, $pelicula) {
+
+        }
+
+        private function insertTablePeliculas_Generos($genero, $pelicula) {
+
         }
 
         private function sendQuery($query) {

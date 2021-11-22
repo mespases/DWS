@@ -15,6 +15,7 @@ $characters = $sql->mapEpXCh();
 $episodes = $sql->selectEpisodes();
 $locations = $sql->selectLocations();
 
+
 //insert($characters, $episodes, $locations);
 function insert($characters, $episodes, $locations) {
     global $sql;

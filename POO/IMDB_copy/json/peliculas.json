@@ -10,7 +10,8 @@
                 "actores": [
                         "Sam Worthington",
                         "Zoe Saldana"
-                ]
+                ],
+                "generos": ["Ciencia Ficción", "Aventura"]
         },
         {
                 "id": 2,
@@ -23,7 +24,8 @@
                 "actores": [
                         "Robert Downey Jr.",
                         "Chris Evans"
-                ]
+                ],
+                "generos": ["Ciencia Ficción", "Aventura", "Acción"]
         },
         {
                 "id": 3,
@@ -36,7 +38,8 @@
                 "actores": [
                         "Leonardo DiCaprio",
                         "Kate Winslet"
-                ]
+                ],
+                "generos": ["Romance", "Aventura"]
         },
         {
                 "id": 4,
@@ -49,7 +52,8 @@
                 "actores": [
                         "Robert Downey Jr.",
                         "Chris Hemsworth"
-                ]
+                ],
+                "generos": ["Ciencia Ficción", "Aventura", "Acción"]
         },
         {
                 "id": 5,
@@ -62,7 +66,8 @@
                 "actores": [
                         "Chris Pratt",
                         "Bryce Dallas Howard"
-                ]
+                ],
+                "generos": ["Ciencia Ficción", "Aventura"]
         },
         {
                 "id": 6,
@@ -72,7 +77,8 @@
                 "imagen": "https://pics.filmaffinity.com/the_incredibles_2-349945637-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=8UwxL-Zheqk",
                 "director": "Brad Bird",
-                "actores": []
+                "actores": [],
+                "generos": ["Ciencia Ficción", "Animación"]
         },
         {
                 "id": 7,
@@ -85,7 +91,8 @@
                 "actores": [
                         "Joaquin Phoenix",
                         "Robert De Niro"
-                ]
+                ],
+                "generos": ["Thriller", "Drama"]
         },
         {
                 "id": 8,
@@ -95,7 +102,8 @@
                 "imagen": "https://pics.filmaffinity.com/toy_story_4-462756582-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=f33yJZ5uOpU",
                 "director": "Josh Cooley",
-                "actores": []
+                "actores": [],
+                "generos": ["Animación", "Aventura"]
         },
         {
                 "id": 9,
@@ -108,7 +116,8 @@
                 "actores": [
                         "Johnny Depp",
                         "Orlando Bloom"
-                ]
+                ],
+                "generos": ["Acción", "Aventura"]
         },
         {
                 "id": 10,
@@ -118,7 +127,8 @@
                 "imagen": "https://pics.filmaffinity.com/the_lion_king-983881776-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=bjJvvrKl83M",
                 "director": "Rob Minkoff",
-                "actores": []
+                "actores": [],
+                "generos": ["Animación"]
         },
         {
                 "id": 11,
@@ -132,7 +142,8 @@
                         "Daniel Radcliffe",
                         "Emma Watson",
                         "Rupert Grint"
-                ]
+                ],
+                "generos": ["Ciencia Ficción", "Aventura"]
         },
         {
                 "id": 12,
@@ -142,7 +153,8 @@
                 "imagen": "https://pics.filmaffinity.com/shrek_2-288126730-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=xBxVgh-kgAI",
                 "director": "Andrew Adamson",
-                "actores": []
+                "actores": [],
+                "generos": ["Animación", "Aventura"]
         },
         {
                 "id": 13,
@@ -155,7 +167,8 @@
                 "actores": [
                         "Leonardo DiCaprio",
                         "Joseph Gordon-Levitt"
-                ]
+                ],
+                "generos": ["Ciencia Ficción", "Acción"]
         },
         {
                 "id": 14,
@@ -168,7 +181,8 @@
                 "actores": [
                         "Matthew McConaughey",
                         "Anne Hathaway"
-                ]
+                ],
+                "generos": ["Ciencia Ficción", "Aventura"]
         },
         {
                 "id": 15,
@@ -181,7 +195,8 @@
                 "actores": [
                         "Fionn Whitehead",
                         "Mark Rylance"
-                ]
+                ],
+                "generos": ["Acción", "Aventura"]
         },
         {
                 "id": 16,
@@ -194,7 +209,8 @@
                 "actores": [
                         "John David Washington",
                         "Robert Pattinson"
-                ]
+                ],
+                "generos": ["Ciencia Ficción", "Acción"]
         },
         {
                 "id": 17,
@@ -207,7 +223,8 @@
                 "actores": [
                         "Matt Damon",
                         "Robin Williams"
-                ]
+                ],
+                "generos": ["Drama", "Aventura"]
         },
         {
                 "id": 18,
@@ -220,7 +237,8 @@
                 "actores": [
                         "Jean Reno",
                         "Mélanie Laurent"
-                ]
+                ],
+                "generos": ["Drama", "Aventura"]
         },
         {
                 "id": 19,
@@ -233,7 +251,8 @@
                 "actores": [
                         "François Cluzet",
                         "Omar Sy"
-                ]
+                ],
+                "generos": ["Drama", "Aventura", "Comedia"]
         },
         {
                 "id": 20,
@@ -246,6 +265,7 @@
                 "actores": [
                         "Jack O'Connell",
                         "Domhnall Gleeson"
-                ]
+                ],
+                "generos": ["Acción", "Aventura"]
         }
 ]
