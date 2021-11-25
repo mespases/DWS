@@ -27,7 +27,7 @@
             $this->createTablePeliculas_Directores();
             $this->createTablePeliculas_Generos();
 
-            $this->extractJson();
+            //$this->extractJson();
         }
 
         private function extractJson() {
@@ -35,6 +35,27 @@
             $this->directores = json_decode(file_get_contents("./json/directores.json"), true);
             $this->generos = json_decode(file_get_contents("./json/generos.json"), true);
             $this->peliculas = json_decode(file_get_contents("./json/peliculas.json"), true);
+
+            // Actores
+            foreach ($this->actores as $actore) {
+                $this->insertTableActores($actore["id"], $actore["nombre"], $actore["edad"], $actore["nacionalidad"]);
+            }
+
+            // Directores
+            foreach ($this->directores as $directore) {
+                $this->insertTableDirector($directore["id"], $directore["nombre"], $directore["edad"], $directore["nacionalidad"]);
+            }
+
+            // Generos
+            foreach ($this->generos as $genero) {
+                $this->insertTableGenero($genero["id"], $genero["nombre"]);
+            }
+
+            // Peliculas
+            foreach ($this->peliculas as $pelicula) {
+                $this->insertTablePelicula($pelicula["id"], $pelicula["titulo"], $pelicula["ano"], $pelicula["valoracion"],
+                $pelicula["imagen"], $pelicula["trailer"], $pelicula["director"], $pelicula["generos"], $pelicula["actores"]);
+            }
         }
 
         private function createDB() {
@@ -138,26 +159,51 @@
 
         private function insertTablePelicula($id, $titulo, $ano, $valoracion, $imagen, $trailer, $director, $genero, $actores) {
             $query = 'INSERT INTO peliculas VALUES ('.$id.', "'.$titulo.'", "'.$ano.'", '.$valoracion.', "'.$imagen.'", "'.$trailer.'");';
+            $this->sendQuery($query);
 
             for ($i = 0; $i < count($director); $i++) {
-                $this->insertTableDirector($id, $director[$i]);
+                $this->insertTablePeliculas_Directores($id, $director[$i]);
+            }
+
+            for ($j = 0; $j < count($genero); $j++) {
+                $this->insertTablePeliculas_Generos($id, $genero[$j]);
+            }
+
+            for ($k = 0; $k < count($actores); $k++) {
+                $this->insertTablePeliculas_Actores($id, $actores[$k]);
             }
 
 
+        }
+
+        private function insertTablePeliculas_Actores($pelicula, $actor) {
+            foreach ($this->actores as $actore) {
+                if (strcmp($actor, $actore["nombre"])) {
+                    $query = 'INSERT INTO peliculas_actores VALUES('.$pelicula.', '.intval($actore["id"]).');';
+                }
+            }
 
             $this->sendQuery($query);
         }
 
-        private function insertTablePeliculas_Actores($actor, $pelicula) {
+        private function insertTablePeliculas_Directores($pelicula, $directore) {
+            foreach ($this->directores as $director) {
+                if (strcmp($directore, $director["nombre"])) {
+                    $query = 'INSERT INTO peliculas_directores VALUES('.$pelicula.', '.intval($director["id"]).');';
+                }
+            }
 
+            $this->sendQuery($query);
         }
 
-        private function insertTablePeliculas_Directores($directore, $pelicula) {
+        private function insertTablePeliculas_Generos($pelicula, $genero) {
+            foreach ($this->generos as $g) {
+                if (strcmp($genero, $g["nombre"])) {
+                    $query = 'INSERT INTO peliculas_generos VALUES('.$pelicula.', '.intval($g["id"]).');';
+                }
+            }
 
-        }
-
-        private function insertTablePeliculas_Generos($genero, $pelicula) {
-
+            $this->sendQuery($query);
         }
 
         private function sendQuery($query) {

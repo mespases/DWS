@@ -6,7 +6,7 @@
                 "valoracion": 7.2,
                 "imagen": "https://pics.filmaffinity.com/avatar-208925608-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=Xg8kYk6uHN0",
-                "director": "James Cameron",
+                "director": ["James Cameron"],
                 "actores": [
                         "Sam Worthington",
                         "Zoe Saldana"
@@ -20,7 +20,7 @@
                 "valoracion": 7.3,
                 "imagen": "https://pics.filmaffinity.com/avengers_endgame-135478227-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=TcMBFSGVi1c",
-                "director": "Anthony",
+                "director": ["Anthony"],
                 "actores": [
                         "Robert Downey Jr.",
                         "Chris Evans"
@@ -34,7 +34,7 @@
                 "valoracion": 6.8,
                 "imagen": "https://pics.filmaffinity.com/titanic-321994924-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=FiRVcExwBVA",
-                "director": "James Cammeron",
+                "director": ["James Cammeron"],
                 "actores": [
                         "Leonardo DiCaprio",
                         "Kate Winslet"
@@ -48,7 +48,7 @@
                 "valoracion": 7.5,
                 "imagen": "https://pics.filmaffinity.com/avengers_infinity_war-181539353-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=-f5PwE_Q8Fs",
-                "director": "Anthony",
+                "director": ["Anthony"],
                 "actores": [
                         "Robert Downey Jr.",
                         "Chris Hemsworth"
@@ -62,7 +62,7 @@
                 "valoracion": 5.8,
                 "imagen": "https://pics.filmaffinity.com/jurassic_world-330260664-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=hv9eSCijf6E",
-                "director": "Colin Trevorrow",
+                "director": ["Colin Trevorrow"],
                 "actores": [
                         "Chris Pratt",
                         "Bryce Dallas Howard"
@@ -76,7 +76,7 @@
                 "valoracion": 6.7,
                 "imagen": "https://pics.filmaffinity.com/the_incredibles_2-349945637-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=8UwxL-Zheqk",
-                "director": "Brad Bird",
+                "director": ["Brad Bird"],
                 "actores": [],
                 "generos": ["Ciencia Ficción", "Animación"]
         },
@@ -87,7 +87,7 @@
                 "valoracion": 8.0,
                 "imagen": "https://pics.filmaffinity.com/joker-790658206-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=EIyZqNbZQI8",
-                "director": "Todd Phillips",
+                "director": ["Todd Phillips"],
                 "actores": [
                         "Joaquin Phoenix",
                         "Robert De Niro"
@@ -101,7 +101,7 @@
                 "valoracion": 7.1,
                 "imagen": "https://pics.filmaffinity.com/toy_story_4-462756582-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=f33yJZ5uOpU",
-                "director": "Josh Cooley",
+                "director": ["Josh Cooley"],
                 "actores": [],
                 "generos": ["Animación", "Aventura"]
         },
@@ -112,7 +112,7 @@
                 "valoracion": 6.4,
                 "imagen": "https://pics.filmaffinity.com/pirates_of_the_caribbean_dead_man_s_chest-498963663-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=2GJh4ElbEjA",
-                "director": "Gore Verbinski",
+                "director": ["Gore Verbinski"],
                 "actores": [
                         "Johnny Depp",
                         "Orlando Bloom"
@@ -126,7 +126,7 @@
                 "valoracion": 7.9,
                 "imagen": "https://pics.filmaffinity.com/the_lion_king-983881776-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=bjJvvrKl83M",
-                "director": "Rob Minkoff",
+                "director": ["Rob Minkoff"],
                 "actores": [],
                 "generos": ["Animación"]
         },
@@ -137,7 +137,7 @@
                 "valoracion": 6.4,
                 "imagen": "https://pics.filmaffinity.com/harry_potter_and_the_order_of_the_phoenix_harry_potter_5-448254831-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=wmef9GgR3T4",
-                "director": "David Yates",
+                "director": ["David Yates"],
                 "actores": [
                         "Daniel Radcliffe",
                         "Emma Watson",
@@ -152,7 +152,7 @@
                 "valoracion": 7.0,
                 "imagen": "https://pics.filmaffinity.com/shrek_2-288126730-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=xBxVgh-kgAI",
-                "director": "Andrew Adamson",
+                "director": ["Andrew Adamson"],
                 "actores": [],
                 "generos": ["Animación", "Aventura"]
         },
@@ -163,7 +163,7 @@
                 "valoracion": 8.0,
                 "imagen": "https://pics.filmaffinity.com/inception-652954101-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
-                "director": "Christopher Nolan",
+                "director": ["Christopher Nolan"],
                 "actores": [
                         "Leonardo DiCaprio",
                         "Joseph Gordon-Levitt"
@@ -177,7 +177,7 @@
                 "valoracion": 7.9,
                 "imagen": "https://pics.filmaffinity.com/interstellar-366875261-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=UoSSbmD9vqc",
-                "director": "Christopher Nolan",
+                "director": ["Christopher Nolan"],
                 "actores": [
                         "Matthew McConaughey",
                         "Anne Hathaway"
@@ -191,7 +191,7 @@
                 "valoracion": 7.0,
                 "imagen": "https://pics.filmaffinity.com/dunkirk-461720087-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=qpPHBdI4mU8",
-                "director": "Christopher Nolan",
+                "director": ["Christopher Nolan"],
                 "actores": [
                         "Fionn Whitehead",
                         "Mark Rylance"
@@ -205,7 +205,7 @@
                 "valoracion": 6.4,
                 "imagen": "https://pics.filmaffinity.com/tenet-432994986-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=QxhDXmb2O3k",
-                "director": "Christopher Nolan",
+                "director": ["Christopher Nolan"],
                 "actores": [
                         "John David Washington",
                         "Robert Pattinson"
@@ -219,7 +219,7 @@
                 "valoracion": 7.5,
                 "imagen": "https://pics.filmaffinity.com/good_will_hunting-764690099-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=0vCaRgK_I3I",
-                "director": "Gus Van Sant",
+                "director": ["Gus Van Sant"],
                 "actores": [
                         "Matt Damon",
                         "Robin Williams"
@@ -233,7 +233,7 @@
                 "valoracion": 6.6,
                 "imagen": "https://pics.filmaffinity.com/la_rafle_the_round_up-510412560-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=I-2-vRmUatY",
-                "director": "Roselyne Bosch",
+                "director": ["Roselyne Bosch"],
                 "actores": [
                         "Jean Reno",
                         "Mélanie Laurent"
@@ -247,7 +247,7 @@
                 "valoracion": 8.0,
                 "imagen": "https://pics.filmaffinity.com/intouchables-218166359-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=aYCSrM8mmmo",
-                "director": "Oliver Nakache",
+                "director": ["Oliver Nakache"],
                 "actores": [
                         "François Cluzet",
                         "Omar Sy"
@@ -261,7 +261,7 @@
                 "valoracion": 7.0,
                 "imagen": "https://pics.filmaffinity.com/unbroken-846251381-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=ymL_Leb6sL8",
-                "director": "Angelina Jolie",
+                "director": ["Angelina Jolie"],
                 "actores": [
                         "Jack O'Connell",
                         "Domhnall Gleeson"
