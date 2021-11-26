@@ -1,4 +1,8 @@
 <?php
+include_once "Actores.php";
+include_once "Directores.php";
+include_once "Pelicula.php";
+include_once "Genero.php";
 
     class BD_movies {
 
@@ -28,7 +32,7 @@
             $this->createTablePeliculas_Directores();
             $this->createTablePeliculas_Generos();
 
-            //$this->extractJson();
+            $this->extractJson();
         }
 
         private function extractJson() {
@@ -173,44 +177,45 @@
             for ($k = 0; $k < count($actores); $k++) {
                 $this->insertTablePeliculas_Actores($id, $actores[$k]);
             }
-
-
         }
 
         private function insertTablePeliculas_Actores($pelicula, $actor) {
             foreach ($this->actores as $actore) {
-                if (strcmp($actor, $actore["nombre"])) {
+                if ($actor == $actore["nombre"]) {
                     $query = 'INSERT INTO peliculas_actores VALUES('.$pelicula.', '.intval($actore["id"]).');';
+                    $this->sendQuery($query);
                 }
             }
-
-            $this->sendQuery($query);
         }
 
         private function insertTablePeliculas_Directores($pelicula, $directore) {
             foreach ($this->directores as $director) {
-                if (strcmp($directore, $director["nombre"])) {
+                if ($directore == $director["nombre"]) {
                     $query = 'INSERT INTO peliculas_directores VALUES('.$pelicula.', '.intval($director["id"]).');';
+                    $this->sendQuery($query);
                 }
             }
-
-            $this->sendQuery($query);
         }
 
         private function insertTablePeliculas_Generos($pelicula, $genero) {
             foreach ($this->generos as $g) {
-                if (strcmp($genero, $g["nombre"])) {
+                if ($genero == $g["nombre"]) {
                     $query = 'INSERT INTO peliculas_generos VALUES('.$pelicula.', '.intval($g["id"]).');';
+                    $this->sendQuery($query);
                 }
             }
-
-            $this->sendQuery($query);
         }
 
-        public function selectActores() {
-            $query = "SELECT * FROM `actores`;";
+        public function selectActores($id_pelicula) {
+            $query = "SELECT A.id, A.nombre, A.edad, A.nacionalidad FROM actores as A INNER JOIN peliculas_actores as B on A.id = B.id_actor WHERE B.id_pelicula = 1 GROUP BY A.".$id_pelicula;
 
-            return $this->getRows($query);
+            $resultado = [];
+
+            while ($row = $this->conn->query($query)) {
+                $resultado[] = new Actores($row["id"], $row["nombre"], $row["edad"], $row["nacionalidad"]);
+            }
+
+            return $resultado;
         }
 
         public function selectDirectores() {
