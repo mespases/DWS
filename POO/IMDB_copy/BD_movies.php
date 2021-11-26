@@ -2,6 +2,7 @@
 
     class BD_movies {
 
+        // Crear todo asociado a aobjetos 
         private $actores;
         private $directores;
         private $generos;
@@ -206,10 +207,62 @@
             $this->sendQuery($query);
         }
 
+        public function selectActores() {
+            $query = "SELECT * FROM `actores`;";
+
+            return $this->getRows($query);
+        }
+
+        public function selectDirectores() {
+            $query = "SELECT * FROM `directores`;";
+
+            return $this->getRows($query);
+        }
+
+        public function selectGeneros() {
+            $query = "SELECT * FROM `generos`;";
+
+            return $this->getRows($query);
+        }
+
+        public function selectPeliculas() {
+            $query = "SELECT * FROM `peliculas`;";
+
+            return $this->getRows($query);
+        }
+
+        public function selectPeliculas_Actores() {
+            $query = "SELECT * FROM `peliculas_actores`;";
+
+            return $this->getRows($query);
+        }
+
+        public function selectPeliculas_Directores() {
+            $query = "SELECT * FROM `peliculas_directores`;";
+
+            return $this->getRows($query);
+        }
+
+        public function selectPeliculas_Generos() {
+            $query = "SELECT * FROM `peliculas_generos`;";
+
+            return $this->getRows($query);
+        }
+
         private function sendQuery($query) {
             if (!mysqli_query($this->conn, $query)) {
                 echo "Error: ".$query."<br>".mysqli_error($this->conn);
             }
+        }
+
+        private function getRows($query) {
+            $resultado = [];
+
+            while ($row = $this->conn->query($query)->fetch_assoc()) {
+                $resultado[] = $row;
+            }
+
+            return $resultado;
         }
 
         public function closeMySQL() {
