@@ -4,7 +4,7 @@
                 "titulo": "Avatar",
                 "ano": "2009",
                 "valoracion": 7.2,
-                "imagen": "https://pics.filmaffinity.com/avatar-208925608-mmed.jpg",
+                "imagen": "img/avatar-208925608-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=Xg8kYk6uHN0",
                 "director": ["James Cameron"],
                 "actores": [
@@ -18,7 +18,7 @@
                 "titulo": "Avengers: Endgame",
                 "ano": "2019",
                 "valoracion": 7.3,
-                "imagen": "https://pics.filmaffinity.com/avengers_endgame-135478227-mmed.jpg",
+                "imagen": "img/avengers_endgame-135478227-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=TcMBFSGVi1c",
                 "director": ["Anthony"],
                 "actores": [
@@ -32,9 +32,9 @@
                 "titulo": "Titanic",
                 "ano": "1997",
                 "valoracion": 6.8,
-                "imagen": "https://pics.filmaffinity.com/titanic-321994924-mmed.jpg",
+                "imagen": "img/titanic-321994924-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=FiRVcExwBVA",
-                "director": ["James Cammeron"],
+                "director": ["James Cameron"],
                 "actores": [
                         "Leonardo DiCaprio",
                         "Kate Winslet"
@@ -46,7 +46,7 @@
                 "titulo": "Avengers: Infinity War",
                 "ano": "2015",
                 "valoracion": 7.5,
-                "imagen": "https://pics.filmaffinity.com/avengers_infinity_war-181539353-mmed.jpg",
+                "imagen": "img/avengers_infinity_war-181539353-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=-f5PwE_Q8Fs",
                 "director": ["Anthony"],
                 "actores": [
@@ -60,7 +60,7 @@
                 "titulo": "Jurassic World",
                 "ano": "2015",
                 "valoracion": 5.8,
-                "imagen": "https://pics.filmaffinity.com/jurassic_world-330260664-mmed.jpg",
+                "imagen": "img/jurassic_world-330260664-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=hv9eSCijf6E",
                 "director": ["Colin Trevorrow"],
                 "actores": [
@@ -74,7 +74,7 @@
                 "titulo": "Los increíbles 2",
                 "ano": "2018",
                 "valoracion": 6.7,
-                "imagen": "https://pics.filmaffinity.com/the_incredibles_2-349945637-mmed.jpg",
+                "imagen": "img/the_incredibles_2-349945637-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=8UwxL-Zheqk",
                 "director": ["Brad Bird"],
                 "actores": [],
@@ -85,7 +85,7 @@
                 "titulo": "Joker",
                 "ano": "2019",
                 "valoracion": 8.0,
-                "imagen": "https://pics.filmaffinity.com/joker-790658206-mmed.jpg",
+                "imagen": "img/joker-790658206-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=EIyZqNbZQI8",
                 "director": ["Todd Phillips"],
                 "actores": [
@@ -99,7 +99,7 @@
                 "titulo": "Toy Story 4",
                 "ano": "2019",
                 "valoracion": 7.1,
-                "imagen": "https://pics.filmaffinity.com/toy_story_4-462756582-mmed.jpg",
+                "imagen": "img/toy_story_4-462756582-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=f33yJZ5uOpU",
                 "director": ["Josh Cooley"],
                 "actores": [],
@@ -110,7 +110,7 @@
                 "titulo": "Piratas del Caribe: El cofre del hombre muerto",
                 "ano": "2006",
                 "valoracion": 6.4,
-                "imagen": "https://pics.filmaffinity.com/pirates_of_the_caribbean_dead_man_s_chest-498963663-mmed.jpg",
+                "imagen": "img/pirates_of_the_caribbean_dead_man_s_chest-498963663-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=2GJh4ElbEjA",
                 "director": ["Gore Verbinski"],
                 "actores": [
@@ -124,7 +124,7 @@
                 "titulo": "El rey león",
                 "ano": "1994",
                 "valoracion": 7.9,
-                "imagen": "https://pics.filmaffinity.com/the_lion_king-983881776-mmed.jpg",
+                "imagen": "img/the_lion_king-983881776-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=bjJvvrKl83M",
                 "director": ["Rob Minkoff"],
                 "actores": [],
@@ -135,7 +135,7 @@
                 "titulo": "Harry Potter y la Orden del Fénix",
                 "ano": "2007",
                 "valoracion": 6.4,
-                "imagen": "https://pics.filmaffinity.com/harry_potter_and_the_order_of_the_phoenix_harry_potter_5-448254831-mmed.jpg",
+                "imagen": "img/harry_potter_and_the_order_of_the_phoenix_harry_potter_5-448254831-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=wmef9GgR3T4",
                 "director": ["David Yates"],
                 "actores": [
@@ -150,7 +150,7 @@
                 "titulo": "Shrek 2",
                 "ano": "2004",
                 "valoracion": 7.0,
-                "imagen": "https://pics.filmaffinity.com/shrek_2-288126730-mmed.jpg",
+                "imagen": "img/shrek_2-288126730-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=xBxVgh-kgAI",
                 "director": ["Andrew Adamson"],
                 "actores": [],
@@ -161,7 +161,7 @@
                 "titulo": "Inception",
                 "ano": "2010",
                 "valoracion": 8.0,
-                "imagen": "https://pics.filmaffinity.com/inception-652954101-mmed.jpg",
+                "imagen": "img/inception-652954101-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
                 "director": ["Christopher Nolan"],
                 "actores": [
@@ -175,7 +175,7 @@
                 "titulo": "Interstellar",
                 "ano": "2014",
                 "valoracion": 7.9,
-                "imagen": "https://pics.filmaffinity.com/interstellar-366875261-mmed.jpg",
+                "imagen": "img/interstellar-366875261-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=UoSSbmD9vqc",
                 "director": ["Christopher Nolan"],
                 "actores": [
@@ -189,7 +189,7 @@
                 "titulo": "Dunkerque",
                 "ano": "2017",
                 "valoracion": 7.0,
-                "imagen": "https://pics.filmaffinity.com/dunkirk-461720087-mmed.jpg",
+                "imagen": "img/dunkirk-461720087-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=qpPHBdI4mU8",
                 "director": ["Christopher Nolan"],
                 "actores": [
@@ -203,7 +203,7 @@
                 "titulo": "Tenet",
                 "ano": "2020",
                 "valoracion": 6.4,
-                "imagen": "https://pics.filmaffinity.com/tenet-432994986-mmed.jpg",
+                "imagen": "img/tenet-432994986-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=QxhDXmb2O3k",
                 "director": ["Christopher Nolan"],
                 "actores": [
@@ -217,7 +217,7 @@
                 "titulo": "El indomable Will Hunting",
                 "ano": "1997",
                 "valoracion": 7.5,
-                "imagen": "https://pics.filmaffinity.com/good_will_hunting-764690099-mmed.jpg",
+                "imagen": "img/good_will_hunting-764690099-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=0vCaRgK_I3I",
                 "director": ["Gus Van Sant"],
                 "actores": [
@@ -231,7 +231,7 @@
                 "titulo": "La redada",
                 "ano": "2010",
                 "valoracion": 6.6,
-                "imagen": "https://pics.filmaffinity.com/la_rafle_the_round_up-510412560-mmed.jpg",
+                "imagen": "img/la_rafle_the_round_up-510412560-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=I-2-vRmUatY",
                 "director": ["Roselyne Bosch"],
                 "actores": [
@@ -245,7 +245,7 @@
                 "titulo": "Intocable",
                 "ano": "2011",
                 "valoracion": 8.0,
-                "imagen": "https://pics.filmaffinity.com/intouchables-218166359-mmed.jpg",
+                "imagen": "img/intouchables-218166359-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=aYCSrM8mmmo",
                 "director": ["Oliver Nakache"],
                 "actores": [
@@ -259,7 +259,7 @@
                 "titulo": "Invencible (Unbroken)",
                 "ano": "2014",
                 "valoracion": 7.0,
-                "imagen": "https://pics.filmaffinity.com/unbroken-846251381-mmed.jpg",
+                "imagen": "img/unbroken-846251381-mmed.jpg",
                 "trailer": "https://www.youtube.com/watch?v=ymL_Leb6sL8",
                 "director": ["Angelina Jolie"],
                 "actores": [

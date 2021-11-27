@@ -15,6 +15,26 @@
             $this->nacionalidad = $nacionalidad;
         }
 
+        public function getId()
+        {
+            return $this->id;
+        }
+
+        public function getNombre()
+        {
+            return $this->nombre;
+        }
+
+        public function getEdad()
+        {
+            return $this->edad;
+        }
+
+        public function getNacionalidad()
+        {
+            return $this->nacionalidad;
+        }
+
 
     }
 

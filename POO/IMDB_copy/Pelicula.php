@@ -25,6 +25,50 @@
             $this->actores = $actores;
         }
 
+        public function getId(): int
+        {
+            return $this->id;
+        }
+
+        public function getTitulo(): string
+        {
+            return $this->titulo;
+        }
+
+        public function getAno(): string
+        {
+            return $this->ano;
+        }
+
+        public function getValoracion(): float
+        {
+            return $this->valoracion;
+        }
+
+        public function getImagen(): string
+        {
+            return $this->imagen;
+        }
+
+        public function getTrailer(): string
+        {
+            return $this->trailer;
+        }
+
+        public function getGeneros(): array
+        {
+            return $this->generos;
+        }
+
+        public function getDirectores(): array
+        {
+            return $this->directores;
+        }
+
+        public function getActores(): array
+        {
+            return $this->actores;
+        }
 
     }
 

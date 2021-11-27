@@ -6,7 +6,6 @@ include_once "Genero.php";
 
     class BD_movies {
 
-        // Crear todo asociado a aobjetos 
         private $actores;
         private $directores;
         private $generos;
@@ -32,7 +31,7 @@ include_once "Genero.php";
             $this->createTablePeliculas_Directores();
             $this->createTablePeliculas_Generos();
 
-            $this->extractJson();
+            //$this->extractJson();
         }
 
         private function extractJson() {
@@ -206,68 +205,80 @@ include_once "Genero.php";
             }
         }
 
-        public function selectActores($id_pelicula) {
-            $query = "SELECT A.id, A.nombre, A.edad, A.nacionalidad FROM actores as A INNER JOIN peliculas_actores as B on A.id = B.id_actor WHERE B.id_pelicula = 1 GROUP BY A.".$id_pelicula;
+        private function selectActores($id_pelicula) {
+            $query = "SELECT A.id, A.nombre, A.edad, A.nacionalidad FROM actores as A INNER JOIN peliculas_actores as B on A.id = B.id_actor WHERE B.id_pelicula = ".$id_pelicula." GROUP BY A.id";
 
             $resultado = [];
+            $sql = $this->conn->query($query);
 
-            while ($row = $this->conn->query($query)) {
+            while ($row = $sql->fetch_assoc()) {
                 $resultado[] = new Actores($row["id"], $row["nombre"], $row["edad"], $row["nacionalidad"]);
             }
 
             return $resultado;
         }
 
-        public function selectDirectores() {
-            $query = "SELECT * FROM `directores`;";
+        private function selectDirectores($id_pelicula) {
+            $query = "SELECT A.id, A.nombre, A.edad, A.nacionalidad FROM directores as A INNER JOIN peliculas_directores as B on A.id = B.id_director WHERE B.id_pelicula = ".$id_pelicula." GROUP BY A.id;";
 
-            return $this->getRows($query);
+            $resultado = [];
+
+            $sql = $this->conn->query($query);
+
+            while ($row = $sql->fetch_assoc()) {
+                $resultado[] = new Directores($row["id"], $row["nombre"], $row["edad"], $row["nacionalidad"]);
+            }
+
+            return $resultado;
         }
 
-        public function selectGeneros() {
-            $query = "SELECT * FROM `generos`;";
+        private function selectGeneros($id_pelicula) {
+            $query = "SELECT A.id, A.nombre FROM generos as A INNER JOIN peliculas_generos as B on A.id = B.id_genero WHERE B.id_pelicula = ".$id_pelicula." GROUP BY A.id;";
 
-            return $this->getRows($query);
+            $resultado = [];
+
+            $sql = $this->conn->query($query);
+
+            while ($row = $sql->fetch_assoc()) {
+                $resultado[] = new Genero($row["id"], $row["nombre"]);
+            }
+
+            return $resultado;
         }
 
-        public function selectPeliculas() {
+        public function selectAllPeliculas() {
             $query = "SELECT * FROM `peliculas`;";
 
-            return $this->getRows($query);
+            $resultado = [];
+            $sql = $this->conn->query($query);
+
+            while ($row = $sql->fetch_assoc()) {
+                $resultado[] = new Pelicula($row["id"], $row["titulo"], $row["ano"], $row["valoracion"], $row["imagen"], $row["trailer"],
+                $this->selectGeneros($row["id"]), $this->selectDirectores($row["id"]), $this->selectActores($row["id"]));
+            }
+
+            return $resultado;
         }
 
-        public function selectPeliculas_Actores() {
-            $query = "SELECT * FROM `peliculas_actores`;";
+        public function selectOnePelicula($id_pelicula) {
+            $query = "SELECT * FROM `peliculas` WHERE id = ".$id_pelicula.";";
 
-            return $this->getRows($query);
-        }
+            //$resultado = [];
 
-        public function selectPeliculas_Directores() {
-            $query = "SELECT * FROM `peliculas_directores`;";
+            $sql = $this->conn->query($query);
 
-            return $this->getRows($query);
-        }
+            while ($row = $sql->fetch_assoc()) {
+                $resultado = new Pelicula($row["id"], $row["titulo"], $row["ano"], $row["valoracion"], $row["imagen"], $row["trailer"],
+                    $this->selectGeneros($row["id"]), $this->selectDirectores($row["id"]), $this->selectActores($row["id"]));
+            }
 
-        public function selectPeliculas_Generos() {
-            $query = "SELECT * FROM `peliculas_generos`;";
-
-            return $this->getRows($query);
+            return $resultado;
         }
 
         private function sendQuery($query) {
             if (!mysqli_query($this->conn, $query)) {
                 echo "Error: ".$query."<br>".mysqli_error($this->conn);
             }
-        }
-
-        private function getRows($query) {
-            $resultado = [];
-
-            while ($row = $this->conn->query($query)->fetch_assoc()) {
-                $resultado[] = $row;
-            }
-
-            return $resultado;
         }
 
         public function closeMySQL() {
