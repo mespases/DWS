@@ -5,7 +5,7 @@
                 "ano": "2009",
                 "valoracion": 7.2,
                 "imagen": "img/avatar-208925608-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=Xg8kYk6uHN0",
+                "trailer": "https://www.youtube.com/embed/Xg8kYk6uHN0",
                 "director": ["James Cameron"],
                 "actores": [
                         "Sam Worthington",
@@ -19,7 +19,7 @@
                 "ano": "2019",
                 "valoracion": 7.3,
                 "imagen": "img/avengers_endgame-135478227-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=TcMBFSGVi1c",
+                "trailer": "https://www.youtube.com/embed/TcMBFSGVi1c",
                 "director": ["Anthony"],
                 "actores": [
                         "Robert Downey Jr.",
@@ -33,7 +33,7 @@
                 "ano": "1997",
                 "valoracion": 6.8,
                 "imagen": "img/titanic-321994924-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=FiRVcExwBVA",
+                "trailer": "https://www.youtube.com/embed/FiRVcExwBVA",
                 "director": ["James Cameron"],
                 "actores": [
                         "Leonardo DiCaprio",
@@ -47,7 +47,7 @@
                 "ano": "2015",
                 "valoracion": 7.5,
                 "imagen": "img/avengers_infinity_war-181539353-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=-f5PwE_Q8Fs",
+                "trailer": "https://www.youtube.com/embed/-f5PwE_Q8Fs",
                 "director": ["Anthony"],
                 "actores": [
                         "Robert Downey Jr.",
@@ -61,7 +61,7 @@
                 "ano": "2015",
                 "valoracion": 5.8,
                 "imagen": "img/jurassic_world-330260664-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=hv9eSCijf6E",
+                "trailer": "https://www.youtube.com/embed/hv9eSCijf6E",
                 "director": ["Colin Trevorrow"],
                 "actores": [
                         "Chris Pratt",
@@ -75,7 +75,7 @@
                 "ano": "2018",
                 "valoracion": 6.7,
                 "imagen": "img/the_incredibles_2-349945637-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=8UwxL-Zheqk",
+                "trailer": "https://www.youtube.com/embed/8UwxL-Zheqk",
                 "director": ["Brad Bird"],
                 "actores": [],
                 "generos": ["Ciencia Ficción", "Animación"]
@@ -86,7 +86,7 @@
                 "ano": "2019",
                 "valoracion": 8.0,
                 "imagen": "img/joker-790658206-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=EIyZqNbZQI8",
+                "trailer": "https://www.youtube.com/embed/EIyZqNbZQI8",
                 "director": ["Todd Phillips"],
                 "actores": [
                         "Joaquin Phoenix",
@@ -100,7 +100,7 @@
                 "ano": "2019",
                 "valoracion": 7.1,
                 "imagen": "img/toy_story_4-462756582-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=f33yJZ5uOpU",
+                "trailer": "https://www.youtube.com/embed/f33yJZ5uOpU",
                 "director": ["Josh Cooley"],
                 "actores": [],
                 "generos": ["Animación", "Aventura"]
@@ -111,7 +111,7 @@
                 "ano": "2006",
                 "valoracion": 6.4,
                 "imagen": "img/pirates_of_the_caribbean_dead_man_s_chest-498963663-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=2GJh4ElbEjA",
+                "trailer": "https://www.youtube.com/embed/2GJh4ElbEjA",
                 "director": ["Gore Verbinski"],
                 "actores": [
                         "Johnny Depp",
@@ -125,7 +125,7 @@
                 "ano": "1994",
                 "valoracion": 7.9,
                 "imagen": "img/the_lion_king-983881776-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=bjJvvrKl83M",
+                "trailer": "https://www.youtube.com/embed/bjJvvrKl83M",
                 "director": ["Rob Minkoff"],
                 "actores": [],
                 "generos": ["Animación"]
@@ -136,7 +136,7 @@
                 "ano": "2007",
                 "valoracion": 6.4,
                 "imagen": "img/harry_potter_and_the_order_of_the_phoenix_harry_potter_5-448254831-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=wmef9GgR3T4",
+                "trailer": "https://www.youtube.com/embed/wmef9GgR3T4",
                 "director": ["David Yates"],
                 "actores": [
                         "Daniel Radcliffe",
@@ -151,7 +151,7 @@
                 "ano": "2004",
                 "valoracion": 7.0,
                 "imagen": "img/shrek_2-288126730-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=xBxVgh-kgAI",
+                "trailer": "https://www.youtube.com/embed/xBxVgh-kgAI",
                 "director": ["Andrew Adamson"],
                 "actores": [],
                 "generos": ["Animación", "Aventura"]
@@ -162,7 +162,7 @@
                 "ano": "2010",
                 "valoracion": 8.0,
                 "imagen": "img/inception-652954101-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
+                "trailer": "https://www.youtube.com/embed/YoHD9XEInc0",
                 "director": ["Christopher Nolan"],
                 "actores": [
                         "Leonardo DiCaprio",
@@ -176,7 +176,7 @@
                 "ano": "2014",
                 "valoracion": 7.9,
                 "imagen": "img/interstellar-366875261-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=UoSSbmD9vqc",
+                "trailer": "https://www.youtube.com/embed/UoSSbmD9vqc",
                 "director": ["Christopher Nolan"],
                 "actores": [
                         "Matthew McConaughey",
@@ -190,7 +190,7 @@
                 "ano": "2017",
                 "valoracion": 7.0,
                 "imagen": "img/dunkirk-461720087-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=qpPHBdI4mU8",
+                "trailer": "https://www.youtube.com/embed/qpPHBdI4mU8",
                 "director": ["Christopher Nolan"],
                 "actores": [
                         "Fionn Whitehead",
@@ -204,7 +204,7 @@
                 "ano": "2020",
                 "valoracion": 6.4,
                 "imagen": "img/tenet-432994986-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=QxhDXmb2O3k",
+                "trailer": "https://www.youtube.com/embed/QxhDXmb2O3k",
                 "director": ["Christopher Nolan"],
                 "actores": [
                         "John David Washington",
@@ -218,7 +218,7 @@
                 "ano": "1997",
                 "valoracion": 7.5,
                 "imagen": "img/good_will_hunting-764690099-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=0vCaRgK_I3I",
+                "trailer": "https://www.youtube.com/embed/0vCaRgK_I3I",
                 "director": ["Gus Van Sant"],
                 "actores": [
                         "Matt Damon",
@@ -232,7 +232,7 @@
                 "ano": "2010",
                 "valoracion": 6.6,
                 "imagen": "img/la_rafle_the_round_up-510412560-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=I-2-vRmUatY",
+                "trailer": "https://www.youtube.com/embed/I-2-vRmUatY",
                 "director": ["Roselyne Bosch"],
                 "actores": [
                         "Jean Reno",
@@ -246,7 +246,7 @@
                 "ano": "2011",
                 "valoracion": 8.0,
                 "imagen": "img/intouchables-218166359-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=aYCSrM8mmmo",
+                "trailer": "https://www.youtube.com/embed/aYCSrM8mmmo",
                 "director": ["Oliver Nakache"],
                 "actores": [
                         "François Cluzet",
@@ -260,7 +260,7 @@
                 "ano": "2014",
                 "valoracion": 7.0,
                 "imagen": "img/unbroken-846251381-mmed.jpg",
-                "trailer": "https://www.youtube.com/watch?v=ymL_Leb6sL8",
+                "trailer": "https://www.youtube.com/embed/ymL_Leb6sL8",
                 "director": ["Angelina Jolie"],
                 "actores": [
                         "Jack O'Connell",

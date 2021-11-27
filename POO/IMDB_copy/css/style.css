@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(24 24 24);
+    font-family: sans-serif, Arial, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+/** Header **/
+nav {
+    background-color: #100f0d;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav div.logo {
+    width: 15%;
+    margin-right: 10em;
+}
+
+nav div.logo img {
+    width: 95px;
+    margin-left: 4em;
+    margin-top: 0.2em;
+}
+
+nav div.search_bar {
+    width: 50%;
+}
+
+nav div.search_bar input {
+    width: 485px;
+    height: 20px;
+    border-radius: 7px;
+}
+
+nav div.search_bar button i {
+    cursor: pointer;
+}
+
+.transparetn {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+/** Content **/
+.amarillo {
+    color: yellow;
+}
+

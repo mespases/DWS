@@ -13,31 +13,15 @@
     <title>IMDB</title>
 
     <script src="https://kit.fontawesome.com/867eec2026.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            background-color: rgb(24 24 24);
-        }
-
-        header {
-            background-color: #100f0d;
-        }
-
-        .transparetn {
-            background-color: transparent;
-            color: white;
-            border: none;
-        }
-        
-        .amarillo {
-            color: yellow;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <!-- header -->
-    <header>
+    <nav>
         <div class="logo">
             <a href="index.php"><img src="img/logo.png" alt="logo"></a>
+        </div>
+        <div class="search_bar">
             <form action="singlePage.php" method="GET">
                 <input type="text">
                 <button type="submit" class="btn btn-success transparetn">
@@ -45,12 +29,12 @@
                 </button>
             </form>
         </div>
-    </header>
+    </nav>
 
     <!-- content -->
     <div class="content">
         <div class="trailer">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/EIyZqNbZQI8?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EIyZqNbZQI8?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="right">
             <div class="top">
