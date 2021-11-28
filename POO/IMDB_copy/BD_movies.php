@@ -275,6 +275,12 @@ include_once "Genero.php";
             return $resultado;
         }
 
+        public function getNumeroDePeliculas() {
+            $query = "SELECT COUNT(titulo) as numero FROM peliculas;";
+
+            return $this->conn->query($query)->fetch_assoc();
+        }
+
         private function sendQuery($query) {
             if (!mysqli_query($this->conn, $query)) {
                 echo "Error: ".$query."<br>".mysqli_error($this->conn);

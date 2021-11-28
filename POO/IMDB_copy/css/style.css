@@ -1,50 +1,146 @@
 body {
-    background-color: rgb(24 24 24);
-    font-family: sans-serif, Arial, 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
+  background-color: #000000;
+  font-family: sans-serif, Arial, "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
 }
 
 /** Header **/
 nav {
-    background-color: #100f0d;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  background-color: #121212;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 nav div.logo {
-    width: 15%;
-    margin-right: 10em;
+  width: 15%;
+  margin-right: 10em;
 }
 
 nav div.logo img {
-    width: 95px;
-    margin-left: 4em;
-    margin-top: 0.2em;
+  width: 95px;
+  margin-left: 4em;
+  margin-top: 0.2em;
 }
 
 nav div.search_bar {
-    width: 50%;
+  width: 50%;
 }
 
 nav div.search_bar input {
-    width: 485px;
-    height: 20px;
-    border-radius: 7px;
+  width: 717px;
+  height: 20px;
+  border-radius: 7px;
 }
 
 nav div.search_bar button i {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .transparetn {
-    background-color: transparent;
-    color: white;
-    border: none;
+  background-color: transparent;
+  color: white;
+  border: none;
 }
 /** Content **/
-.amarillo {
-    color: yellow;
+div.content {
+  margin-left: 20em;
+  display: flex;
 }
 
+div div.trailer iframe {
+  width: 861px; 
+  height: 484px;
+}
+
+div div.right {
+  background-color: #161616;
+  width: 450px; 
+  height: 484px;
+}
+
+div div.right div.top, div div.right div.bottom {
+  padding: 15px 15px 15px 15px;
+}
+
+div div.right div.top img {
+  width: 90px;
+  height: 130px;
+  float: left;
+}
+
+div div.right div.top h5 {
+  color: white;
+  margin-top: 10px;
+  padding-left: 105px;
+  font-size: 16px;
+}
+div div.right div.top h5 p.val {
+  color: white;
+  display: inline;
+  float: right;
+  margin: 0;
+  padding: 0;
+  font-family: unset;
+}
+
+div div.right div.top h5 p.w {
+  color: #919191;
+}
+
+div div.right div.top i.amarillo {
+  float: right;
+  color: yellow;
+  padding-left: 4px;
+}
+
+div div.right div.top p.line {
+  color: white;
+  display: inline;
+  padding-left: 17px;
+  text-align: justify;
+}
+
+div div.right div.top p {
+  color: #919191;
+  padding-left: 105px;
+}
+
+div.right hr {
+  margin: 2em 1em 1em 1em;
+  border-color: rgb(253 246 246 / 20%);
+}
+
+div.right div.bottom h5 {
+  color: #919191;
+  margin-top: 0;
+  text-align: justify;
+}
+
+div.right div.bottom h5.white {
+  color: white;
+}
+
+/** Footer **/
+footer {
+  margin-left: 7em;
+  padding-right: 10em;
+}
+
+footer ul li div.film {
+  width: 300px;
+  height: 445px;
+  margin: 5em 50px 0 50px;
+}
+
+footer ul li div.film a { 
+  cursor: pointer;
+}
+
+.cS-hidden {
+  height: 1px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  overflow: hidden;
+}
