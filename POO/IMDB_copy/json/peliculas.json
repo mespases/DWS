@@ -4,7 +4,7 @@
                 "titulo": "Avatar",
                 "ano": "2009",
                 "valoracion": 7.2,
-                "imagen": "img/avatar-208925608-mmed.jpg",
+                "imagen": "avatar-208925608-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/Xg8kYk6uHN0",
                 "director": ["James Cameron"],
                 "actores": [
@@ -18,7 +18,7 @@
                 "titulo": "Avengers: Endgame",
                 "ano": "2019",
                 "valoracion": 7.3,
-                "imagen": "img/avengers_endgame-135478227-mmed.jpg",
+                "imagen": "avengers_endgame-135478227-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/TcMBFSGVi1c",
                 "director": ["Anthony"],
                 "actores": [
@@ -32,7 +32,7 @@
                 "titulo": "Titanic",
                 "ano": "1997",
                 "valoracion": 6.8,
-                "imagen": "img/titanic-321994924-mmed.jpg",
+                "imagen": "titanic-321994924-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/FiRVcExwBVA",
                 "director": ["James Cameron"],
                 "actores": [
@@ -46,7 +46,7 @@
                 "titulo": "Avengers: Infinity War",
                 "ano": "2015",
                 "valoracion": 7.5,
-                "imagen": "img/avengers_infinity_war-181539353-mmed.jpg",
+                "imagen": "avengers_infinity_war-181539353-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/-f5PwE_Q8Fs",
                 "director": ["Anthony"],
                 "actores": [
@@ -60,7 +60,7 @@
                 "titulo": "Jurassic World",
                 "ano": "2015",
                 "valoracion": 5.8,
-                "imagen": "img/jurassic_world-330260664-mmed.jpg",
+                "imagen": "jurassic_world-330260664-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/hv9eSCijf6E",
                 "director": ["Colin Trevorrow"],
                 "actores": [
@@ -74,7 +74,7 @@
                 "titulo": "Los increíbles 2",
                 "ano": "2018",
                 "valoracion": 6.7,
-                "imagen": "img/the_incredibles_2-349945637-mmed.jpg",
+                "imagen": "the_incredibles_2-349945637-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/8UwxL-Zheqk",
                 "director": ["Brad Bird"],
                 "actores": [],
@@ -85,7 +85,7 @@
                 "titulo": "Joker",
                 "ano": "2019",
                 "valoracion": 8.0,
-                "imagen": "img/joker-790658206-mmed.jpg",
+                "imagen": "joker-790658206-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/EIyZqNbZQI8",
                 "director": ["Todd Phillips"],
                 "actores": [
@@ -99,7 +99,7 @@
                 "titulo": "Toy Story 4",
                 "ano": "2019",
                 "valoracion": 7.1,
-                "imagen": "img/toy_story_4-462756582-mmed.jpg",
+                "imagen": "toy_story_4-462756582-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/f33yJZ5uOpU",
                 "director": ["Josh Cooley"],
                 "actores": [],
@@ -110,7 +110,7 @@
                 "titulo": "Piratas del Caribe: El cofre del hombre muerto",
                 "ano": "2006",
                 "valoracion": 6.4,
-                "imagen": "img/pirates_of_the_caribbean_dead_man_s_chest-498963663-mmed.jpg",
+                "imagen": "pirates_of_the_caribbean_dead_man_s_chest-498963663-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/2GJh4ElbEjA",
                 "director": ["Gore Verbinski"],
                 "actores": [
@@ -124,7 +124,7 @@
                 "titulo": "El rey león",
                 "ano": "1994",
                 "valoracion": 7.9,
-                "imagen": "img/the_lion_king-983881776-mmed.jpg",
+                "imagen": "the_lion_king-983881776-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/bjJvvrKl83M",
                 "director": ["Rob Minkoff"],
                 "actores": [],
@@ -135,7 +135,7 @@
                 "titulo": "Harry Potter y la Orden del Fénix",
                 "ano": "2007",
                 "valoracion": 6.4,
-                "imagen": "img/harry_potter_and_the_order_of_the_phoenix_harry_potter_5-448254831-mmed.jpg",
+                "imagen": "harry_potter_and_the_order_of_the_phoenix_harry_potter_5-448254831-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/wmef9GgR3T4",
                 "director": ["David Yates"],
                 "actores": [
@@ -150,7 +150,7 @@
                 "titulo": "Shrek 2",
                 "ano": "2004",
                 "valoracion": 7.0,
-                "imagen": "img/shrek_2-288126730-mmed.jpg",
+                "imagen": "shrek_2-288126730-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/xBxVgh-kgAI",
                 "director": ["Andrew Adamson"],
                 "actores": [],
@@ -161,7 +161,7 @@
                 "titulo": "Inception",
                 "ano": "2010",
                 "valoracion": 8.0,
-                "imagen": "img/inception-652954101-mmed.jpg",
+                "imagen": "inception-652954101-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/YoHD9XEInc0",
                 "director": ["Christopher Nolan"],
                 "actores": [
@@ -175,7 +175,7 @@
                 "titulo": "Interstellar",
                 "ano": "2014",
                 "valoracion": 7.9,
-                "imagen": "img/interstellar-366875261-mmed.jpg",
+                "imagen": "interstellar-366875261-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/UoSSbmD9vqc",
                 "director": ["Christopher Nolan"],
                 "actores": [
@@ -189,7 +189,7 @@
                 "titulo": "Dunkerque",
                 "ano": "2017",
                 "valoracion": 7.0,
-                "imagen": "img/dunkirk-461720087-mmed.jpg",
+                "imagen": "dunkirk-461720087-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/qpPHBdI4mU8",
                 "director": ["Christopher Nolan"],
                 "actores": [
@@ -203,7 +203,7 @@
                 "titulo": "Tenet",
                 "ano": "2020",
                 "valoracion": 6.4,
-                "imagen": "img/tenet-432994986-mmed.jpg",
+                "imagen": "tenet-432994986-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/QxhDXmb2O3k",
                 "director": ["Christopher Nolan"],
                 "actores": [
@@ -217,7 +217,7 @@
                 "titulo": "El indomable Will Hunting",
                 "ano": "1997",
                 "valoracion": 7.5,
-                "imagen": "img/good_will_hunting-764690099-mmed.jpg",
+                "imagen": "good_will_hunting-764690099-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/0vCaRgK_I3I",
                 "director": ["Gus Van Sant"],
                 "actores": [
@@ -231,7 +231,7 @@
                 "titulo": "La redada",
                 "ano": "2010",
                 "valoracion": 6.6,
-                "imagen": "img/la_rafle_the_round_up-510412560-mmed.jpg",
+                "imagen": "la_rafle_the_round_up-510412560-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/I-2-vRmUatY",
                 "director": ["Roselyne Bosch"],
                 "actores": [
@@ -245,7 +245,7 @@
                 "titulo": "Intocable",
                 "ano": "2011",
                 "valoracion": 8.0,
-                "imagen": "img/intouchables-218166359-mmed.jpg",
+                "imagen": "intouchables-218166359-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/aYCSrM8mmmo",
                 "director": ["Oliver Nakache"],
                 "actores": [
@@ -259,7 +259,7 @@
                 "titulo": "Invencible (Unbroken)",
                 "ano": "2014",
                 "valoracion": 7.0,
-                "imagen": "img/unbroken-846251381-mmed.jpg",
+                "imagen": "unbroken-846251381-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/ymL_Leb6sL8",
                 "director": ["Angelina Jolie"],
                 "actores": [
@@ -267,5 +267,18 @@
                         "Domhnall Gleeson"
                 ],
                 "generos": ["Acción", "Aventura"]
+        },
+        {
+                "id": 21,
+                "titulo": "El padrino",
+                "ano": "2972",
+                "valoracion": 9.0,
+                "imagen": "the_godfather-488102675-large.jpg",
+                "trailer": "https://www.youtube.com/embed/gCVj1LeYnsc",
+                "director": ["Francis Ford Coppola"],
+                "actores": [
+                        "Marlon Brando", "Al Pacino", "James Caan"
+                ],
+                "generos": ["Drama", "Mafia", "Crimen"]
         }
 ]

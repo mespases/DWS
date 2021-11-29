@@ -184,5 +184,23 @@
         "nombre": "Domhnall Gleeson",
         "edad": 38,
         "nacionalidad": "Irlanda"
+    },
+    {
+        "id": 32,
+        "nombre": "Marlon Brando",
+        "edad": 80,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 33,
+        "nombre": "Al Pacino",
+        "edad": 81,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 34,
+        "nombre": "James Caan",
+        "edad": 81,
+        "nacionalidad": "USA"
     }
 ]

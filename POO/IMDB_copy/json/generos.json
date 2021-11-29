@@ -30,5 +30,13 @@
     {
         "id": 8,
         "nombre": "Comedia"
+    },
+    {
+        "id": 9,
+        "nombre": "Mafia"
+    },
+    {
+        "id": 10,
+        "nombre": "Crimen"
     }
 ]
