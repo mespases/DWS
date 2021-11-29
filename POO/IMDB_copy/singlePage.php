@@ -39,6 +39,7 @@ $slider = randFilms();
     <script src="js/lightslider.js"></script>
     <link type="text/css" rel="stylesheet" href="css/lightslider.css" />        
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo.png" />
 </head>
 
 <body>
