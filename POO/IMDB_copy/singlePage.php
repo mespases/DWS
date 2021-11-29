@@ -1,17 +1,19 @@
 <?php
 include ("BD_movies.php");
 $bd = new BD_movies();
+$num = $bd->getNumeroDePeliculas();
 
-if (isset($_GET["id"]) && $_GET["id"] <= $bd->getNumeroDePeliculas()) {
+if (isset($_GET["id"]) && $_GET["id"] <= $num) {
     $peli = $bd->selectOnePelicula($_GET["id"]);
 } else {
     $peli = $bd->selectOnePelicula(15);
 }
 
 function randFilms() {
-    global $bd;
-    $numPeliculas = $bd->getNumeroDePeliculas();
+    global $num, $bd;
+    $numPeliculas = $num;
     $arr = [];
+    $films = [];
 
     while (count($arr) < 5) {
         $randomNumber = rand(0, intval($numPeliculas["numero"])-1);
@@ -20,9 +22,13 @@ function randFilms() {
         }
     }
 
-    return $arr;
+
+    for ($i = 0; $i < 5; $i++) {
+        $films[] = $bd->selectOnePelicula($arr[$i]);
+    }
+
+    return $films;
 }
-$allFilms = $bd->selectAllPeliculas();
 $slider = randFilms();
 ?>
 <!DOCTYPE html>
@@ -111,10 +117,10 @@ $slider = randFilms();
     <footer>
         <ul id="autoWidth" class="cs-hidden">
 
-            <?php foreach ($slider as $i => $j) {?>
+            <?php foreach ($slider as $i) {?>
                 <li>
                     <div class="film">
-                        <a href="singlePage.php?id=<?php echo $allFilms[$j]->getId(); ?>"><img src="<?php echo "img/".$allFilms[$j]->getImagen(); ?>" alt="<?php echo $allFilms[$j]->getTitulo(); ?>" style="width: 300px"></a>
+                        <a href="singlePage.php?id=<?php echo $i->getId(); ?>"><img src="<?php echo "img/".$i->getImagen(); ?>" alt="<?php echo $i->getTitulo(); ?>" style="width: 300px"></a>
                     </div>
                 </li>
             <?php } ?>

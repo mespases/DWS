@@ -1,5 +1,7 @@
 <?php
-
+include_once "BD_movies.php";
+$bd = new BD_movies();
+$allFilms = $bd->selectAllPeliculas();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -34,62 +36,30 @@
             </form>
         </div>
     </nav>
-    <div class="movies">
-        <div class="film">
-            <a href="singlePage.php?id=15"><img src="img/dunkirk-461720087-mmed.jpg" alt="dunk"></a>
-            <div class="text_img">
-                <h5>2017</h5>
-                <h4>Dunkerque</h4>
-                <p>Acción, Thriller</p>
-                <p>7</p>
-            </div>
-        </div>
-        <div class="film">
-            <a href="singlePage.php?id=15"><img src="img/dunkirk-461720087-mmed.jpg" alt="dunk"></a>
-            <div class="text_img">
-                <h5>2017</h5>
-                <h4>Dunkerque</h4>
-                <p>Acción, Thriller</p>
-                <p>7</p>
-            </div>
-        </div>
-        <div class="film">
-            <a href="singlePage.php?id=15"><img src="img/dunkirk-461720087-mmed.jpg" alt="dunk"></a>
-            <div class="text_img">
-                <h5>2017</h5>
-                <h4>Dunkerque</h4>
-                <p>Acción, Thriller</p>
-                <p>7</p>
-            </div>
-        </div>
-        <div class="film">
-            <a href="singlePage.php?id=15"><img src="img/dunkirk-461720087-mmed.jpg" alt="dunk"></a>
-            <div class="text_img">
-                <h5>2017</h5>
-                <h4>Dunkerque</h4>
-                <p>Acción, Thriller</p>
-                <p>7</p>
-            </div>
-        </div>
-        <div class="film">
-            <a href="singlePage.php?id=15"><img src="img/dunkirk-461720087-mmed.jpg" alt="dunk"></a>
-            <div class="text_img">
-                <h5>2017</h5>
-                <h4>Dunkerque</h4>
-                <p>Acción, Thriller</p>
-                <p>7</p>
-            </div>
-        </div>
-        <div class="film">
-            <a href="singlePage.php?id=15"><img src="img/dunkirk-461720087-mmed.jpg" alt="dunk"></a>
-            <div class="text_img">
-                <h5>2017</h5>
-                <h4>Dunkerque</h4>
-                <p>Acción, Thriller</p>
-                <p>7</p>
-            </div>
-        </div>
-    </div>
 
+    <section class="all_movies">
+
+        <?php foreach ($allFilms as $film) {?>
+
+        <div class="film_box">
+            <a href="singlePage.php?id=<?php echo $film->getId();?>" class="overlay">
+                <i class="fas fa-play"></i>
+            </a>
+            <div class="img_box">
+                <img src="img/<?php echo $film->getImagen(); ?>" alt="<?php echo $film->getTitulo(); ?>">
+            </div>
+            <a href="singlePage.php?id=<?php echo $film->getId();?>">
+                <div class="text_box">
+                    <span class="puntuacion"><?php echo $film->getValoracion();?></span>
+                    <div class="bottom">
+                        <div class="movie_name">
+                            <span><?php echo $film->getAno(); ?></span>
+                            <strong><?php echo $film->getTitulo(); ?></strong>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <?php } ?>
 </body>
 </html>
