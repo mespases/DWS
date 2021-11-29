@@ -8,6 +8,7 @@ div.movies {
 div.movies div.film {
   width: 33%;
   text-align: center;
+  position: relative;
 }
 
 div.movies div.film img {
@@ -19,7 +20,7 @@ div.movies div.film img {
 div.movies div.film div.text_img {
     color: white;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 20%;
+    top: 60%;
     background: linear-gradient(360deg, #161616b9 35%, rgba(73, 73, 73, 0.23), 64%);
 }
