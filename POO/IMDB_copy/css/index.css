@@ -30,6 +30,7 @@ section.all_movies div.film_box a.overlay {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   color: #ffffff;
   transition: all ease 0.3s;
 }
