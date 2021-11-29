@@ -16,11 +16,12 @@ function randFilms() {
     $films = [];
 
     while (count($arr) < 5) {
-        $randomNumber = rand(0, intval($numPeliculas["numero"])-1);
+        $randomNumber = rand(1, intval($numPeliculas["numero"]));
         if (!in_array($randomNumber, $arr)) {
             $arr[] = $randomNumber;
         }
     }
+
 
 
     for ($i = 0; $i < 5; $i++) {
