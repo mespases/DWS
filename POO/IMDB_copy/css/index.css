@@ -1,0 +1,25 @@
+div.movies {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+div.movies div.film {
+  width: 33%;
+  text-align: center;
+}
+
+div.movies div.film img {
+  width: 65%;
+  top: 50%;
+  position: relative;
+}
+
+div.movies div.film div.text_img {
+    color: white;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(360deg, #161616b9 35%, rgba(73, 73, 73, 0.23), 64%);
+}

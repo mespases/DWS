@@ -46,7 +46,7 @@ $slider = randFilms();
     <!-- header -->
     <nav>
         <div class="logo">
-            <a href="singlePage.php"><img src="img/logo.png" alt="logo"></a>
+            <a href="index.php"><img src="img/logo.png" alt="logo"></a>
         </div>
         <div class="search_bar">
             <form action="singlePage.php" method="GET">
