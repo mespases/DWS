@@ -94,5 +94,35 @@
         "nombre": "Francis Ford Coppola",
         "edad": 82,
         "nacionalidad": "USA"
+    },
+    {
+        "id": 17,
+        "nombre": "Clint Eastwood",
+        "edad": 91,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 18,
+        "nombre": "Lee Unkrich",
+        "edad": 54,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 19,
+        "nombre": "Adrián Molina",
+        "edad": 36,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 20,
+        "nombre": "Ryan Coogler",
+        "edad": 35,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 21,
+        "nombre": "Aaron Covington",
+        "edad": 37,
+        "nacionalidad": "USA"
     }
 ]

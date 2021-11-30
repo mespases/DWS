@@ -38,5 +38,17 @@
     {
         "id": 10,
         "nombre": "Crimen"
+    },
+    {
+        "id": 11,
+        "nombre": "Amistad"
+    },
+    {
+        "id": 12,
+        "nombre": "Racismo"
+    },
+    {
+        "id": 13,
+        "nombre": "Deporte"
     }
 ]

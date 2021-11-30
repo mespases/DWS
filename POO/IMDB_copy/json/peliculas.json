@@ -6,12 +6,17 @@
                 "valoracion": 7.2,
                 "imagen": "avatar-208925608-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/Xg8kYk6uHN0",
-                "director": ["James Cameron"],
+                "director": [
+                        "James Cameron"
+                ],
                 "actores": [
                         "Sam Worthington",
                         "Zoe Saldana"
                 ],
-                "generos": ["Ciencia Ficción", "Aventura"]
+                "generos": [
+                        "Ciencia Ficción",
+                        "Aventura"
+                ]
         },
         {
                 "id": 2,
@@ -20,12 +25,18 @@
                 "valoracion": 7.3,
                 "imagen": "avengers_endgame-135478227-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/TcMBFSGVi1c",
-                "director": ["Anthony"],
+                "director": [
+                        "Anthony"
+                ],
                 "actores": [
                         "Robert Downey Jr.",
                         "Chris Evans"
                 ],
-                "generos": ["Ciencia Ficción", "Aventura", "Acción"]
+                "generos": [
+                        "Ciencia Ficción",
+                        "Aventura",
+                        "Acción"
+                ]
         },
         {
                 "id": 3,
@@ -34,12 +45,17 @@
                 "valoracion": 6.8,
                 "imagen": "titanic-321994924-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/FiRVcExwBVA",
-                "director": ["James Cameron"],
+                "director": [
+                        "James Cameron"
+                ],
                 "actores": [
                         "Leonardo DiCaprio",
                         "Kate Winslet"
                 ],
-                "generos": ["Romance", "Aventura"]
+                "generos": [
+                        "Romance",
+                        "Aventura"
+                ]
         },
         {
                 "id": 4,
@@ -48,12 +64,18 @@
                 "valoracion": 7.5,
                 "imagen": "avengers_infinity_war-181539353-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/-f5PwE_Q8Fs",
-                "director": ["Anthony"],
+                "director": [
+                        "Anthony"
+                ],
                 "actores": [
                         "Robert Downey Jr.",
                         "Chris Hemsworth"
                 ],
-                "generos": ["Ciencia Ficción", "Aventura", "Acción"]
+                "generos": [
+                        "Ciencia Ficción",
+                        "Aventura",
+                        "Acción"
+                ]
         },
         {
                 "id": 5,
@@ -62,12 +84,17 @@
                 "valoracion": 5.8,
                 "imagen": "jurassic_world-330260664-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/hv9eSCijf6E",
-                "director": ["Colin Trevorrow"],
+                "director": [
+                        "Colin Trevorrow"
+                ],
                 "actores": [
                         "Chris Pratt",
                         "Bryce Dallas Howard"
                 ],
-                "generos": ["Ciencia Ficción", "Aventura"]
+                "generos": [
+                        "Ciencia Ficción",
+                        "Aventura"
+                ]
         },
         {
                 "id": 6,
@@ -76,9 +103,14 @@
                 "valoracion": 6.7,
                 "imagen": "the_incredibles_2-349945637-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/8UwxL-Zheqk",
-                "director": ["Brad Bird"],
+                "director": [
+                        "Brad Bird"
+                ],
                 "actores": [],
-                "generos": ["Ciencia Ficción", "Animación"]
+                "generos": [
+                        "Ciencia Ficción",
+                        "Animación"
+                ]
         },
         {
                 "id": 7,
@@ -87,12 +119,17 @@
                 "valoracion": 8.0,
                 "imagen": "joker-790658206-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/EIyZqNbZQI8",
-                "director": ["Todd Phillips"],
+                "director": [
+                        "Todd Phillips"
+                ],
                 "actores": [
                         "Joaquin Phoenix",
                         "Robert De Niro"
                 ],
-                "generos": ["Thriller", "Drama"]
+                "generos": [
+                        "Thriller",
+                        "Drama"
+                ]
         },
         {
                 "id": 8,
@@ -101,9 +138,14 @@
                 "valoracion": 7.1,
                 "imagen": "toy_story_4-462756582-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/f33yJZ5uOpU",
-                "director": ["Josh Cooley"],
+                "director": [
+                        "Josh Cooley"
+                ],
                 "actores": [],
-                "generos": ["Animación", "Aventura"]
+                "generos": [
+                        "Animación",
+                        "Aventura"
+                ]
         },
         {
                 "id": 9,
@@ -112,12 +154,17 @@
                 "valoracion": 6.4,
                 "imagen": "pirates_of_the_caribbean_dead_man_s_chest-498963663-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/2GJh4ElbEjA",
-                "director": ["Gore Verbinski"],
+                "director": [
+                        "Gore Verbinski"
+                ],
                 "actores": [
                         "Johnny Depp",
                         "Orlando Bloom"
                 ],
-                "generos": ["Acción", "Aventura"]
+                "generos": [
+                        "Acción",
+                        "Aventura"
+                ]
         },
         {
                 "id": 10,
@@ -126,9 +173,13 @@
                 "valoracion": 7.9,
                 "imagen": "the_lion_king-983881776-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/bjJvvrKl83M",
-                "director": ["Rob Minkoff"],
+                "director": [
+                        "Rob Minkoff"
+                ],
                 "actores": [],
-                "generos": ["Animación"]
+                "generos": [
+                        "Animación"
+                ]
         },
         {
                 "id": 11,
@@ -137,13 +188,18 @@
                 "valoracion": 6.4,
                 "imagen": "harry_potter_and_the_order_of_the_phoenix_harry_potter_5-448254831-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/wmef9GgR3T4",
-                "director": ["David Yates"],
+                "director": [
+                        "David Yates"
+                ],
                 "actores": [
                         "Daniel Radcliffe",
                         "Emma Watson",
                         "Rupert Grint"
                 ],
-                "generos": ["Ciencia Ficción", "Aventura"]
+                "generos": [
+                        "Ciencia Ficción",
+                        "Aventura"
+                ]
         },
         {
                 "id": 12,
@@ -152,9 +208,14 @@
                 "valoracion": 7.0,
                 "imagen": "shrek_2-288126730-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/xBxVgh-kgAI",
-                "director": ["Andrew Adamson"],
+                "director": [
+                        "Andrew Adamson"
+                ],
                 "actores": [],
-                "generos": ["Animación", "Aventura"]
+                "generos": [
+                        "Animación",
+                        "Aventura"
+                ]
         },
         {
                 "id": 13,
@@ -163,12 +224,17 @@
                 "valoracion": 8.0,
                 "imagen": "inception-652954101-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/YoHD9XEInc0",
-                "director": ["Christopher Nolan"],
+                "director": [
+                        "Christopher Nolan"
+                ],
                 "actores": [
                         "Leonardo DiCaprio",
                         "Joseph Gordon-Levitt"
                 ],
-                "generos": ["Ciencia Ficción", "Acción"]
+                "generos": [
+                        "Ciencia Ficción",
+                        "Acción"
+                ]
         },
         {
                 "id": 14,
@@ -177,12 +243,17 @@
                 "valoracion": 7.9,
                 "imagen": "interstellar-366875261-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/UoSSbmD9vqc",
-                "director": ["Christopher Nolan"],
+                "director": [
+                        "Christopher Nolan"
+                ],
                 "actores": [
                         "Matthew McConaughey",
                         "Anne Hathaway"
                 ],
-                "generos": ["Ciencia Ficción", "Aventura"]
+                "generos": [
+                        "Ciencia Ficción",
+                        "Aventura"
+                ]
         },
         {
                 "id": 15,
@@ -191,12 +262,17 @@
                 "valoracion": 7.0,
                 "imagen": "dunkirk-461720087-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/qpPHBdI4mU8",
-                "director": ["Christopher Nolan"],
+                "director": [
+                        "Christopher Nolan"
+                ],
                 "actores": [
                         "Fionn Whitehead",
                         "Mark Rylance"
                 ],
-                "generos": ["Acción", "Aventura"]
+                "generos": [
+                        "Acción",
+                        "Aventura"
+                ]
         },
         {
                 "id": 16,
@@ -205,12 +281,17 @@
                 "valoracion": 6.4,
                 "imagen": "tenet-432994986-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/QxhDXmb2O3k",
-                "director": ["Christopher Nolan"],
+                "director": [
+                        "Christopher Nolan"
+                ],
                 "actores": [
                         "John David Washington",
                         "Robert Pattinson"
                 ],
-                "generos": ["Ciencia Ficción", "Acción"]
+                "generos": [
+                        "Ciencia Ficción",
+                        "Acción"
+                ]
         },
         {
                 "id": 17,
@@ -219,12 +300,17 @@
                 "valoracion": 7.5,
                 "imagen": "good_will_hunting-764690099-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/0vCaRgK_I3I",
-                "director": ["Gus Van Sant"],
+                "director": [
+                        "Gus Van Sant"
+                ],
                 "actores": [
                         "Matt Damon",
                         "Robin Williams"
                 ],
-                "generos": ["Drama", "Aventura"]
+                "generos": [
+                        "Drama",
+                        "Aventura"
+                ]
         },
         {
                 "id": 18,
@@ -233,12 +319,17 @@
                 "valoracion": 6.6,
                 "imagen": "la_rafle_the_round_up-510412560-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/I-2-vRmUatY",
-                "director": ["Roselyne Bosch"],
+                "director": [
+                        "Roselyne Bosch"
+                ],
                 "actores": [
                         "Jean Reno",
                         "Mélanie Laurent"
                 ],
-                "generos": ["Drama", "Aventura"]
+                "generos": [
+                        "Drama",
+                        "Aventura"
+                ]
         },
         {
                 "id": 19,
@@ -247,12 +338,18 @@
                 "valoracion": 8.0,
                 "imagen": "intouchables-218166359-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/aYCSrM8mmmo",
-                "director": ["Oliver Nakache"],
+                "director": [
+                        "Oliver Nakache"
+                ],
                 "actores": [
                         "François Cluzet",
                         "Omar Sy"
                 ],
-                "generos": ["Drama", "Aventura", "Comedia"]
+                "generos": [
+                        "Drama",
+                        "Aventura",
+                        "Comedia"
+                ]
         },
         {
                 "id": 20,
@@ -261,12 +358,17 @@
                 "valoracion": 7.0,
                 "imagen": "unbroken-846251381-mmed.jpg",
                 "trailer": "https://www.youtube.com/embed/ymL_Leb6sL8",
-                "director": ["Angelina Jolie"],
+                "director": [
+                        "Angelina Jolie"
+                ],
                 "actores": [
                         "Jack O'Connell",
                         "Domhnall Gleeson"
                 ],
-                "generos": ["Acción", "Aventura"]
+                "generos": [
+                        "Acción",
+                        "Aventura"
+                ]
         },
         {
                 "id": 21,
@@ -275,10 +377,77 @@
                 "valoracion": 9.0,
                 "imagen": "the_godfather-488102675-large.jpg",
                 "trailer": "https://www.youtube.com/embed/gCVj1LeYnsc",
-                "director": ["Francis Ford Coppola"],
-                "actores": [
-                        "Marlon Brando", "Al Pacino", "James Caan"
+                "director": [
+                        "Francis Ford Coppola"
                 ],
-                "generos": ["Drama", "Mafia", "Crimen"]
+                "actores": [
+                        "Marlon Brando",
+                        "Al Pacino",
+                        "James Caan"
+                ],
+                "generos": [
+                        "Drama",
+                        "Mafia",
+                        "Crimen"
+                ]
+        },
+        {
+                "id": 22,
+                "titulo": "Gran Torino",
+                "ano": "2008",
+                "valoracion": 8.2,
+                "imagen": "gran_torino-278262332-large.jpg",
+                "trailer": "https://www.youtube.com/embed/U_bZWFLTp-c",
+                "director": [
+                        "Clint Eastwood"
+                ],
+                "actores": [
+                        "Clint Eastwood",
+                        "Christopher Carley",
+                        "Bee Vang"
+                ],
+                "generos": [
+                        "Drama",
+                        "Racismo",
+                        "Amistad"
+                ]
+        },
+        {
+                "id": 23,
+                "titulo": "COCO",
+                "ano": "2017",
+                "valoracion": 8.0,
+                "imagen": "coco-155051069-large.jpg",
+                "trailer": "https://www.youtube.com/embed/htwlR51npL4",
+                "director": [
+                        "Lee Unkrich",
+                        "Adrián Molina"
+                ],
+                "actores": [],
+                "generos": [
+                        "Drama",
+                        "Animación"
+                ]
+        },
+        {
+                "id": 24,
+                "titulo": "Creed. La leyenda de Rocky",
+                "ano": "2015",
+                "valoracion": 6.6,
+                "imagen": "creed-232228847-large.jpg",
+                "trailer": "https://www.youtube.com/embed/8pPXp7pRKbQ",
+                "director": [
+                        "Ryan Coogler",
+                        "Aaron Covington"
+                ],
+                "actores": [
+                        "Michael B. Jordan",
+                        "Sylvester Stallone",
+                        "Tessa Thompson"
+                ],
+                "generos": [
+                        "Drama",
+                        "Deporte"
+                ]
         }
 ]

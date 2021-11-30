@@ -202,5 +202,41 @@
         "nombre": "James Caan",
         "edad": 81,
         "nacionalidad": "USA"
+    },
+    {
+        "id": 35,
+        "nombre": "Clint Eastwood",
+        "edad": 91,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 36,
+        "nombre": "Christopher Carley",
+        "edad": 43,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 37,
+        "nombre": "Bee Vang",
+        "edad": 30,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 38,
+        "nombre": "Michael B. Jordan",
+        "edad": 34,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 39,
+        "nombre": "Sylvester Stallone",
+        "edad": 75,
+        "nacionalidad": "USA"
+    },
+    {
+        "id": 40,
+        "nombre": "Tessa Thompson",
+        "edad": 38,
+        "nacionalidad": "USA"
     }
 ]
