@@ -31,9 +31,11 @@ include_once "Genero.php";
             $this->createTablePeliculas_Directores();
             $this->createTablePeliculas_Generos();
 
+            // Descomentar para insertar todos los datos
             //$this->extractJson();
         }
 
+        /** Inserta todos los datos de los json en las tablas correspondientes */
         private function extractJson() {
             $this->actores = json_decode(file_get_contents("./json/actores.json"), true);
             $this->directores = json_decode(file_get_contents("./json/directores.json"), true);
@@ -246,6 +248,7 @@ include_once "Genero.php";
             return $resultado;
         }
 
+        /** Devuelve todas las peliculas que esten dentro de la BD */
         public function selectAllPeliculas() {
             $query = "SELECT * FROM `peliculas`;";
 
@@ -260,6 +263,7 @@ include_once "Genero.php";
             return $resultado;
         }
 
+        /** Devuelve solo la pelicula del id introducido por parametro */
         public function selectOnePelicula($id_pelicula) {
             $query = "SELECT * FROM `peliculas` WHERE id = ".$id_pelicula.";";
 
@@ -275,12 +279,14 @@ include_once "Genero.php";
             return $resultado;
         }
 
+        /** Devuelve el numero de peliculas totales dentro de la BD */
         public function getNumeroDePeliculas() {
             $query = "SELECT COUNT(titulo) as numero FROM peliculas;";
 
             return $this->conn->query($query)->fetch_assoc();
         }
 
+        /** Devuelve todos las peliculas que contengan en el titulo el parametro */
         public function selectBySearch($busqueda) {
             $query = "SELECT * FROM peliculas WHERE titulo LIKE '%".$busqueda."%';";
 
@@ -296,6 +302,7 @@ include_once "Genero.php";
 
         }
 
+        /** Realiza la query */
         private function sendQuery($query) {
             if (!mysqli_query($this->conn, $query)) {
                 echo "Error: ".$query."<br>".mysqli_error($this->conn);

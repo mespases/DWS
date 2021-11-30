@@ -2,6 +2,7 @@
 include_once "BD_movies.php";
 $bd = new BD_movies();
 
+// Si search no tiene nada nos cargara todas las peliculas
 if (isset($_GET["search"])) {
     $allFilms = $bd->selectBySearch($_GET["search"]);
 } else {

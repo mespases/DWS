@@ -3,12 +3,14 @@ include ("BD_movies.php");
 $bd = new BD_movies();
 $num = $bd->getNumeroDePeliculas();
 
+// Si recibe un numero mayor al de los id de dentro de la bd nos carga el 15
 if (isset($_GET["id"]) && $_GET["id"] <= $num) {
     $peli = $bd->selectOnePelicula($_GET["id"]);
 } else {
     $peli = $bd->selectOnePelicula(15);
 }
 
+/** Devuelve una array de 5 peliculas generadas aleatoriamente, funcion para el slider */
 function randFilms() {
     global $num, $bd;
     $numPeliculas = $num;
