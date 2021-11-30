@@ -56,8 +56,8 @@ $slider = randFilms();
             <a href="index.php"><img src="img/logo.png" alt="logo"></a>
         </div>
         <div class="search_bar">
-            <form action="singlePage.php" method="GET">
-                <input type="text" name="id">
+            <form action="index.php" method="GET">
+                <input type="text" name="search">
                 <button type="submit" class="btn btn-success transparetn">
                     <i class="fas fa-search"></i>
                 </button>

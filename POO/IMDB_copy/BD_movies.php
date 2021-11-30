@@ -281,6 +281,21 @@ include_once "Genero.php";
             return $this->conn->query($query)->fetch_assoc();
         }
 
+        public function selectBySearch($busqueda) {
+            $query = "SELECT * FROM peliculas WHERE titulo LIKE '%".$busqueda."%';";
+
+            $resultado = [];
+            $sql = $this->conn->query($query);
+
+            while ($row = $sql->fetch_assoc()) {
+                $resultado[] = new Pelicula($row["id"], $row["titulo"], $row["ano"], $row["valoracion"], $row["imagen"], $row["trailer"],
+                    $this->selectGeneros($row["id"]), $this->selectDirectores($row["id"]), $this->selectActores($row["id"]));
+            }
+
+            return $resultado;
+
+        }
+
         private function sendQuery($query) {
             if (!mysqli_query($this->conn, $query)) {
                 echo "Error: ".$query."<br>".mysqli_error($this->conn);

@@ -2,16 +2,17 @@
 section.all_movies {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /*justify-content: center;*/
   align-items: center;
   margin: 20px auto;
-  width: 100%;
+  padding-left: 10%;
+  /*width: 100%;*/
 }
 
 section.all_movies div.film_box {
   width: 300px;
   height: 445px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #0e0e0ec2;
   position: relative;
   overflow: hidden;
@@ -57,7 +58,11 @@ section.all_movies div.film_box div.img_box img {
 }
 
 section.all_movies div.film_box a div.text_box {
-  background: linear-gradient(360deg, #161616b9 35%, rgba(73,73,73,0.23) 64%);
+  background: linear-gradient(
+    360deg,
+    #161616b9 35%,
+    rgba(73, 73, 73, 0.23) 64%
+  );
   position: absolute;
   left: 0px;
   top: 0px;
@@ -84,7 +89,8 @@ section.all_movies div.film_box a div.text_box span.puntuacion {
   left: 100%;
 }
 
-.puntuacion, .bottom {
+.puntuacion,
+.bottom {
   padding: 20px;
 }
 
@@ -98,7 +104,7 @@ section.all_movies div.film_box a div.text_box span.puntuacion {
   font-size: 1.3em;
   letter-spacing: 1px;
   font-weight: 400;
-  color: rgba(240,240,240,0.85);
+  color: rgba(240, 240, 240, 0.85);
 }
 
 .movie_name strong {
@@ -107,6 +113,7 @@ section.all_movies div.film_box a div.text_box span.puntuacion {
   font-weight: 500;
   line-height: 20px;
   margin-top: 10px;
-  letter-spacing: 0.5px; 
+  letter-spacing: 0.5px;
 }
+
 
