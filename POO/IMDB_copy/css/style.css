@@ -5,6 +5,10 @@ body {
   padding: 0;
 }
 
+body.sing_in {
+  background-color: #dbdbdb;
+}
+
 /** Header **/
 nav {
   background-color: #121212;
@@ -143,4 +147,40 @@ footer ul li div.film a {
   opacity: 0;
   filter: alpha(opacity=0);
   overflow: hidden;
+}
+
+/* Sing in */
+div.sesion_box {
+  text-align: center;
+  margin-top: 5em;
+}
+
+div.sesion_box section.sesion {
+  background: linear-gradient(45deg, #0000003d, #fff70014);
+  width: 20em;
+  height: 25em;
+  margin: 0 auto;
+  box-shadow: 3px 1px 6px #0000006e;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.sesion_box section.sesion input {
+  width: 16em;
+  height: 1.5em;
+  margin-bottom: 2em;
+  border-radius: 7px;
+  font-size: 0.9em;
+}
+
+div.sesion_box section.sesion button {
+  background: linear-gradient(172deg, #c3b31f 20%, #8d7e13a6 75%);
+  width: 9em;
+  height: 2em;
+  display: block;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1em;
 }

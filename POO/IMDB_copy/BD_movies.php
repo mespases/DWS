@@ -32,7 +32,7 @@ include_once "Genero.php";
             $this->createTablePeliculas_Generos();
 
             // Descomentar para insertar todos los datos
-            //$this->extractJson();
+            //  $this->extractJson();
         }
 
         /** Inserta todos los datos de los json en las tablas correspondientes */
