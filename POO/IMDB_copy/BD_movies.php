@@ -30,6 +30,7 @@ include_once "Genero.php";
             $this->createTablePeliculas_Actores();
             $this->createTablePeliculas_Directores();
             $this->createTablePeliculas_Generos();
+            $this->createTableUsers();
 
             // Descomentar para insertar todos los datos
             //  $this->extractJson();
@@ -67,6 +68,15 @@ include_once "Genero.php";
         private function createDB() {
             $query = "CREATE DATABASE IF NOT EXISTS ". $this->bd_name;
 
+            $this->sendQuery($query);
+        }
+
+        private function createTableUsers() {
+            $query = "CREATE TABLE IF NOT EXISTS usuarios(
+                            id int PRIMARY KEY AUTO_INCREMENT,
+                            email varchar(255),
+                            password varchar(255)
+                        );";
             $this->sendQuery($query);
         }
 
@@ -300,6 +310,10 @@ include_once "Genero.php";
 
             return $resultado;
 
+        }
+
+        public function authentifyUser($email, $password) {
+            $query = "SELECT * FROM `usuarios` WHERE email = '".$email."';";
         }
 
         /** Realiza la query */

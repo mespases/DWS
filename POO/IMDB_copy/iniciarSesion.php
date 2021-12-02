@@ -34,8 +34,8 @@
     <div class="sesion_box">
         <section class="sesion">
             <form action="index.php" method="GET">
-                <input type="email">
-                <input type="password">
+            <p><i class="fas fa-user"></i><input type="email" placeholder="email"></p>
+            <p><i class="fas fa-key"></i><input type="password" placeholder="password"></p>
                 <button type="submit">Iniciar sesión</button>
             </form>
         </section>

@@ -167,12 +167,23 @@ div.sesion_box section.sesion {
   justify-content: center;
 }
 
+div.sesion_box i {
+  margin-left: 0;
+}
+
 div.sesion_box section.sesion input {
+  background-color: transparent;
   width: 16em;
   height: 1.5em;
   margin-bottom: 2em;
-  border-radius: 7px;
   font-size: 0.9em;
+  border-width: 0 0 2px;
+  border-color: #00000066;
+  outline: none;
+}
+
+div.sesion_box section.sesion input:focus {
+  border-color: #000000;
 }
 
 div.sesion_box section.sesion button {
