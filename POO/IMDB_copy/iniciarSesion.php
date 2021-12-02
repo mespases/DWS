@@ -23,7 +23,7 @@ $bd = new BD_movies();
     <link rel="shortcut icon" href="img/logo.png" />
 </head>
 
-<body class="sing_in">
+<body class="sign_in">
     <nav>
         <div class="logo">
             <a href="index.php"><img src="img/logo.png" alt="logo"></a>
@@ -35,6 +35,9 @@ $bd = new BD_movies();
                     <i class="fas fa-search"></i>
                 </button>
             </form>
+        </div>
+        <div class="sign_in_a">
+            <a href="iniciarSesion.php">Iniciar Sesión</a>
         </div>
     </nav>
 

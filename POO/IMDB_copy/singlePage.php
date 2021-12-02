@@ -65,6 +65,9 @@ $slider = randFilms();
                 </button>
             </form>
         </div>
+        <div class="sign_in_a">
+            <a href="iniciarSesion.php">Iniciar Sesión</a>
+        </div>
     </nav>
     <!-- content -->
     <div class="content">

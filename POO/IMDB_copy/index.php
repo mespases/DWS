@@ -43,6 +43,9 @@ $bd->closeMySQL();
                 </button>
             </form>
         </div>
+        <div class="sign_in_a">
+            <a href="iniciarSesion.php">Iniciar Sesión</a>
+        </div>
     </nav>
 
     <section class="all_movies">

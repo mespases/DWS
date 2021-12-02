@@ -5,7 +5,7 @@ body {
   padding: 0;
 }
 
-body.sing_in {
+body.sign_in {
   background-color: #dbdbdb;
 }
 
@@ -26,6 +26,31 @@ nav div.logo img {
   width: 95px;
   margin-left: 4em;
   margin-top: 0.2em;
+}
+
+div.sign_in_a {
+  width: 20%;
+}
+
+nav div.sign_in_a a {
+  color: white;
+  width: 120px;
+  height: 26px;
+  border: 1px solid;
+  border-radius: 10px;
+  line-height: 26px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  float: right;
+  transition: 0.4s;
+}
+
+nav div.sign_in_a a:hover {
+  color: #121212;
+  background-color: white;
+  box-shadow: 1px 1px 10px 0px #ffffff7e;
+  transition: 0.4s;
 }
 
 nav div.search_bar {
@@ -149,7 +174,7 @@ footer ul li div.film a {
   overflow: hidden;
 }
 
-/* Sing in */
+/* Sign in */
 div.sesion_box {
   text-align: center;
   margin-top: 5em;
