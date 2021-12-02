@@ -1,3 +1,10 @@
+<?php
+include_once "BD_movies.php";
+
+$bd = new BD_movies();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,13 +40,28 @@
 
     <div class="sesion_box">
         <section class="sesion">
-            <form action="index.php" method="GET">
-            <p><i class="fas fa-user"></i><input type="email" placeholder="email"></p>
-            <p><i class="fas fa-key"></i><input type="password" placeholder="password"></p>
+            <form action="#" method="GET">
+            <p><i class="fas fa-user"></i><input type="email" placeholder="email" name="email"></p>
+            <p><i class="fas fa-key"></i><input type="password" placeholder="password" name="password"></p>
                 <button type="submit">Iniciar sesión</button>
             </form>
+            <?php
+
+                if (isset($_GET["email"])) {
+                    $email = $_GET["email"];
+                } if (isset($_GET["password"])) {
+                    $password = $_GET["password"];
+                }
+
+                if (isset($email) && isset($password) && $bd->authentifyUser($email, $password)) {
+                    header("Location: index.php");
+                } else if (isset($email) && isset($password) && $email != "" && $password != ""){
+                    echo "<script>alert('El usuario o contraseña no son correctos')</script>";
+                }
+            ?>
         </section>
     </div>
 
 </body>
 </html>
+<?php $bd->closeMySQL(); ?>

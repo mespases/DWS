@@ -1,58 +1,16 @@
 <?php
 
-    class Persona {
-        public $nombre;
-        public $edad;
-        public $estatura;
-        public $peso;
+    $pass = "root";
 
-        /**
-         * @param $nombre
-         * @param $edad
-         * @param $estatura
-         * @param $peso
-         */
-        public function __construct($nombre, $edad, $estatura, $peso)
-        {
-            $this->nombre = $nombre;
-            $this->edad = $edad;
-            $this->estatura = $estatura;
-            $this->peso = $peso;
-        }
+    echo "</h1>Contraseña normal: ".$pass."</h1>";
 
-        /**
-         * @return mixed
-         */
-        public function getNombre()
-        {
-            return $this->nombre;
-        }
+    $hash_pass = password_hash($pass, PASSWORD_DEFAULT);
+    echo "<h1>Contraseña cifrada: ".$hash_pass."</h1>";
 
-        /**
-         * @return mixed
-         */
-        public function getEdad()
-        {
-            return $this->edad;
-        }
-
-        /**
-         * @return mixed
-         */
-        public function getEstatura()
-        {
-            return $this->estatura;
-        }
-
-        /**
-         * @return mixed
-         */
-        public function getPeso()
-        {
-            return $this->peso;
-        }
-
-
+    if (password_verify($pass, $hash_pass)) {
+        echo "hola";
+    } else {
+        echo "adios";
     }
 
 ?>

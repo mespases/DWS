@@ -314,6 +314,14 @@ include_once "Genero.php";
 
         public function authentifyUser($email, $password) {
             $query = "SELECT * FROM `usuarios` WHERE email = '".$email."';";
+
+            $resultado = $this->conn->query($query)->fetch_assoc();
+
+            if (password_verify($password, $resultado["password"])) {
+                return true;
+            }
+
+            return false;
         }
 
         /** Realiza la query */
