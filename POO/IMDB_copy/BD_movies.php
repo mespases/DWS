@@ -74,8 +74,8 @@ include_once "Genero.php";
         private function createTableUsers() {
             $query = "CREATE TABLE IF NOT EXISTS usuarios(
                             id int PRIMARY KEY AUTO_INCREMENT,
-                            email varchar(255),
-                            password varchar(255)
+                            email varchar(255) not null UNIQUE,
+                            password varchar(255) not null
                         );";
             $this->sendQuery($query);
         }
@@ -312,6 +312,7 @@ include_once "Genero.php";
 
         }
 
+        /** Devuelve true si el usuario y contraseña estan dentro de la BD */
         public function authentifyUser($email, $password) {
             $query = "SELECT * FROM `usuarios` WHERE email = '".$email."';";
 

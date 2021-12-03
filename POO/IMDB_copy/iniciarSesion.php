@@ -2,6 +2,11 @@
 include_once "BD_movies.php";
 
 $bd = new BD_movies();
+session_start();
+
+if ($_SESSION["loggedIn"]) {
+    header("Location: index.php");
+}
 
 ?>
 
@@ -43,21 +48,23 @@ $bd = new BD_movies();
 
     <div class="sesion_box">
         <section class="sesion">
-            <form action="#" method="GET">
+            <form action="#" method="POST">
             <p><i class="fas fa-user"></i><input type="email" placeholder="email" name="email"></p>
             <p><i class="fas fa-key"></i><input type="password" placeholder="password" name="password"></p>
                 <button type="submit">Iniciar sesión</button>
             </form>
             <?php
 
-                if (isset($_GET["email"])) {
-                    $email = $_GET["email"];
-                } if (isset($_GET["password"])) {
-                    $password = $_GET["password"];
+                if (isset($_POST["email"])) {
+                    $email = $_POST["email"];
+                } if (isset($_POST["password"])) {
+                    $password = $_POST["password"];
                 }
 
                 if (isset($email) && isset($password) && $bd->authentifyUser($email, $password)) {
+                    $_SESSION["loggedIn"] = true;
                     header("Location: index.php");
+
                 } else if (isset($email) && isset($password) && $email != "" && $password != ""){
                     echo "<script>alert('El usuario o contraseña no son correctos')</script>";
                 }

@@ -1,6 +1,8 @@
 <?php
 include ("BD_movies.php");
 $bd = new BD_movies();
+session_start();
+
 $num = $bd->getNumeroDePeliculas();
 
 // Si recibe un numero mayor al de los id de dentro de la bd nos carga el 15
@@ -66,7 +68,15 @@ $slider = randFilms();
             </form>
         </div>
         <div class="sign_in_a">
-            <a href="iniciarSesion.php">Iniciar Sesión</a>
+
+            <?php
+            if (!$_SESSION["loggedIn"]) {
+                echo "<a href='iniciarSesion.php'>Iniciar Sesión</a>";
+            } else {
+                echo "<a href='close.php'>Cerrar Sesión</a>";
+            }
+            ?>
+
         </div>
     </nav>
     <!-- content -->

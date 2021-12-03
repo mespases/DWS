@@ -1,6 +1,7 @@
 <?php
 include_once "BD_movies.php";
 $bd = new BD_movies();
+session_start();
 
 // Si search no tiene nada nos cargara todas las peliculas
 if (isset($_GET["search"])) {
@@ -44,7 +45,13 @@ $bd->closeMySQL();
             </form>
         </div>
         <div class="sign_in_a">
-            <a href="iniciarSesion.php">Iniciar Sesión</a>
+            <?php
+            if (!$_SESSION["loggedIn"]) {
+                echo "<a href='iniciarSesion.php'>Iniciar Sesión</a>";
+            } else {
+                echo "<a href='close.php'>Cerrar Sesión</a>";
+            }
+            ?>
         </div>
     </nav>
 
