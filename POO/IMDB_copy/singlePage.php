@@ -129,8 +129,8 @@ $slider = randFilms();
 
     </div>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Slider -->
+    <div class="slider">
         <ul id="autoWidth" class="cs-hidden">
 
             <?php foreach ($slider as $i) {?>
@@ -142,7 +142,29 @@ $slider = randFilms();
             <?php } ?>
             
         </ul>
-    </footer>
+    </div>
+
+    <section class="comments">
+        <h3>Comentarios</h3>
+
+        <form action="#" method="POST">
+            <textarea placeholder="Añade un nuevo comentario" rows="4" cols="10"></textarea>
+            <div class="comment_btn">
+                <button>Publicar</button>
+            </div>
+        </form> 
+
+        <!-- Lista de comentarios -->
+        <ul class="comment_list" style="color: white">
+            <li>
+                <article>
+                    <i class="fas fa-user-circle"></i>
+                    <h4>Nombre: Miguel</h4>
+                    <p>Esta pelicula no me ha gustado nada</p>
+                </article>
+            </li>
+        </ul>
+    </section>
 
 </body>
 <script>
