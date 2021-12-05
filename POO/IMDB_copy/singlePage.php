@@ -70,7 +70,7 @@ $slider = randFilms();
         <div class="sign_in_a">
 
             <?php
-            if (!$_SESSION["loggedIn"]) {
+            if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"]) {
                 echo "<a href='iniciarSesion.php'>Iniciar Sesión</a>";
             } else {
                 echo "<a href='close.php'>Cerrar Sesión</a>";

@@ -177,31 +177,46 @@ div.slider ul li div.film a {
 /* Comments */
 section.comments {
   text-align: center;
+  margin-top: 6em;
 }
 
 section.comments h3 {
   color: white;
+  font-size: 2em;
+  margin-right: 23em;
+}
+
+section.comments form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 section.comments form textarea {
-  background-color: #161616;
+  background-color: #282828;
   color: #919191;
   width: 70em;
-  height: 6em;
+  height: 8em;
   resize: none;
   border: none;
   outline: none;
 }
 
-
-
 section.comments form div.comment_btn {
   background-color: #121212;
-  width: 70em;
+  width: 58.6em;
+  height: 2em;
 }
 
 section.comments form div.comment_btn button {
-  font: optional;
+  background-color: rgb(38 38 38);
+  color: white;
+  text-shadow: 1px 1px 4px #ffffffb5;
+  border: 1px solid #525252;
+  position: relative;
+  float: right;
+  line-height: 2em;
+  width: 7em;
 }
 
 /* Sign in */

@@ -4,7 +4,7 @@ include_once "BD_movies.php";
 $bd = new BD_movies();
 session_start();
 
-if ($_SESSION["loggedIn"]) {
+if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) {
     header("Location: index.php");
 }
 
@@ -21,6 +21,7 @@ if ($_SESSION["loggedIn"]) {
 
     <script src="https://kit.fontawesome.com/867eec2026.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/lightslider.js"></script>
     <link type="text/css" rel="stylesheet" href="css/lightslider.css" />  
     <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -66,7 +67,13 @@ if ($_SESSION["loggedIn"]) {
                     header("Location: index.php");
 
                 } else if (isset($email) && isset($password) && $email != "" && $password != ""){
-                    echo "<script>alert('El usuario o contraseña no son correctos')</script>";
+                    echo "<script>
+                            Swal.fire({
+                              icon: 'error',
+                              title: 'Oops...',
+                              text: 'El usuario o la contraseña no son correctos',
+                            })
+                    </script>";
                 }
             ?>
         </section>

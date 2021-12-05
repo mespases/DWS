@@ -318,7 +318,7 @@ include_once "Genero.php";
 
             $resultado = $this->conn->query($query)->fetch_assoc();
 
-            if (password_verify($password, $resultado["password"])) {
+            if (isset($resultado) && password_verify($password, $resultado["password"])) {
                 return true;
             }
 
