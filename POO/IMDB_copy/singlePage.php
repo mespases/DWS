@@ -155,12 +155,16 @@ $slider = randFilms();
         </form> 
 
         <!-- Lista de comentarios -->
+        <p>Comentarios más recientes</p>
+        <hr/>
         <ul class="comment_list" style="color: white">
             <li>
                 <article>
                     <i class="fas fa-user-circle"></i>
-                    <h4>Nombre: Miguel</h4>
-                    <p>Esta pelicula no me ha gustado nada</p>
+                    <div class="text">
+                        <h4>Miguel</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </div>
                 </article>
             </li>
         </ul>

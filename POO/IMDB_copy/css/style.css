@@ -176,12 +176,12 @@ div.slider ul li div.film a {
 
 /* Comments */
 section.comments {
+  color: white;
   text-align: center;
   margin-top: 6em;
 }
 
 section.comments h3 {
-  color: white;
   font-size: 2em;
   margin-right: 23em;
 }
@@ -217,6 +217,58 @@ section.comments form div.comment_btn button {
   float: right;
   line-height: 2em;
   width: 7em;
+}
+
+section.comments > p {
+  margin-top: 2em;
+  margin-right: 37em;
+  font-size: 1.2em;
+}
+
+section.comments hr {
+  width: 59em;
+  border-color: rgb(253 246 246 / 20%);
+}
+
+section.comments ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+section.comments ul li {
+  list-style: none;
+}
+
+section.comments ul li article {
+  width: 59em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+section.comments ul li article i {
+  font-size: 4em;
+}
+
+section.comments ul li article div.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1em;
+  padding-top: 0.8em;
+}
+
+section.comments ul li article div.text h4 {
+  font-size: 1.2em;
+  font-weight: 800;
+  margin: 0;
+}
+
+section.comments ul li article div.text p {
+  color: #919191;
+  text-align: justify;
 }
 
 /* Sign in */
