@@ -17,6 +17,11 @@ include_once "Genero.php";
         private $password = "";
         private $bd_name = "bd_movies";
 
+        //private $host = "sql480.main-hosting.eu";
+        //private $username = "u850300514_mespases";
+        //private $password = "x45185284J";
+        //private $bd_name = "u850300514_mespases";
+
         public function __construct() {
             $this->conn = new mysqli($this->host, $this->username, $this->password);
 
@@ -74,6 +79,7 @@ include_once "Genero.php";
         private function createTableUsers() {
             $query = "CREATE TABLE IF NOT EXISTS usuarios(
                             id int PRIMARY KEY AUTO_INCREMENT,
+                            nombre varchar(255) not null,
                             email varchar(255) not null UNIQUE,
                             password varchar(255) not null
                         );";
