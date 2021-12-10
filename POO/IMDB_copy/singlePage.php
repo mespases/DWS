@@ -148,7 +148,7 @@ $slider = randFilms();
         <h3>Comentarios</h3>
 
         <form action="#" method="POST">
-            <textarea placeholder="Añade un nuevo comentario" rows="4" cols="10"></textarea>
+            <textarea placeholder="Añade un nuevo comentario" rows="4" cols="10" maxlength="255"></textarea>
             <div class="comment_btn">
                 <button>Publicar</button>
             </div>
@@ -158,15 +158,20 @@ $slider = randFilms();
         <p>Comentarios más recientes</p>
         <hr/>
         <ul class="comment_list" style="color: white">
+
+            <?php
+                foreach ($peli->getComentarios() as $comentario) {
+            ?>
             <li>
                 <article>
                     <i class="fas fa-user-circle"></i>
                     <div class="text">
-                        <h4>Miguel</h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <h4><?php echo $comentario->getNombre(); ?></h4>
+                        <p><?php echo $comentario->getCommentario(); ?></p>
                     </div>
                 </article>
             </li>
+            <?php } ?>
         </ul>
     </section>
 

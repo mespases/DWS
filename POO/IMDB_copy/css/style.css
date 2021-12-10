@@ -232,13 +232,17 @@ section.comments hr {
 
 section.comments ul {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0;
 }
 
 section.comments ul li {
+  background-color: #46414173;
+  border-radius: 4px;
   list-style: none;
+  margin-bottom: 3em;
 }
 
 section.comments ul li article {
@@ -250,6 +254,7 @@ section.comments ul li article {
 
 section.comments ul li article i {
   font-size: 4em;
+  margin: 0.2em;
 }
 
 section.comments ul li article div.text {

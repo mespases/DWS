@@ -11,8 +11,9 @@
         private array $generos;
         private array $directores;
         private array $actores;
+        private array $comentarios;
 
-        public function __construct(int $id, string $titulo, string $ano, float $valoracion, string $imagen, string $trailer, array $generos, array $directores, array $actores)
+        public function __construct(int $id, string $titulo, string $ano, float $valoracion, string $imagen, string $trailer, array $generos, array $directores, array $actores, array $comentarios = [])
         {
             $this->id = $id;
             $this->titulo = $titulo;
@@ -23,6 +24,13 @@
             $this->generos = $generos;
             $this->directores = $directores;
             $this->actores = $actores;
+            $this->comentarios = $comentarios;
+        }
+
+
+        public function getComentarios(): array
+        {
+            return $this->comentarios;
         }
 
         public function getId(): int
