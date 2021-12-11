@@ -64,6 +64,7 @@ if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) {
 
                 if (isset($email) && isset($password) && $bd->authentifyUser($email, $password)) {
                     $_SESSION["loggedIn"] = true;
+                    $_SESSION["user_id"] = $bd->selectUserId($email);
                     header("Location: index.php");
 
                 } else if (isset($email) && isset($password) && $email != "" && $password != ""){

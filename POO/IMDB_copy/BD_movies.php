@@ -3,7 +3,7 @@ include_once "Actores.php";
 include_once "Directores.php";
 include_once "Pelicula.php";
 include_once "Genero.php";
-include_once "Usuario_comentario.php";
+include_once "Comentario.php";
 
     class BD_movies {
 
@@ -41,7 +41,7 @@ include_once "Usuario_comentario.php";
             $this->createTablePeliculas_Directores();
             $this->createTablePeliculas_Generos();
             $this->createTableUsers();
-            $this->createTablePeliculas_Comentarios();
+            $this->createTableComentarios();
 
             // Descomentar para insertar todos los datos
             //  $this->extractJson();
@@ -92,8 +92,8 @@ include_once "Usuario_comentario.php";
             $this->sendQuery($query);
         }
 
-        private function createTablePeliculas_Comentarios() {
-            $query = "CREATE TABLE IF NOT EXISTS peliculas_comentarios (
+        private function createTableComentarios() {
+            $query = "CREATE TABLE IF NOT EXISTS comentarios (
                             id int PRIMARY KEY AUTO_INCREMENT,
                             id_pelicula int not null,
     						id_usuario int not null,
@@ -241,6 +241,13 @@ include_once "Usuario_comentario.php";
             }
         }
 
+        public function insertComentario($id_pelicula, $id_usuario, $comentario) {
+            $query = "INSERT INTO `comentarios` (`id_pelicula`, `id_usuario`, `comentario`) VALUES 
+                                                            ('".$id_pelicula."', '".$id_usuario["id"]."', '".$comentario."');";
+
+            $this->sendQuery($query);
+        }
+
         private function selectActores($id_pelicula) {
             $query = "SELECT A.id, A.nombre, A.edad, A.nacionalidad FROM actores as A INNER JOIN peliculas_actores as B on A.id = B.id_actor WHERE B.id_pelicula = ".$id_pelicula." GROUP BY A.id";
 
@@ -283,17 +290,23 @@ include_once "Usuario_comentario.php";
         }
 
         private function selectComentarios($id_pelicula) {
-            $query = 'SELECT B.nombre, A.comentario FROM peliculas_comentarios as A INNER JOIN usuarios as B on A.id_usuario = B.id 
+            $query = 'SELECT B.nombre, A.comentario FROM comentarios as A INNER JOIN usuarios as B on A.id_usuario = B.id 
                               WHERE A.id_pelicula = '.$id_pelicula.';';
 
             $resultado = [];
             $sql = $this->conn->query($query);
 
             while ($row = $sql->fetch_assoc()) {
-                $resultado[] = new Usuario_comentario($row["nombre"], $row["comentario"]);
+                $resultado[] = new Comentario($row["nombre"], $row["comentario"]);
             }
 
             return $resultado;
+        }
+
+        public function selectUserId($email) {
+            $query = 'SELECT id FROM `usuarios` WHERE email = "'.$email.'";';
+
+            return $this->conn->query($query)->fetch_assoc();
         }
 
         /** Devuelve todas las peliculas que esten dentro de la BD */
@@ -361,13 +374,6 @@ include_once "Usuario_comentario.php";
             }
 
             return false;
-        }
-
-        public function insertComentario($id_pelicula, $id_usuario, $comentario) {
-            $query = "INSERT INTO `peliculas_comentarios` (`id_pelicula`, `id_usuario`, `comentario`) VALUES 
-                                                            ('".$id_pelicula."', '".$id_usuario."', '".$comentario."');";
-
-            $this->sendQuery($query);
         }
 
         /** Realiza la query */

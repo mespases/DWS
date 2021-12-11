@@ -1,6 +1,6 @@
 <?php
 
-    class Usuario_comentario {
+    class Comentario {
 
         private string $nombre;
         private string $commentario;
