@@ -12,12 +12,8 @@ if (isset($_GET["id"]) && $_GET["id"] <= $num) {
     $peli = $bd->selectOnePelicula(15);
 }
 
-/** Insertamos el comentario si lo recibimos */
-if (isset($_POST["coment"]) && $_POST["coment"] != "") {
-    $bd->insertComentario($peli->getId(), $_SESSION["user_id"], $_POST["coment"]);
-    $peli = $bd->selectOnePelicula($_GET["id"]);
-    $_POST["coment"] = ""; /** Falta corregir lo del f5 con los comentarios */
-}
+$_SESSION["film_id"] = $peli->getId();
+
 
 /** Devuelve una array de 5 peliculas generadas aleatoriamente, funcion para el slider */
 function randFilms() {
@@ -162,7 +158,7 @@ $slider = randFilms();
                 </div>
             </form>
         <?php } else { ?>
-            <form action="#" method="POST">
+            <form action="comentPOST.php" method="POST">
                 <textarea placeholder="Añade un nuevo comentario" rows="4" cols="10" maxlength="255" name="coment"></textarea>
                 <div class="comment_btn">
                     <button>Publicar</button>
