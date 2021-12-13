@@ -2,11 +2,9 @@
 section.all_movies {
   display: flex;
   flex-wrap: wrap;
-  /*justify-content: center;*/
   align-items: center;
   margin: 20px auto;
   padding-left: 10%;
-  /*width: 100%;*/
 }
 
 section.all_movies div.film_box {
@@ -71,7 +69,6 @@ section.all_movies div.film_box a div.text_box {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /*padding: 20px;*/
   justify-content: space-between;
 }
 
@@ -117,3 +114,28 @@ section.all_movies div.film_box a div.text_box span.puntuacion {
 }
 
 
+@media screen and (max-width: 1255px) {
+  section.all_movies div.film_box {
+    width: 35%;
+    margin: 4em;
+  }
+}
+
+@media screen and (max-width: 962px) {
+  section.all_movies div.film_box {
+    width: 34%;
+    margin: 3em;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  section.all_movies {
+    justify-content: center;
+  }
+
+  section.all_movies div.film_box {
+    width: 70%;
+    margin: 3em;
+  }
+
+}

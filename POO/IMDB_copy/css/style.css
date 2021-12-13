@@ -13,7 +13,6 @@ body.sign_in {
 nav {
   background-color: #121212;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -74,8 +73,8 @@ nav div.search_bar button i {
 }
 /** Content **/
 div.content {
-  margin-left: 20em;
   display: flex;
+  justify-content: center;
 }
 
 div div.trailer iframe {
@@ -321,4 +320,37 @@ div.sesion_box section.sesion button {
   margin: 0 auto;
   border-radius: 7px;
   font-size: 1em;
+}
+
+@media screen and (max-width: 1255px) {
+  div.sign_in_a {
+    width: 16%;
+  }
+}
+
+@media screen and (max-width: 962px) {
+  div.sign_in_a {
+    width: 22%;
+  }
+
+  nav div.logo {
+    width: 6%;
+    margin-right: 9em;
+  }
+
+  nav div.logo img {
+    margin-left: 1em;
+  }
+
+}
+
+@media screen and (max-width: 962px) { 
+  nav div.search_bar {
+    display: none;
+  }
+
+  div.sign_in_a {
+    width: 71%;
+    margin-right: 1em;
+  }
 }
