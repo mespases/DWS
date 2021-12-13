@@ -1,10 +1,16 @@
 <?php
-    session_start();
 
-    echo $_SESSION["loggedIn"];
+         $host = "localhost";
+         $username = "root";
+         $password = "";
+         $bd_name = "bd_movies";
 
-    if (!$_SESSION["loggedIn"]) {
-        header("Location: iniciarSesion.php");
+    $conn = new mysqli($host, $username, $password, $bd_name);
+
+    $query ='INSERT INTO usuarios VALUES (null, "Miguel", "admin@admin.com", "root");';
+
+    if (!mysqli_query($conn, $query)) {
+        echo '<script>alert("mal")</script>';
     }
 ?>
 
