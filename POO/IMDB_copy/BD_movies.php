@@ -27,6 +27,7 @@ include_once "Comentario.php";
         //private $password = "x45185284J";
         //private $bd_name = "u850300514_mespases";
 
+        /** Crea una BD e inserta si no existe */
         public function __construct() {
             $this->conn = new mysqli($this->host, $this->username, $this->password);
 
@@ -76,12 +77,14 @@ include_once "Comentario.php";
             }
         }
 
+        /** Crea la base de datos */
         private function createDB() {
             $query = "CREATE DATABASE IF NOT EXISTS ". $this->bd_name;
 
             $this->sendQuery($query);
         }
 
+        /** Crea la tabla de usuarios */
         private function createTableUsers() {
             $query = "CREATE TABLE IF NOT EXISTS usuarios(
                             id int PRIMARY KEY AUTO_INCREMENT,
@@ -92,6 +95,7 @@ include_once "Comentario.php";
             $this->sendQuery($query);
         }
 
+        /** Crea la tabla de comentarios */
         private function createTableComentarios() {
             $query = "CREATE TABLE IF NOT EXISTS comentarios (
                             id int PRIMARY KEY AUTO_INCREMENT,
@@ -104,6 +108,7 @@ include_once "Comentario.php";
             $this->sendQuery($query);
         }
 
+        /** Crea la tabla de actores */
         private function createTableActores() {
             $query = "CREATE TABLE IF NOT EXISTS actores (
                             id int PRIMARY KEY,
@@ -114,6 +119,7 @@ include_once "Comentario.php";
             $this->sendQuery($query);
         }
 
+        /** Crea la tabla de directores */
         private function createTableDirector() {
             $query = "CREATE TABLE IF NOT EXISTS directores (
                             id int PRIMARY KEY,
@@ -124,6 +130,7 @@ include_once "Comentario.php";
             $this->sendQuery($query);
         }
 
+        /** Crea la tabla de comentarios */
         private function createTableGenero() {
             $query = "CREATE TABLE IF NOT EXISTS generos(
                             id int PRIMARY KEY,
@@ -133,6 +140,7 @@ include_once "Comentario.php";
             $this->sendQuery($query);
         }
 
+        /** Crea la tabla de peliculas */
         private function createTablePelicula() {
             $query = "CREATE TABLE IF NOT EXISTS peliculas(
                             id int PRIMARY KEY,
@@ -146,6 +154,7 @@ include_once "Comentario.php";
             $this->sendQuery($query);
         }
 
+        /** Crea la tabla de peliculas acotres fk's */
         private function createTablePeliculas_Actores() {
             $query = "CREATE TABLE IF NOT EXISTS peliculas_actores(
                             id_pelicula int not null,
@@ -157,6 +166,7 @@ include_once "Comentario.php";
             $this->sendQuery($query);
         }
 
+        /** Crea la tabla de peliculas directores fk's */
         private function createTablePeliculas_Directores() {
             $query = "CREATE TABLE IF NOT EXISTS peliculas_directores(
                             id_pelicula int not null,
@@ -168,6 +178,7 @@ include_once "Comentario.php";
             $this->sendQuery($query);
         }
 
+        /** Crea la tabla de peliculas generos fk's */
         private function createTablePeliculas_Generos() {
             $query = "CREATE TABLE IF NOT EXISTS peliculas_generos(
                             id_pelicula int not null,
@@ -179,24 +190,28 @@ include_once "Comentario.php";
             $this->sendQuery($query);
         }
 
+        /** Inserta los actores */
         private function insertTableActores($id, $nombre, $edad, $nacionalidad) {
             $query = 'INSERT INTO actores VALUES ('.$id.', "'.$nombre.'", '.$edad.', "'.$nacionalidad.'");';
 
             $this->sendQuery($query);
         }
 
+        /** Inserta los directores */
         private function insertTableDirector($id, $nombre, $edad, $nacionalidad) {
             $query = 'INSERT INTO directores VALUES ('.$id.', "'.$nombre.'", '.$edad.', "'.$nacionalidad.'");';
 
             $this->sendQuery($query);
         }
 
+        /** Inserta los generos */
         private function insertTableGenero($id, $nombre) {
             $query = 'INSERT INTO generos VALUES ('.$id.', "'.$nombre.'");';
 
             $this->sendQuery($query);
         }
 
+        /** Inserta las peliculas */
         private function insertTablePelicula($id, $titulo, $ano, $valoracion, $imagen, $trailer, $director, $genero, $actores) {
             $query = 'INSERT INTO peliculas VALUES ('.$id.', "'.$titulo.'", "'.$ano.'", '.$valoracion.', "'.$imagen.'", "'.$trailer.'");';
             $this->sendQuery($query);
@@ -214,6 +229,7 @@ include_once "Comentario.php";
             }
         }
 
+        /** Inserta los peliculas actores fk's */
         private function insertTablePeliculas_Actores($pelicula, $actor) {
             foreach ($this->actores as $actore) {
                 if ($actor == $actore["nombre"]) {
@@ -223,6 +239,7 @@ include_once "Comentario.php";
             }
         }
 
+        /** Inserta los peliculas directores fk's */
         private function insertTablePeliculas_Directores($pelicula, $directore) {
             foreach ($this->directores as $director) {
                 if ($directore == $director["nombre"]) {
@@ -232,6 +249,7 @@ include_once "Comentario.php";
             }
         }
 
+        /** Inserta los peliculas generos fk's */
         private function insertTablePeliculas_Generos($pelicula, $genero) {
             foreach ($this->generos as $g) {
                 if ($genero == $g["nombre"]) {
@@ -241,6 +259,7 @@ include_once "Comentario.php";
             }
         }
 
+        /** Inserta un nuevo comentario en una pelicula en concreto */
         public function insertComentario($id_pelicula, $id_usuario, $comentario) {
             $query = "INSERT INTO `comentarios` (`id_pelicula`, `id_usuario`, `comentario`) VALUES 
                                                             ('".$id_pelicula."', '".$id_usuario["id"]."', '".$comentario."');";
@@ -248,6 +267,22 @@ include_once "Comentario.php";
             $this->sendQuery($query);
         }
 
+        /** Registra un nuevo usuario para que pueda iniciar sesion, enseñando un error si ha pasado algo */
+        public function insertUsuario($nombre, $email, $password) {
+            $query = "INSERT INTO usuarios(nombre, email, password) VALUES ('".$nombre."', '".$email."', '".$password."')";
+
+            if (!mysqli_query($this->conn, $query)) {
+                echo "<script>
+                            Swal.fire({
+                              icon: 'error',
+                              title: 'Oops...',
+                              text: 'El email introducido ya existe',
+                            })
+                        </script>";
+            }
+        }
+
+        /** Selecciona los actores con la id_pelicula pasada */
         private function selectActores($id_pelicula) {
             $query = "SELECT A.id, A.nombre, A.edad, A.nacionalidad FROM actores as A INNER JOIN peliculas_actores as B on A.id = B.id_actor WHERE B.id_pelicula = ".$id_pelicula." GROUP BY A.id";
 
@@ -261,6 +296,7 @@ include_once "Comentario.php";
             return $resultado;
         }
 
+        /** Selecciona los directores con la id_pelicula pasada */
         private function selectDirectores($id_pelicula) {
             $query = "SELECT A.id, A.nombre, A.edad, A.nacionalidad FROM directores as A INNER JOIN peliculas_directores as B on A.id = B.id_director WHERE B.id_pelicula = ".$id_pelicula." GROUP BY A.id;";
 
@@ -275,6 +311,7 @@ include_once "Comentario.php";
             return $resultado;
         }
 
+        /** Selecciona los generos con la id_pelicula pasada */
         private function selectGeneros($id_pelicula) {
             $query = "SELECT A.id, A.nombre FROM generos as A INNER JOIN peliculas_generos as B on A.id = B.id_genero WHERE B.id_pelicula = ".$id_pelicula." GROUP BY A.id;";
 
@@ -289,6 +326,7 @@ include_once "Comentario.php";
             return $resultado;
         }
 
+        /** Selecciona los comentarios con la id_pelicula pasada */
         private function selectComentarios($id_pelicula) {
             $query = 'SELECT B.nombre, A.comentario FROM comentarios as A INNER JOIN usuarios as B on A.id_usuario = B.id 
                               WHERE A.id_pelicula = '.$id_pelicula.';';
@@ -303,6 +341,7 @@ include_once "Comentario.php";
             return $resultado;
         }
 
+        /** Devuelve el id del usuario pasandole el email */
         public function selectUserId($email) {
             $query = 'SELECT id FROM `usuarios` WHERE email = "'.$email.'";';
 
@@ -383,6 +422,7 @@ include_once "Comentario.php";
             }
         }
 
+        /** Cierra la conexion de la base de datos */
         public function closeMySQL() {
             mysqli_close($this->conn);
         }

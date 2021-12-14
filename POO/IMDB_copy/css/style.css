@@ -283,8 +283,8 @@ div.sesion_box {
 
 div.sesion_box section.sesion {
   background: linear-gradient(45deg, #0000003d, #fff70014);
-  width: 20em;
-  height: 25em;
+  width: 23em;
+  height: 28em;
   margin: 0 auto;
   box-shadow: 3px 1px 6px #0000006e;
   border-radius: 7px;
@@ -320,6 +320,38 @@ div.sesion_box section.sesion button {
   margin: 0 auto;
   border-radius: 7px;
   font-size: 1em;
+  transition: 0.6s;
+}
+
+div.sesion_box section.sesion p {
+  margin-bottom: 1.2em;
+}
+
+div.sesion_box section.sesion p input {
+  padding-left: 5px;
+}
+
+div.sesion_box section.createSesion p {
+  font-size: 0.9em;
+  margin-top: 12px;
+  margin-bottom: 1.4em;
+}
+
+div.sesion_box section.createSesion a {
+  background: linear-gradient(172deg, #c3b31f 20%, #8d7e13a6 75%);
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 5px 15px 5px 15px;
+  font-size: 1em;
+  margin-top: 2em;
+  transition: 0.6s;
+}
+
+div.sesion_box section.createSesion a:hover, div.sesion_box section.sesion button:hover {
+  background-color: #343131;
+  transition: 1s;
 }
 
 @media screen and (max-width: 1255px) {

@@ -51,6 +51,7 @@ $slider = randFilms();
     <script src="https://kit.fontawesome.com/867eec2026.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/lightslider.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link type="text/css" rel="stylesheet" href="css/lightslider.css" />        
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="img/logo.png" />
@@ -152,7 +153,7 @@ $slider = randFilms();
 
         <?php if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"]) { ?>
             <form action="#" method="POST">
-                <textarea placeholder="Añade un nuevo comentario" rows="4" cols="10" maxlength="255" readonly></textarea>
+                <textarea placeholder="Añade un nuevo comentario" rows="4" cols="10" maxlength="255" readonly id="text"></textarea>
                 <div class="comment_btn">
                     <button>Publicar</button>
                 </div>
@@ -201,6 +202,16 @@ $slider = randFilms();
         }
     });
   });
+
+      document.getElementById("text").addEventListener('click', function () {
+          Swal.fire({
+              icon: 'warning',
+              title: 'Oops...',
+              text: 'No puedes añadir un comentario sin iniciar sesión',
+          })
+      })
+
+
 
 </script>
 <?php $bd->closeMySQL(); ?>
