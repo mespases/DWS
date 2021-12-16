@@ -360,6 +360,54 @@ div.sesion_box section.createSesion a:hover, div.sesion_box section.sesion butto
   }
 }
 
+@media screen and (max-width: 1172px) {
+  div.content {
+    flex-direction: column;
+  }
+
+  div div.trailer {
+    margin-left: 19vw;
+  }
+
+  div div.trailer iframe {
+    width: 764px;
+  }
+
+  div div.right {
+    width: 764px;
+    height: 370px;
+    margin-left: 19vw;
+  }
+
+  div.slider {
+    padding-left: 3em;
+  }
+
+  section.comments h3 {
+    margin-right: 19em;
+  }
+
+  section.comments form textarea {
+    width: 60em;
+  }
+
+  section.comments form div.comment_btn {
+    width: 50.3em;
+  }
+
+  section.comments > p {
+    margin-right: 30em;
+  }
+
+  section.comments hr {
+    width: 50em;
+  }
+
+  section.comments ul li article {
+    width: 50em;
+  }
+}
+
 @media screen and (max-width: 962px) {
   div.sign_in_a {
     width: 22%;

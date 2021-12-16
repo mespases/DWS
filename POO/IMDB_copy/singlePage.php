@@ -28,9 +28,7 @@ function randFilms() {
             $arr[] = $randomNumber;
         }
     }
-
-
-
+    
     for ($i = 0; $i < 5; $i++) {
         $films[] = $bd->selectOnePelicula($arr[$i]);
     }
@@ -206,12 +204,10 @@ $slider = randFilms();
       document.getElementById("text").addEventListener('click', function () {
           Swal.fire({
               icon: 'warning',
-              title: 'Oops...',
+              title: 'Inicia Sesión',
               text: 'No puedes añadir un comentario sin iniciar sesión',
           })
       })
-
-
 
 </script>
 <?php $bd->closeMySQL(); ?>
