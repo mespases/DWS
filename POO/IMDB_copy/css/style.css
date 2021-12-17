@@ -363,10 +363,7 @@ div.sesion_box section.createSesion a:hover, div.sesion_box section.sesion butto
 @media screen and (max-width: 1172px) {
   div.content {
     flex-direction: column;
-  }
-
-  div div.trailer {
-    margin-left: 19vw;
+    align-items: center;
   }
 
   div div.trailer iframe {
@@ -376,7 +373,6 @@ div.sesion_box section.createSesion a:hover, div.sesion_box section.sesion butto
   div div.right {
     width: 764px;
     height: 370px;
-    margin-left: 19vw;
   }
 
   div.slider {
@@ -422,6 +418,38 @@ div.sesion_box section.createSesion a:hover, div.sesion_box section.sesion butto
     margin-left: 1em;
   }
 
+  iframe {
+    display: none;
+  }
+
+  div div.right {
+    width: 645px;
+  }
+
+  section.comments h3 {
+    margin-right: 16em;
+  }
+
+  section.comments form textarea {
+    width: 53em;
+  }
+
+  section.comments form div.comment_btn {
+    width: 44.4em;
+  }
+
+  section.comments > p {
+    margin-right: 25em;
+  }
+
+  section.comments hr {
+    width: 44em;
+  }
+
+  section.comments ul li article {
+    width: 44em;
+  }
+
 }
 
 @media screen and (max-width: 962px) { 
@@ -432,5 +460,82 @@ div.sesion_box section.createSesion a:hover, div.sesion_box section.sesion butto
   div.sign_in_a {
     width: 71%;
     margin-right: 1em;
+  }
+
+  div.slider {
+    padding-left: 0em;
+  }
+
+  section.comments h3 {
+    margin-right: 12em;
+  }
+
+  section.comments form textarea {
+    width: 43em;
+  }
+
+  section.comments form div.comment_btn {
+    width: 36.1em;
+  }
+
+  section.comments > p {
+    margin-right: 18em;
+  }
+
+  section.comments hr {
+    width: 36em;
+  }
+
+  section.comments ul li article {
+    width: 36em;
+  }
+
+}
+
+@media screen and (max-width: 812px) { 
+  div div.right {
+    width: 360px;
+  }
+}
+
+@media screen and (max-width: 636px) {
+  section.comments h3 {
+    margin-right: 6em;
+  }
+
+  section.comments form textarea {
+    width: 28em;
+    height: 12em;
+  }
+
+  section.comments form div.comment_btn {
+    width: 23.6em;
+  }
+
+  section.comments > p {
+    margin-right: 8em;
+  }
+
+  section.comments hr {
+    width: 24em;
+  }
+
+  section.comments ul li article {
+    width: 24em;
+  }
+
+  div.slider {
+    padding-left: 0em;
+    margin-left: 1em;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  div.sesion_box section.sesion {
+    width: 20em;
+  }
+
+  div.sesion_box section.sesion input {
+    width: 14em;
   }
 }
