@@ -102,6 +102,7 @@ include_once "Comentario.php";
                             id_pelicula int not null,
     						id_usuario int not null,
     						comentario varchar(255),
+                            puntuacion varchar(255),
     						FOREIGN KEY (id_pelicula) REFERENCES peliculas(id) ON DELETE CASCADE,
     						FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE
                         );";
@@ -260,9 +261,9 @@ include_once "Comentario.php";
         }
 
         /** Inserta un nuevo comentario en una pelicula en concreto */
-        public function insertComentario($id_pelicula, $id_usuario, $comentario) {
-            $query = "INSERT INTO `comentarios` (`id_pelicula`, `id_usuario`, `comentario`) VALUES 
-                                                            ('".$id_pelicula."', '".$id_usuario["id"]."', '".$comentario."');";
+        public function insertComentario($id_pelicula, $id_usuario, $comentario, $puntuacion) {
+            $query = "INSERT INTO `comentarios` (`id_pelicula`, `id_usuario`, `comentario`, `puntuacion`) VALUES 
+                                                            ('".$id_pelicula."', '".$id_usuario["id"]."', '".$comentario."', '".$puntuacion."');";
 
             $this->sendQuery($query);
         }
@@ -328,14 +329,14 @@ include_once "Comentario.php";
 
         /** Selecciona los comentarios con la id_pelicula pasada */
         private function selectComentarios($id_pelicula) {
-            $query = 'SELECT B.nombre, A.comentario FROM comentarios as A INNER JOIN usuarios as B on A.id_usuario = B.id 
-                              WHERE A.id_pelicula = '.$id_pelicula.';';
+            $query = 'SELECT B.nombre, A.comentario, A.puntuacion FROM comentarios as A INNER JOIN usuarios as B on A.id_usuario = B.id 
+                              WHERE A.id_pelicula = '.$id_pelicula.' ORDER BY A.id DESC;';
 
             $resultado = [];
             $sql = $this->conn->query($query);
 
             while ($row = $sql->fetch_assoc()) {
-                $resultado[] = new Comentario($row["nombre"], $row["comentario"]);
+                $resultado[] = new Comentario($row["nombre"], $row["comentario"], $row["puntuacion"]);
             }
 
             return $resultado;

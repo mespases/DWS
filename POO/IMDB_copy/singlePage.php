@@ -160,6 +160,16 @@ $slider = randFilms();
             <form action="comentPOST.php" method="POST">
                 <textarea placeholder="Añade un nuevo comentario" rows="4" cols="10" maxlength="255" name="coment"></textarea>
                 <div class="comment_btn">
+                    <div class="puntuation">
+                        <label class="like">
+                            <input type="radio" name="like" value="+1" checked>
+                            <i class="fas fa-thumbs-up"></i>
+                        </label>
+                        <label class="dislike">
+                            <input type="radio" name="like" value="-1">
+                            <i class="fas fa-thumbs-down"></i>
+                        </label>
+                    </div>
                     <button>Publicar</button>
                 </div>
             </form>
@@ -176,6 +186,13 @@ $slider = randFilms();
             <li>
                 <article>
                     <i class="fas fa-user-circle"></i>
+                    <?php
+                    if ($comentario->getPuntuacion() == "+1") {
+                        echo '<i class="fas fa-thumbs-up"></i>';
+                    } else {
+                        echo '<i class="fas fa-thumbs-down"></i>';
+                    }
+                    ?>
                     <div class="text">
                         <h4><?php echo $comentario->getNombre(); ?></h4>
                         <p><?php echo $comentario->getCommentario(); ?></p>

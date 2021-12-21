@@ -207,35 +207,30 @@ section.comments form div.comment_btn {
   height: 2em;
 }
 
-/** pruebas*/
 section.comments form div.comment_btn div.puntuation {
   position: absolute;
   font-size: 1.7em;
   margin-left: 7px;
 }
 
-section.comments form div.comment_btn div.puntuation p i {
-  transition: 0.3s;
+section.comments form div.comment_btn div.puntuation label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
 }
 
-section.comments form div.comment_btn div.puntuation i.fas.fa-thumbs-down {
-  margin-left: 5px;
+section.comments form div.comment_btn div.puntuation label i {
+  cursor: pointer;
 }
 
-section.comments form div.comment_btn div.puntuation i.fas.fa-thumbs-up:horizontal {
-  color: #00a700;
+section.comments form div.comment_btn div.puntuation label.like input:checked + i {
+  color: #0088ffc7;
 }
 
-section.comments form div.comment_btn div.puntuation i.fas.fa-thumbs-down:horizontal {
-  color: #a30000;
+section.comments form div.comment_btn div.puntuation label.dislike input:checked + i {
+  color: #bd0000c7;
 }
-
-section.comments form div.comment_btn div.puntuation p:focus i.fas.fa-thumbs-down {
-  color: #a30000;
-  font-size: 4em;
-  background-color: red;
-}
-/** Fin de las pruebas */
 
 section.comments form div.comment_btn button {
   background-color: rgb(38 38 38);
@@ -284,6 +279,20 @@ section.comments ul li article {
 section.comments ul li article i {
   font-size: 4em;
   margin: 0.2em;
+}
+
+section.comments ul li article i.fa-thumbs-up {
+  position: absolute;
+  color: #0088ffc7;
+  font-size: 1.4em;
+  padding: 0em 2.2em 1.6em;
+}
+
+section.comments ul li article i.fa-thumbs-down {
+  position: absolute;
+  color: #bd0000c7;
+  font-size: 1.4em;
+  padding: 0em 2.2em 1.6em;
 }
 
 section.comments ul li article div.text {
