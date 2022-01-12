@@ -1,0 +1,119 @@
+#Hotel
+    - id pk
+    - nombre
+    - descripcion
+    - localizacion 
+    - precio_noche_estandar
+    - precio_noche_deluxe
+    - precio_persona
+    - puntuacion
+    
+#Servicios (Ej: gym, parking, wifi...)
+    - id pk
+    - id_hotel fk
+    - nombre
+
+#Media
+    - id pk
+    - id_hotel fk
+    - img
+
+#Reserva
+    - id pk
+    - id_hotel fk
+    - fecha_inicio
+    - fecha_fin
+    - habitaciones_reservadas
+
+
+/* MySQL
+drop database if EXISTS Bookings;
+CREATE DATABASE IF NOT EXISTS Bookings;
+USE Bookings;
+
+CREATE TABLE IF NOT EXISTS hotel (
+	id int AUTO_INCREMENT PRIMARY KEY,
+    nombre varchar(255),
+    descripcion varchar(255),
+    localizacion varchar(255),
+    precio_noche_estandar float,
+    precio_noche_deluxe float,
+    precio_persona float,
+    puntuacion int
+);
+
+CREATE TABLE IF NOT EXISTS servicios (
+	id int AUTO_INCREMENT PRIMARY KEY,
+    id_hotel int,
+    nombre varchar(255),
+    FOREIGN KEY (id_hotel) REFERENCES hotel(id) on DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS media (
+	id int AUTO_INCREMENT PRIMARY KEY,
+    id_hotel int,
+    img varchar(255),
+    FOREIGN KEY (id_hotel) REFERENCES hotel(id) on DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS reserva (
+	id int AUTO_INCREMENT PRIMARY KEY,
+    id_hotel int,
+    fecha_inicio varchar(255),
+    fecha_fin varchar(255),
+    habitaciones_reservadas int,
+    FOREIGN KEY (id_hotel) REFERENCES hotel(id) on DELETE CASCADE
+);
+
+
+// Insert hoteles
+INSERT INTO hotel(nombre, descripcion, localizacion, precio_noche_estandar, precio_noche_deluxe, precio_persona, puntuacion) VALUES('Hotel Mirador', 'Céntrico y tranquilo, dispone de parking propio y es la mejor opción para unas vacaciones en pareja, con amigos o en familia.', 'Paseo Maritimo 10', 72, 95, 36.5, 9);
+INSERT INTO hotel(nombre, descripcion, localizacion, precio_noche_estandar, precio_noche_deluxe, precio_persona, puntuacion) VALUES('Iberostar Cristina', 'El IBEROSTAR Cristina es un hotel completamente reformado en 2016 con miniclub en Playa de Palma perfecto para unas vacaciones repletas de emociones.', 'Calle Bartomeu Xamena, s/n - Playa de Palma', 67, 81, 30, 9);
+INSERT INTO hotel(nombre, descripcion, localizacion, precio_noche_estandar, precio_noche_deluxe, precio_persona, puntuacion) VALUES('Hotel Amic Horizonte', 'El Horizonte con wifi gratuito en zonas comunes es un hotel de gestión familiar situado cerca del puerto de Palma, a 2,5 km del centro de la ciudad de Palma.', 'Calle Vista Alegre, 1.', 53, 73, 40, 7);
+INSERT INTO hotel(nombre, descripcion, localizacion, precio_noche_estandar, precio_noche_deluxe, precio_persona, puntuacion) VALUES('Elba Sunset Mallorca Thalasso Spa', 'Un hotel de vanguardia donde destaca su modernidad y ubicación sobre el Mediterráneo.', 'Carrer Torrenova 25-27,', 99, 140, 53, 8);
+INSERT INTO hotel(nombre, descripcion, localizacion, precio_noche_estandar, precio_noche_deluxe, precio_persona, puntuacion) VALUES('Hipotels Dunas Cala Millor', 'Disfruta de una gran variedad de instalaciones recreativas, entre ellas piscina al aire libre, piscina cubierta y sauna.', 'Avda. Sa Coma, S/N, Cala Millor.', 51, 71, 30, 8);
+INSERT INTO hotel(nombre, descripcion, localizacion, precio_noche_estandar, precio_noche_deluxe, precio_persona, puntuacion) VALUES('Hotel Amoros', 'Con piscina al aire libre y muchas otras instalaciones recreativas a tu disposición, no te quedará ni un minuto libre.', 'Carrer De Ses Llegitimes, 37.', 51, 90, 70, 8);
+INSERT INTO hotel(nombre, descripcion, localizacion, precio_noche_estandar, precio_noche_deluxe, precio_persona, puntuacion) VALUES('Hotel Riu Festival', 'A 300 m de la playa. WiFi gratuito en todo el hotel. Piscina y terraza-solarium. Restaurante con terraza.', 'Camino De Las Maravillas, N°7, Palma De Mallorca.', 60, 70, 20, 8);
+INSERT INTO hotel(nombre, descripcion, localizacion, precio_noche_estandar, precio_noche_deluxe, precio_persona, puntuacion) VALUES('Occidental Playa De Palma', 'Sumérgete en una de las 2 piscinas al aire libre, o disfruta de otras instalaciones recreativas, como sauna y gimnasio.', 'Avinguda Del Fra Joan Llabres 16, Palma De Mallorca.', 71, 104, 40, 8);
+INSERT INTO hotel(nombre, descripcion, localizacion, precio_noche_estandar, precio_noche_deluxe, precio_persona, puntuacion) VALUES('Gpro Valparaíso Palace And SpaGPRO', 'Valparaiso Palace & Spa es uno de los emblemáticos hoteles de 5 estrellas en la ciudad de Palma.', 'C/ Francisco Vidal Sureda, 23.', 126, 192, 80, 9);
+INSERT INTO hotel(nombre, descripcion, localizacion, precio_noche_estandar, precio_noche_deluxe, precio_persona, puntuacion) VALUES('Abelux', 'Este hotel dispone de aparcamiento con descuento en las inmediaciones y espacios para fumadores.', 'Calle Ramon Muntaner, 30.', 68, 78, 20, 7);
+
+// Insert servicios
+INSERT INTO servicios(id_hotel, nombre) VALUES(1, 'WiFi');
+INSERT INTO servicios(id_hotel, nombre) VALUES(1, 'gimnasio');
+INSERT INTO servicios(id_hotel, nombre) VALUES(1, 'spa');
+INSERT INTO servicios(id_hotel, nombre) VALUES(2, 'wifi');
+INSERT INTO servicios(id_hotel, nombre) VALUES(2, 'spa');
+INSERT INTO servicios(id_hotel, nombre) VALUES(3, 'parking');
+INSERT INTO servicios(id_hotel, nombre) VALUES(4, 'wifi');
+INSERT INTO servicios(id_hotel, nombre) VALUES(4, 'parking');
+INSERT INTO servicios(id_hotel, nombre) VALUES(4, 'gimnasio');
+INSERT INTO servicios(id_hotel, nombre) VALUES(4, 'spa');
+INSERT INTO servicios(id_hotel, nombre) VALUES(5, 'wifi');
+INSERT INTO servicios(id_hotel, nombre) VALUES(5, 'parking');
+INSERT INTO servicios(id_hotel, nombre) VALUES(6, 'wifi');
+INSERT INTO servicios(id_hotel, nombre) VALUES(6, 'parking');
+INSERT INTO servicios(id_hotel, nombre) VALUES(6, 'gimnasio');
+INSERT INTO servicios(id_hotel, nombre) VALUES(6, 'spa');
+INSERT INTO servicios(id_hotel, nombre) VALUES(6, 'cupon descuento');
+INSERT INTO servicios(id_hotel, nombre) VALUES(6, 'restaurante de lujo');
+INSERT INTO servicios(id_hotel, nombre) VALUES(7, 'wifi');
+INSERT INTO servicios(id_hotel, nombre) VALUES(7, 'gimnasio');
+INSERT INTO servicios(id_hotel, nombre) VALUES(8, 'wifi');
+INSERT INTO servicios(id_hotel, nombre) VALUES(9, 'wifi');
+INSERT INTO servicios(id_hotel, nombre) VALUES(9, 'gimnasio');
+INSERT INTO servicios(id_hotel, nombre) VALUES(9, 'spa');
+INSERT INTO servicios(id_hotel, nombre) VALUES(9, 'restaurante de lujo');
+INSERT INTO servicios(id_hotel, nombre) VALUES(10, 'wifi');
+INSERT INTO servicios(id_hotel, nombre) VALUES(10, 'spa');
+INSERT INTO servicios(id_hotel, nombre) VALUES(10, 'gimnasio');
+INSERT INTO servicios(id_hotel, nombre) VALUES(10, 'cupon descuento');
+
+
+// Insert media
+
+
+// Ej insert reservas, ya que se hara desde codigo
+
+
+*/

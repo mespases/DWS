@@ -1,9 +1,14 @@
 <?php
 
-         $host = "localhost";
-         $username = "root";
-         $password = "";
-         $bd_name = "bd_movies";
+        $host = "localhost";
+        $username = "root";
+        $password = "";
+        $bd_name = "bd_movies";
+
+         //$host = "sql480.main-hosting.eu";
+         //$username = "u850300514_mespases";
+         //$password = "x45185284J";
+         //$bd_name = "u850300514_mespases";
 
     $conn = new mysqli($host, $username, $password, $bd_name);
 
