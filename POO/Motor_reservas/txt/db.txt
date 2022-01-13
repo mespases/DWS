@@ -2,11 +2,11 @@
     - id pk
     - nombre
     - descripcion
-    - localizacion 
+    - ciudad
+    - coordenadas
+    - puntuacion
     - precio_noche_estandar
     - precio_noche_deluxe
-    - precio_persona
-    - puntuacion
     
 #Servicios (Ej: gym, parking, wifi...)
     - id pk
