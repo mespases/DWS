@@ -3,7 +3,8 @@
     - nombre
     - descripcion
     - ciudad
-    - coordenadas
+    - latitud
+    - longitud
     - puntuacion
     - precio_noche_estandar
     - precio_noche_deluxe
