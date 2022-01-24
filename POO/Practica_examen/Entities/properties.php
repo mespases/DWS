@@ -18,6 +18,7 @@
         private $rooms;
         private $surface;
         private $price;
+        private users $user;
 
         /**
          * @param $id
@@ -37,7 +38,7 @@
          * @param $surface
          * @param $price
          */
-        public function __construct($id, countries $countryId, states $stateId, cities $cityId, neighborhoods $neighborhoodId, array $multimedias, $zipcode, $latitude, $longitude, $date, $description, $bathrooms, $floor, $rooms, $surface, $price)
+        public function __construct($id, countries $countryId, states $stateId, cities $cityId, neighborhoods $neighborhoodId, array $multimedias, $zipcode, $latitude, $longitude, $date, $description, $bathrooms, $floor, $rooms, $surface, $price, users $user)
         {
             $this->id = $id;
             $this->countryId = $countryId;
@@ -55,7 +56,26 @@
             $this->rooms = $rooms;
             $this->surface = $surface;
             $this->price = $price;
+            $this->user = $user;
         }
+
+        /**
+         * @return users
+         */
+        public function getUser(): users
+        {
+            return $this->user;
+        }
+
+        /**
+         * @param users $user
+         */
+        public function setUser(users $user): void
+        {
+            $this->user = $user;
+        }
+
+
 
         /**
          * @return mixed

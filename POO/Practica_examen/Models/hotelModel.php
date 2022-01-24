@@ -66,10 +66,14 @@ include_once '../Entities/properties.php';
         }
 
         private function getUsers($id) {
-            $query = "SELECT * FROM `users` WHERE id=".$id;
-            $query_result = $this->executeQuery($query);
+            if (!is_null($id)) {
+                $query = "SELECT * FROM `users` WHERE id=".$id;
+                $query_result = $this->executeQuery($query);
 
-            return new users($query_result["id"], $query_result["mail"], $query_result["password"]);
+                return new users($query_result["id"], $query_result["mail"], $query_result["password"]);
+            }
+
+            return new users(0, "-", "-");
         }
 
         public function getPropierties($id) {
@@ -77,7 +81,7 @@ include_once '../Entities/properties.php';
             $query_result = $this->executeQuery($query);
 
             return new properties($query_result["id"], $this->getCountries($query_result["countryId"]), $this->getStates($query_result["stateId"]), $this->getCities($query_result["cityId"]), $this->getNeigh($query_result["neighborhoodId"]), $this->getMultimedia($query_result["id"]),
-                $query_result["zipcode"], $query_result["latitude"], $query_result["longitude"], $query_result["date"], $query_result["description"], $query_result["bathrooms"], $query_result["floor"], $query_result["rooms"], $query_result["surface"], $query_result["price"]);
+                $query_result["zipcode"], $query_result["latitude"], $query_result["longitude"], $query_result["date"], $query_result["description"], $query_result["bathrooms"], $query_result["floor"], $query_result["rooms"], $query_result["surface"], $query_result["price"], $this->getUsers($query_result["userId"]));
         }
 
     }
