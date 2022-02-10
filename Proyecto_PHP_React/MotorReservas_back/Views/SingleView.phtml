@@ -1,0 +1,163 @@
+<?php
+/**
+ * @var Hotel $hotel
+ */
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP LINK -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Hoteles Mallorca</title>
+    <style>
+        #carousel img {
+            width: 600px;
+            height: 500px;
+            border-radius: 5px;
+        }
+        #info {
+            height: 500px;
+        }
+        #price-box {
+            width: 130px;
+            height: 70px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 5px;
+            border: 1px solid rgb(252, 228, 198);
+            border-radius: 10px;
+            background-color: rgba(255, 242, 220, 0.64);
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow p-4 mb-3">
+            <div class="container">
+                <a href="MainController.php" class="navbar-brand">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <?php if (isset($_SESSION["userId"])) { ?>
+                        <a href="LogoutController.php" class="nav-link text-dark">Cerrar sesión</a>
+                    <?php } else { ?>
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a href="SigninController.php" class="nav-link text-dark">Iniciar sesión</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="SignupController.php" class="nav-link text-dark">Registrarse</a>
+                            </li>
+                        </ul>
+                    <?php } ?>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENT -->
+    <section>
+
+        <h1 class="display-4 m-4 text-center">Hoteles Mallorca</h1>
+
+        <div class="row row-cols-1 row-cols-md-2 p-5 g-4 text-center">
+
+            <!-- CAROUSEL -->
+            <div id="carousel" class="carousel slide col-lg-7" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <?php foreach ($hotel->getImages() as $key => $image) { ?>
+                        <div class="carousel-item <?php echo ($key == 0 ? "active" : "") ?>">
+                            <img src=" <?php echo $image->getUrl() ?>" class="d-block w-100" alt="image">
+                        </div>
+                    <?php } ?>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <!-- INFO -->
+            <div id="info" class="col-lg-5">
+                <div class="card h-100">
+                    <div class="card-header p-3">
+                        <h4 class="card-title"><?php echo $hotel->getName() ?></h4>
+                        <small><?php echo $hotel->getTown()->getName() . " · " . $hotel->getStreet() ?></small>
+                    </div>
+                    <div class="card-body d-flex flex-wrap justify-content-evenly">
+                        <p class="card-text mb-0 p-2"><?php echo $hotel->getDescription() ?></p>
+                        <div id="price-box">
+                            <span>Precio noche</span>
+                            <span class="fs-5"><?php echo $hotel->getBasicPrice() . ' €' ?></span>
+                        </div>
+                        <div id="price-box">
+                            <span>Precio especial</span>
+                            <span class="fs-5"><?php echo $hotel->getDeluxePrice() . ' €' ?></span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-center m-0">Valoración: <?php echo '<b>' . $hotel->getScore() . '</b>' ?></p>
+                    </div>
+                    <hr />
+
+                    <div class="col-lg-12 text-center p-2">
+                        <a href="#" class="btn btn-dark col-lg-11 mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal"   >Reservar</a>
+                    </div>
+                    <!-- MODAL RESERVE -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Reservar estancia</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                </div>
+                                <form method="post" class="modal-body d-flex flex-wrap justify-content-evenly align-items-center">
+                                    <div>
+                                        <label for="birthday">Entrada:</label>
+                                        <input type="date" name="dateStart">
+                                    </div>
+                                    <div>
+                                        <label for="birthday">Salida:</label>
+                                        <input type="date" name="dateEnd">
+                                    </div>
+                                    <label for="people">Personas</label>
+                                    <input id="people" type="number" name="people" min="1" max="5" style="width: 2.5em;" />
+                                    <div>
+                                        <button type="submit" class="btn btn-dark mt-4">Confirmar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-top footer navbar-fixed-bottom text-muted p-4">
+        <div class="container">
+            &copy; 2022 - Hoteles Mallorca
+        </div>
+    </footer>
+
+    <!-- BOOTSTRAP LINK -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
